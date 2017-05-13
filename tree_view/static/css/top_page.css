@@ -1,0 +1,586 @@
+@charset "UTF-8";
+
+/*
+for the use fo PC and SP
+*/
+
+
+/* common --------------------------------------------------- */
+
+
+body {
+background: none;
+}
+
+
+#mainArea strong {
+font-weight: bold;
+}
+
+#mainArea .MB0 {
+margin-bottom: 0 !important;
+}
+
+#mainArea .WF1 {
+font-family: 'Ropa Sans', sans-serif;
+}
+
+#mainArea .defaultBG {
+background-color: #f2f5f5;
+}
+
+#mainArea a:link,
+#mainArea a:active,
+#mainArea a:visited {
+color: #658dc8;
+}
+
+#mainArea h2.MdsBase {
+font-weight: bold;
+text-align: center;
+}
+
+
+/* 注釈 */
+.KomeS {
+display: inline-block;
+position: relative;
+margin-top: 10px;
+padding-left: 18px;
+font-size: 12px !important;
+line-height: 1.6em;
+}
+
+.KomeS:before {
+display: inline-block;
+position: absolute;
+left: 3px;
+top: 0;
+content: '※';
+}
+
+
+/* PC用 --------------------------------------------------- */
+@media only screen and (min-width: 769px) {
+
+
+  /* 共通 */
+  #mainArea {
+  /*margin-bottom: 10px;*/
+  /*border-bottom: 6px solid #f1f1f1;*/
+  }
+
+  #mainArea .SP {
+  display: none;
+  }
+
+  #mainArea p, #mainArea th, #mainArea td, #mainArea li {
+  font-size: 14px;
+  }
+
+  #mainArea small {
+  font-size: 12px;
+  }
+
+  #mainArea .SectionBasic {
+  padding: 30px 0;
+  }
+
+  #mainArea h2.MdsBase {
+  margin-bottom: 20px;
+  font-size: 44px;
+  font-family: 'Anton', sans-serif;
+  }
+
+  .Win #mainArea h2.MdsBase {
+  font-weight: normal;
+  }
+
+  #mainArea .LeadMain {
+  font-size: 16px;
+  text-align: center;
+  }
+
+
+  /* 背景動画 */
+  #mainArea #BgVideoWrap {
+    position: relative;
+    overflow: hidden;
+    margin-top: 157px;  /* あまり良くない（ハードコートするべきでない） */
+  }
+
+  #mainArea #BgVideo {
+    width: 100%;
+  }
+
+  /* タイトルロゴ */
+  #mainArea #BgVideoWrap .PageTitle {
+    position: absolute;
+    z-index: 10;
+    top: 40%;
+    left: 15%;
+    right: 15%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /* default */
+  /*#PageNewgrads2018 #BgVideoWrap .PageTitle {*/
+  /*position: absolute;*/
+  /*z-index: 10;*/
+  /*top: 50%; */
+  /*left: 50%;*/
+  /*margin: -75px 0 0 -210px;*/
+  /*text-align: center;*/
+  /*}*/
+
+  /* スクロール画像 */
+  #mainArea #BgVideoWrap .ScrollDown {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  }
+
+  /* Dot画像の貼り付け */
+  .BgVideoOverlay {
+    width: 100%;
+    height: 100%;
+    background: url(../images/dot.png);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 8;
+    opacity: 0.4;
+  }
+
+
+
+  /* 背景動画：タブレット対応 */
+  .Tablet #mainArea #BgVideoWrap {
+  display: none;
+  }
+
+  .Tablet #mainArea #KeyVisualSP {
+  display: block !important;
+  position: relative;
+  }
+
+  .Tablet #mainArea #KeyVisualSP .PageTitle {
+  position: absolute;
+  z-index: 10000;
+  left: 50%;
+  bottom: 50px;
+  margin-left: -110px;
+  }
+
+  .Tablet #mainArea #KeyVisualSP .PageTitle img {
+  width: 220px;
+  height: auto;
+  }
+
+
+
+  /* メッセージ */
+  #mainArea .Message {
+  padding-bottom: 20px;
+  color: whitesmoke;
+  border-bottom: 1px solid #658dc8;
+  text-align: center;
+  background: url(../images/mask_trapezoid.png) no-repeat center bottom;
+  }
+
+  #mainArea .Message h2.MdsBase {
+  margin-left: 10px;
+  margin-bottom: 50px;
+  font-size: 40px;
+  }
+
+  #mainArea .Message .Lead {
+  margin-bottom: 30px;
+  font-size: 16px;
+  line-height: 2.2em;
+  }
+
+  #mainArea .Message .Btn {
+  margin-top: 100px;
+  }
+  /* background in Message */
+  .cd-fixed-bg {
+    min-height: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .cd-fixed-bg.cd-bg-1 {
+    background-image: url("../images/data_center.jpg");
+  }
+
+  .cd-scrolling-bg {
+    min-height: 100%;
+  }
+
+
+  /* Interview */
+  #mainArea .VideoEmbedding {
+    text-align: center;
+    border-bottom: 1px solid #658dc8;
+  }
+
+  #mainArea .VideoEmbedding .LeadMain {
+    margin-bottom: 35px;
+  }
+
+
+  /* 教授陣（3 columns） */
+  #mainArea .Professors {
+    background-color: ghostwhite;
+  }
+
+  #mainArea .Professors .LeadMain {
+  margin-bottom: 35px;
+  }
+
+  #mainArea .Professors .ColumnUnit {
+  display: table;
+  width: 970px;
+  margin: 0 auto;
+  }
+
+  #mainArea .Professors .ColumnUnit .EachProfessor {
+  display: table-cell;
+  vertical-align: top;
+  }
+
+  #mainArea .Professors .ColumnUnit .Onizuka {
+  width: 33%;
+  padding-right: 20px;
+  }
+
+  #mainArea .Professors .ColumnUnit .Arase {
+  width: 34%;
+  padding: 0 20px;
+  border-left: 1px solid #dce0e0;
+  border-right: 1px solid #dce0e0;
+  }
+
+  #mainArea .Professors .ColumnUnit .Sasaki {
+  width: 33%;
+  padding-left: 20px;
+  }
+
+  #mainArea .Professors .ColumnUnit h3.Mds {
+  margin-bottom: 30px;
+  padding-top: 115px;
+  font-size: 24px;
+  font-family: 'Anton', sans-serif;
+  text-align: center;
+  background-position: 50% 0;
+  background-size: 105px auto;
+  }
+
+  .Win #mainArea .Professors .ColumnUnit h3.Mds {
+  font-weight: normal;
+  }
+
+  #mainArea .Professors .ColumnUnit .Onizuka h3.Mds {
+    background: url(../images/onizuka.jpg) no-repeat 50% 0;
+    background-size: 115px 115px;
+  }
+
+  #mainArea .Professors .ColumnUnit .Arase h3.Mds {
+    background: url(../images/arase.jpg) no-repeat 50% 0;
+    background-size: 115px 115px;
+  }
+
+  #mainArea .Professors .ColumnUnit .Sasaki h3.Mds {
+    background: url(../images/sasaki.jpg) no-repeat 53% 0;
+    background-size: 115px 115px;
+  }
+
+  #mainArea .Professors .ColumnUnit .Lead {
+  height: 400px;
+  margin-bottom: 30px;
+  line-height: 1.8em;
+  }
+
+  #mainArea .Professors .LinkUnit {
+  height: 145px;
+  background: #fff;
+  }
+
+  #mainArea .Professors .LinkUnit h4.Mds {
+  padding: 6px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background: #658dc8;
+  }
+
+  #mainArea .Professors .LinkTo {
+  padding: 15px 15px;
+  }
+
+  #mainArea .Professors .LinkTo li {
+  margin-bottom: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  }
+
+  #mainArea .Professors .LinkTo li a {
+  padding: 4px 0 4px 24px;
+  background: url(../images/click.png) no-repeat 0 50%;
+  background-size: 16px auto;
+  }
+
+
+  /* image */
+  #mainArea .PhotoImages img {
+  width: 33.33333333%;
+  vertical-align: bottom;
+  }
+
+
+  /* FBページプラグイン */
+  #mainArea .FBPlugin {
+  padding: 80px 0;
+  text-align: center;
+  }
+
+
+}
+/* PC用：終わり --------------------------------------------------- */
+
+
+
+
+/* SP (Smart Phone) 用 --------------------------------------------------- */
+@media only screen and (max-width: 768px) {
+
+
+  #mainArea {
+  padding-top: 50px;
+  }
+
+  #mainArea .PC {
+  display: none;
+  }
+
+  /* 共通 */
+  #mainArea p, #mainArea th,#mainArea td, #mainArea li {
+  font-size: 13px;
+  }
+
+  #mainArea small {
+  font-size: 10px;
+  }
+
+  #mainArea .Break {
+  display: block;
+  }
+
+  #mainArea .SectionBasic {
+  padding: 30px 15px;
+  }
+
+  #mainArea h2.MdsBase {
+  margin-bottom: 15px;
+  font-size: 24px;
+  }
+
+  #mainArea .BtnEntry {
+    padding: 12px 80px;
+    font-size: 18px;
+    background: url(../images/gt_favicon.png) no-repeat 95% 50%;
+    background-size: 19px auto;
+  }
+
+  /* キービジュアル */
+  #mainArea #KeyVisualSP {
+  position: relative;
+  }
+
+  #mainArea #KeyVisualSP .PageTitle {
+  position: absolute;
+  z-index: 100;
+  left: 50%;
+  bottom: 25px;
+  margin-left: -110px;
+  }
+
+  #mainArea #KeyVisualSP .PageTitle img {
+  width: 220px;
+  height: auto;
+  }
+
+
+  /* メッセージ */
+  #mainArea .Message {
+  padding-top: 25px;
+  padding-bottom: 160px;
+  border-bottom: 1px solid #3e8b73;
+  /*background: url(../images/gt_favicon.png) no-repeat center bottom;*/
+  background-size: 386px auto;
+  }
+
+  #mainArea .Message h2.MdsBase {
+  margin-left: 5px;
+  margin-bottom: 20px;
+  font-size: 19px;
+  text-align: center;
+  }
+
+  #mainArea .Message .Lead {
+  margin-bottom: 20px;
+  font-size: 13px;
+  }
+
+  #mainArea .Message .Btn {
+  margin-top: 30px;
+  text-align: center;
+  }
+
+
+
+  /* 動画埋め込み */
+  #mainArea .Movie {
+  position: relative;
+  margin-top: 25px;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  }
+
+  #mainArea .Movie iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  }
+
+
+
+  /* Column Test */
+  #mainArea .Professors {
+  padding-bottom: 10px;
+  }
+
+  #mainArea .Professors .LeadMain {
+  margin-bottom: 30px;
+  }
+
+  #mainArea .Professors .EachProfessor {
+  margin-bottom: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #dce0e0;
+  }
+
+  #mainArea .Professors .ColumnUnit h3.Mds {
+  margin-bottom: 15px;
+  padding-top: 105px;
+  font-size: 21px;
+  font-weight: bold;
+  text-align: center;
+  background-position: 50% 0;
+  background-size: 105px auto;
+  }
+
+  #mainArea .Professors .ColumnUnit .Onizuka h3.Mds {
+  background: url(../images/onizuka.jpg) no-repeat;
+  background-position: 50% 0;
+  background-size: 105px auto;
+  }
+
+  #mainArea .Professors .ColumnUnit .Arase h3.Mds {
+  background: url(../images/arase.jpg) no-repeat;
+  background-position: 50% 0;
+  background-size: 105px auto;
+  }
+
+  #mainArea .Professors .ColumnUnit .Sasaki h3.Mds {
+  background: url(../images/sasaki.jpg) no-repeat;
+  background-position: 53% 0;
+  background-size: 105px auto;
+  }
+
+  #mainArea .Professors .ColumnUnit .Lead {
+  margin-bottom: 15px;
+  line-height: 1.8em;
+  }
+
+  #mainArea .Professors .LinkUnit {
+  background: #fff;
+  }
+
+  #mainArea .Professors .LinkUnit h4.Mds {
+  padding: 6px 10px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #fff;
+  background: #9cc8ba;
+  }
+
+  #mainArea .Professors .LinkTo {
+  padding: 10px 10px;
+  }
+
+  #mainArea .Professors .LinkTo li {
+  margin-bottom: 5px;
+  font-weight: bold;
+  }
+
+  #mainArea .Professors .LinkTo li a {
+  padding: 4px 0 4px 22px;
+  background:  url(../images/click.png) no-repeat;
+  background-position: 0 50%;
+  background-size: 15px auto;
+  }
+
+
+  /* イメージ画像 */
+  #mainArea .PhotoImages img {
+  width: 50%;
+  vertical-align: bottom;
+  }
+
+
+}
+/* SP用：終わり --------------------------------------------------- */
+
+
+/**
+ * BxSlider v4.1.2 - Fully loaded, responsive content slider
+ * http://bxslider.com
+ *
+ * Written by: Steven Wanderski, 2014
+ * http://stevenwanderski.com
+ * (while drinking Belgian ales and listening to jazz)
+ *
+ * CEO and founder of bxCreative, LTD
+ * http://bxcreative.com
+ */
+
+
+/** RESET AND LAYOUT
+===================================*/
+
+.bx-wrapper {
+position: relative;
+width: 100%;
+margin: 0 auto;
+padding: 0;
+overflow: hidden;
+}
+
+.bx-wrapper img {
+width: 100%;
+display: block;
+}
+
+
+
+
+
+

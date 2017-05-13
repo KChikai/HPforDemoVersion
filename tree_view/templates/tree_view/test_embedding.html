@@ -1,0 +1,338 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+
+<title>動画埋め込みテストページ</title>
+
+{# CSS Files #}
+<link rel="stylesheet" href="{% static 'css/slidebars.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'css/top_page.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'css/aos.css' %}" />
+
+<!-- fonts in newgrads2018 -->
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+
+<link  rel="shortcut icon" href="/favicon.ico">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="{% static 'js/slidebars.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/application.js' %}"></script>
+
+<!-- js files in newgrads2018 -->
+<script src="{% static 'js/jquery.bxslider.min.js' %}"></script>
+<script src="{% static 'js/top_page.js' %}"></script>
+</head>
+
+<body>
+
+{# Header part #}
+<div id="header" class="cf">
+
+    {# PC以外用 #}
+    <div id="header_inner" class="cf">
+        <div id="logo">
+            <a href="http://www-bigdata.ist.osaka-u.ac.jp"><img src="{% static 'images/header_logo_bk.png' %}" class="switch" alt=""></a>
+        </div>
+        <div id="menu">
+            <img src="{% static 'images/menu.png' %}" alt="" class="sb-toggle-right">
+        </div>
+    </div><!--#header_inner-->
+
+    {# PC上側 #}
+    <div id="pc_header_inner" class="cf">
+        <div id="pc_logo"><a href="http://www-bigdata.ist.osaka-u.ac.jp">鬼塚研究室</a></div>
+        <div id="pc_menu">
+            <ul class="pc_navi">
+                <li><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/research"><span>研究</span></a></li>
+                <li><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/publication"><span>論文</span></a></li>
+                <li><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/whats-new"><span>News</span></a></li>
+                <li class="pc_header_recruit"><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/member"><span>メンバー</span></a></li>
+                <li><a href=http://www-bigdata.ist.osaka-u.ac.jp/bigdata/access><span>アクセス</span></a></li>
+                <li><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/link"><span>リンク</span></a></li>
+                <li><a href="#"><span>English</span></a></li>
+            </ul>
+        </div>
+    </div><!-- #pc_header_inner -->
+
+    {# PC下側 #}
+    <nav class="pc_sub_menu">
+        <ul class="pc_recruit">
+            <li class="pc_sub_menu_message"><a href="#">メッセージ</a></li>
+            <li class="pc_sub_menu_jobs"><a href="#">研究室紹介ビデオ</a></li>
+            <li class="pc_sub_menu_interview"><a href="#">研究紹介</a></li>
+            <li class="pc_sub_menu_work"><a href="#">教授陣</a></li>
+            <li class="pc_sub_menu_work"><a href="#">News</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+<!-- mainコンテンツ：Start -->
+<div id="mainArea">
+
+    {#  for PC (video contents)  #}
+    <div id="BgVideoWrap" class="PC">
+        <div class='BgVideoOverlay'></div>
+        <video id="BgVideo" autoplay loop muted>
+            <source src="{% static 'images/sample_sand20.m4v' %}" />
+            <source src="{% static 'images/sample_sand20.mp4' %}" type="video/mp4" />
+        </video>
+        <h1 class="PageTitle"><img src="{% static 'images/logo_white.png' %}" alt="Onizuka Lab logo"></h1>
+        <div class="ScrollDown"><img src="{% static 'images/scroll.png' %}" alt="SCROLL DOWN"></div>
+    </div>
+
+    {# for Smart Phone #}
+    <div id="KeyVisualSP" class="SP">
+        <ul id="Slide">
+            <li><img src="{% static 'images/building.jpg' %}" alt=""></li>
+            <li><img src="{% static 'images/themes.png' %}" alt=""></li>
+        </ul>
+        <p class="PageTitle"><img src="{% static 'images/oni_icon.png' %}" alt=""></p>
+        <!-- // #KeyVisualSP -->
+    </div>
+
+    {# Message contents #}
+    <div id="Poem" class="cd-fixed-bg cd-bg-1">
+        <section class="SectionBasic Message">
+            <div data-aos="fade-up"> {#  data-aos-anchor-placement="top-center">#}
+                <h2 class="MdsBase">
+                    ビッグデータ革命を、<br />
+                    牽引する。
+                </h2>
+                <p class="Lead">
+                    ビッグデータ，IoT，自然言語処理，データマイニング，人工知能．<br />
+                    昨今話題となっているこれらのワードは<br />
+                    hogehoge<br />
+                    現在，上記の分野は世界でも多くの注目を浴びています．
+                </p>
+                <p class="Lead">私たちは，挑戦します．</p>
+                <p class="Lead">
+                    世界に目を向け，他に劣らないような研究成果をあげております。<br />
+                    実現したいことがたくさんあります。</p>
+                <p class="Lead">
+                    いまわたしたちが求めているのは、<br />
+                    「 一日三食きっちり食べる人」です。<br />
+                    この思いに共感し、共にビッグデータ革命を牽引しましょう。</p>
+                <p class="KomeS">このページはテストページです．</p>
+                <!-- / .SectionBasic -->
+            </div>
+        </section>
+    </div>
+
+    {# embedding youtube video #}
+    <section class="SectionBasic VideoEmbedding defaultBG">
+        <h2 class="MdsBase">Onizuka Lab's Trailer</h2>
+        <p class="LeadMain">
+            現在の鬼塚研の研究紹介動画（予定），研究室内の様子も紹介．
+        </p>
+        <div class="Movie"><iframe width="760" height="400" src="https://www.youtube.com/embed/a3ICNMQW7Ok" frameborder="0" allowfullscreen></iframe></div>
+        <!-- / .SectionBasic -->
+    </section>
+
+    {# 3 column #}
+    <section class="SectionBasic Professors defaultBG" id="Professors">
+        <h2 class="MdsBase">Introduce Professors</h2>
+        <p class="LeadMain">鬼塚研究室では下記の３名が、研究室に常駐しており、それぞれのエキスパートとして活躍しています。</p>
+        <div class="ColumnUnit">
+            <!-- * -->
+            <section class="EachProfessor Onizuka">
+                <h3 class="Mds">Makoto Onizuka</h3>
+                <p class="Lead">
+                    教授 <br />
+                    Data is the new oil (データは新しい石油である)という言葉に代表されるように，ビッグデータを処理することで知識やルールを発見して，社会的あるいは経済的なインパクトを 生み出すことが期待されています．
+                    私はこの中で特に，1)大量の計算機を利用した分散データ処理技術，2)高速グラフマイニングアルゴリズム，3)分析結果の可視化技術に 取り組んでいます．
+                </p>
+                <nav class="LinkUnit">
+                <h4 class="Mds">主な研究分野</h4>
+                <ul class="LinkTo">
+                <li><a href="#">データベース</a></li>
+                <li><a href="#">グラフ分散処理</a></li>
+                </ul>
+                </nav>
+            </section>
+            <!-- * -->
+            <section class="EachProfessor Arase">
+                <h3 class="Mds">Yuki Arase</h3>
+                <p class="Lead">
+                    准教授 <br />
+                    言語は人間にとってもっとも自然なコミュニケーション手段の一つであり，長い歴史のなかで知識や経験の伝達に使われてきました．
+                    コンピュータでこのような大量の言語データを解析し，そこに現れる言語現象を理解することで，人間の社会を構成する知識の抽出と活用が可能になり，ひいては人間の知性の解明につながります．
+                    言語理解の第一歩として，ビッグデータからの言いかえ表現抽出と生成に取り組んでいます．
+                </p>
+                <nav class="LinkUnit">
+                <h4 class="Mds">主な研究分野</h4>
+                <ul class="LinkTo">
+                <li><a href="#">自然言語処理</a></li>
+                </ul>
+                </nav>
+            </section>
+            <!-- * -->
+            <section class="EachProfessor Sasaki">
+                <h3 class="Mds">Yuya Sasaki</h3>
+                <p class="Lead">
+                    助教授 <br />
+                    大阪大学大学院情報科学研究科の助教です．
+                    時空間データベース，モバイルデータ管理，グラフに関する研究をしています．
+                    2014年に大阪大学にて情報科学の博士を取得しました．
+                </p>
+                <nav class="LinkUnit">
+                <h4 class="Mds">主な研究分野</h4>
+                <ul class="LinkTo">
+                <li><a href="#">果穂</a></li>
+                </ul>
+                </nav>
+            </section>
+            <!-- / .JobsUnit -->
+        </div>
+        <!-- / .SectionBasic -->
+    </section>
+
+</div>
+
+
+
+{# 上に戻るボタン + footer #}
+<div id="container">
+    <div class="back-to-top-container cf">
+        <a href="#top"><img src="{% static 'images/arrow.png' %}" alt="" width="12" /> このページの先頭に戻る</a>
+    </div>
+
+    <div id="footer" class="cf">
+        <ul id="sns_box">
+            <li><div class="fb-like" data-href="" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div></li>
+            <li><a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
+        </ul>
+        <ul>
+            <li><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/research" target="_blank">研究内容</a></li>
+            <li><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/publication">論文</a></li>
+            <li><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/whats-new">What's new</a></li>
+            <li><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/member">メンバー</a></li>
+            <li class="li_last"><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/access">アクセス</a></li>
+            <li class="li_last"><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/link">外部リンク</a></li>
+        </ul>
+    </div><!-- #footer -->
+</div><!-- #container -->
+
+
+{# slide bar for Smart Phone #}
+<div class="sb-slidebar sb-right">
+    <ul class="sb-menu">
+        <li class="sb-menu-title">MENU</li>
+        <li class="sb-close"><a href="http://www-bigdata.ist.osaka-u.ac.jp">トップページ</a></li>
+        <li class="sb-submenu-open"><a href="#" class="sb-toggle-submenu">研究内容<span class="sb-caret"></span></a>
+            <ul class="sb-submenu">
+                <li class="sb-close"><a href="#">メッセージ</a></li>
+            </ul>
+        </li>
+
+        <li class="sb-submenu-open"><a href="#" class="sb-toggle-submenu">論文<span class="sb-caret"></span></a>
+        <ul class="sb-submenu">
+            <li class="sb-close"><a href="#" target="_blank">概要</a></li>
+            <li class="sb-close"><a href="#" target="_blank">アクセス</a></li>
+        </ul>
+
+        <li class="sb-submenu-open"><a href="#" class="sb-toggle-submenu">What's new<span class="sb-caret"></span></a>
+            <ul class="sb-submenu">
+                <li class="sb-close"><a href="#">ああああ余り</a></li>
+            </ul>
+        </li>
+        <li class="sb-close"><a href="#">メンバー</a></li>
+        <li class="sb-close"><a href="/treeview/index">アクセス</a></li>
+        <li class="sb-submenu-open"><a href="#" class="sb-toggle-submenu">外部リンク<span class="sb-caret"></span></a>
+            <ul class="sb-submenu">
+                <li class="sb-close"><a href="http://www.osaka-u.ac.jp/ja">大阪大学</a></li>
+                <li class="sb-close"><a href="http://www.ist.osaka-u.ac.jp/japanese">情報科学研究科</a></li>
+                <li class="sb-close"><a href="http://www-bigdata.ist.osaka-u.ac.jp/local/oniwiki">ローカル</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+
+
+{# jquery #}
+<script>
+// for SP hover
+$(function(){
+    $('.sb-menu li')
+      .bind( 'touchstart', function(){
+        $( this ).addClass( 'hover' );
+    }).bind( 'touchend', function(){
+        setTimeout(function(){
+            $('.sb-menu li').removeClass('hover');
+            },350);
+    });
+
+    $('.sb-close a')
+      .bind( 'touchstart', function(){
+        $( this ).addClass( 'hover' );
+    }).bind( 'touchend', function(){
+        setTimeout(function(){
+            $('.sb-menu li').removeClass('hover');
+            },350);
+    });
+
+});
+
+// scroll to each positions
+// this script is running when this page is fully loaded.
+// videoをjsでwindow sizeぴったりにresizeするので，#BgVideoWrapのheightが値が安定しない
+// 従って，最初の部分はwindow sizeから取得
+jQuery.event.add(window, "load", function(){
+
+    var header_and_video = $(window).height();
+    var header_height = $("#mainArea").get(0).offsetTop;
+
+    // Poem
+    //var position = $("#BgVideoWrap").outerHeight(true) - header_height;  // 本来の手法
+    var position = header_and_video - header_height;
+    $('.pc_sub_menu_message').click(function(){
+        $("html,body").animate({
+            scrollTop : position
+        }, {
+            queue : false
+        });
+    });
+
+    // Embedding Video
+    //var position2 = $(".VideoEmbedding").get(0).offsetTop - header_height;    // 本来の手法
+    var position2 = position + $("#Poem").outerHeight(true);
+    $('.pc_sub_menu_jobs').click(function(){
+        $("html,body").animate({
+            scrollTop : position2
+        }, {
+            queue : false
+        });
+    });
+
+    // Professors
+    //var position3 = $(".Professors").get(0).offsetTop - header_height;    // 本来の手法
+    var position3 = position2 + $(".VideoEmbedding").outerHeight(true);
+    $('.pc_sub_menu_interview').click(function(){
+        $("html,body").animate({
+            scrollTop : position3
+        }, {
+            queue : false
+        });
+    });
+
+});
+
+</script>
+
+{# for Animate On Scroll Library #}
+<script src="{% static 'js/aos.js' %}"></script>
+<script>
+	AOS.init();
+</script>
+
+</body>
+</html>
