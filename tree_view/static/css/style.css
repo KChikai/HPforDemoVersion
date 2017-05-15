@@ -87,7 +87,7 @@ a {
 }
 
 a:hover {
-  color: #fb9b00;
+  color: #3289fb;
   text-decoration: underline;
 }
 
@@ -129,6 +129,7 @@ a:hover {
 #footer {
   padding: 10px;
   font-size: 10px;
+  background: #000;
   border-top: 1px solid #dad8d2;
 }
 
@@ -142,6 +143,10 @@ a:hover {
   float: left;
   padding: 0 5px;
   border-right: 1px solid #dad8d2;
+}
+
+#footer li a{
+  color: white;
 }
 
 #footer .li_last {
@@ -612,7 +617,7 @@ body#recruit_top #sb-site, body#recruit_top .sb-site-container {
 /* PC sub menu */
 .pc_sub_menu {
   border-top: 1px solid #fff;
-  background: #404040;
+  background: #505D6E;
   -webkit-font-smoothing: antialiased;
 }
 .sub-contents {

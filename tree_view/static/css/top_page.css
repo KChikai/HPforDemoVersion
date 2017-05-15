@@ -60,6 +60,42 @@ content: '※';
 }
 
 
+#grid{
+    padding: 10px 5px 5px 5px;
+    -webkit-box-shadow: 0 0 12px rgba(0,0,0,0.2);
+    box-shadow: 0 0 12px rgba(0,0,0,0.2);
+    overflow: hidden;
+    background-color: #9cc8ba;
+    background-image: url("../images/low_tri.png");
+}
+/* These are the classes that are going to be applied: */
+.column { float: left; }
+
+.EachBox{
+    margin: 10px;
+}
+.EachBox .box-img img{
+    /*width: 100%;*/
+    /*height: 100%;*/
+}
+
+.box1{
+    /*height: 300px;*/
+}
+
+.EachBox.box2{
+    /*height: 280px;*/
+}
+
+.EachBox .box3{
+    height: 480px;
+    background-image: url("../images/sasaki.jpg");
+}
+
+
+
+
+
 /* PC用 --------------------------------------------------- */
 @media only screen and (min-width: 769px) {
 
@@ -101,7 +137,34 @@ content: '※';
   text-align: center;
   }
 
-
+  
+  #mainArea .blur-image{
+    background-size: cover;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;/*ブラー効果でボヤけた部分を非表示*/
+  }
+  /*:beforeにぼかし効果を設定する*/
+  #mainArea .blur-image:before{
+    content: '';
+    background: inherit;/*.bgImageで設定した背景画像を継承する*/
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);
+    position: absolute;
+    /*ブラー効果で画像の端がボヤけた分だけ位置を調整*/
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    z-index: -1;/*重なり順序を一番下にしておく*/
+  }
+  
+  
+  
+  /* ここから書くsection内容について記載 */
   /* 背景動画 */
   #mainArea #BgVideoWrap {
     position: relative;
@@ -217,26 +280,30 @@ content: '※';
   .cd-fixed-bg.cd-bg-1 {
     background-image: url("../images/data_center.jpg");
   }
-
   .cd-scrolling-bg {
     min-height: 100%;
   }
 
+  
 
-  /* Interview */
+  /* YouTube Video Embedding */
   #mainArea .VideoEmbedding {
     text-align: center;
     border-bottom: 1px solid #658dc8;
+    background: url("../images/low_tri.png");
   }
 
   #mainArea .VideoEmbedding .LeadMain {
     margin-bottom: 35px;
   }
 
+  
+
 
   /* 教授陣（3 columns） */
   #mainArea .Professors {
     background-color: ghostwhite;
+    background-image: url("../images/building.jpg");  
   }
 
   #mainArea .Professors .LeadMain {
@@ -386,8 +453,9 @@ content: '※';
   }
 
   #mainArea h2.MdsBase {
-  margin-bottom: 15px;
-  font-size: 24px;
+      font-family: 'Anton', sans-serif;
+      margin-bottom: 15px;
+      font-size: 24px;
   }
 
   #mainArea .BtnEntry {
