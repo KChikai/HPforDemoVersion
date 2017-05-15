@@ -62,17 +62,15 @@ content: '※';
 
 #grid{
     padding: 10px 5px 5px 5px;
-    -webkit-box-shadow: 0 0 12px rgba(0,0,0,0.2);
-    box-shadow: 0 0 12px rgba(0,0,0,0.2);
+    /*-webkit-box-shadow: 0 0 12px rgba(0,0,0,0.2);*/
+    /*box-shadow: 0 0 12px rgba(0,0,0,0.2);*/
     overflow: hidden;
-    background-color: #9cc8ba;
-    background-image: url("../images/low_tri.png");
 }
 /* These are the classes that are going to be applied: */
 .column { float: left; }
 
 .EachBox{
-    margin: 10px;
+    margin: 15px;
 }
 .EachBox .box-img img{
     /*width: 100%;*/
@@ -400,6 +398,13 @@ content: '※';
   padding: 4px 0 4px 24px;
   background: url(../images/click.png) no-repeat 0 50%;
   background-size: 16px auto;
+  }
+
+
+  /* grid menu */
+  #mainArea .Grid {
+    background-color: #9cc8ba;
+    background-image: url("../images/low_tri.png");
   }
 
 
