@@ -535,16 +535,22 @@ body#recruit_top #sb-site, body#recruit_top .sb-site-container {
 #pc_logo a {
   height: 100px;
   display: block;
-  background: url(../images/header_logo_bk.png) left center no-repeat;
+  /*background: url(../images/header_logo_bk.png) left center no-repeat;*/
   text-indent: -200%;
   overflow: hidden;
 }
+#pc_logo img{
+  display: block;
+  width: 30%;
+  padding-top: 15px;
+}
+
 
 #pc_menu ul.pc_navi {
   line-height: 100px;
   position: absolute;
-  width: 680px;
-  right: 0;
+  width: 600px;
+  right: 160px;
   top: 0;
   text-align: right;
   font-size: 1.125rem;

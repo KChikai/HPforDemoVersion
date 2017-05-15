@@ -87,7 +87,6 @@ content: '※';
 
 .EachBox .box3{
     height: 480px;
-    background-image: url("../images/sasaki.jpg");
 }
 
 
@@ -404,7 +403,7 @@ content: '※';
   /* grid menu */
   #mainArea .Grid {
     background-color: #9cc8ba;
-    background-image: url("../images/low_tri.png");
+    background-image: url("../images/poplar2.png");
   }
 
 
