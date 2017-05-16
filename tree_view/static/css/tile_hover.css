@@ -10,7 +10,7 @@
 }
 .tiles .tile {
   display: inline-block;
-  margin: 10px;
+  margin: 5px;
   text-align: left;
   opacity: .99;
   overflow: hidden;

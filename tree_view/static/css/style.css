@@ -191,7 +191,7 @@ body#recruit_top #sb-site, body#recruit_top .sb-site-container {
 
 .sb-slidebar li.sb-submenu-open a.sb-toggle-submenu {
   display: block;
-  width: 90%;
+  width: 100%;
   padding: 5%;
   background: url("../images/sidebar_under_arrow.png") right 17px no-repeat;
   background-size: 10px 10px;
@@ -201,7 +201,7 @@ body#recruit_top #sb-site, body#recruit_top .sb-site-container {
 
 .sb-slidebar li.sb-close a {
   display: block;
-  width: 90%;
+  width: 100%;
   padding: 5%;
   background: url("../images/sidebar_arrow.png") right center no-repeat;
   background-size: 10px 10px;
@@ -230,7 +230,7 @@ body#recruit_top #sb-site, body#recruit_top .sb-site-container {
 
 /* contents menu */
 .sb-menu-title {
-  width: 90%;
+  width: 100%;
   padding: 5%;
   color: white;
   text-align: center;

@@ -61,7 +61,7 @@ content: '※';
 
 
 /* Grid menu */
-#grid{
+.grid{
     padding: 10px 5px 5px 5px;
     /*-webkit-box-shadow: 0 0 12px rgba(0,0,0,0.2);*/
     /*box-shadow: 0 0 12px rgba(0,0,0,0.2);*/
@@ -71,20 +71,20 @@ content: '※';
 .column { float: left; }
 
 .EachBox{
-    margin: 15px;
+    margin: 5px;
 }
 .EachBox .box-img img{
     /*width: 100%;*/
     /*height: 100%;*/
 }
 
-.box1{
+/*.box1{*/
     /*height: 300px;*/
-}
+/*}*/
 
-.EachBox.box2{
+/*.EachBox.box2{*/
     /*height: 280px;*/
-}
+/*}*/
 
 .EachBox .box3{
     height: 480px;
@@ -168,7 +168,7 @@ content: '※';
   #mainArea #BgVideoWrap {
     position: relative;
     overflow: hidden;
-    margin-top: 157px;  /* あまり良くない（ハードコートするべきでない） */
+    margin-top: 163px;  /* あまり良くない（ハードコートするべきでない） */
   }
 
   #mainArea #BgVideo {
@@ -298,7 +298,14 @@ content: '※';
     margin-bottom: 35px;
   }
 
-  
+
+
+  /* PC 教授陣（3 columns news card） */
+  .CardStyle.ColumnUnit {
+    max-width: 970px;
+    margin: auto;         /* auto にせずに一個ずつ決定すると左詰めになる*/
+    background-image: url("../images/grid.png");
+  }
 
 
   /* PC 教授陣（3 columns） */
@@ -313,7 +320,7 @@ content: '※';
 
   #mainArea .Professors .ColumnUnit {
   display: table;
-  width: 970px;
+  max-width: 970px;
   margin: 0 auto;
   }
 
@@ -354,17 +361,17 @@ content: '※';
   }
 
   #mainArea .Professors .ColumnUnit .Onizuka h3.Mds {
-    background: url(../images/onizuka.jpg) no-repeat 50% 0;
+    background: url(../images/onizuka2.png) no-repeat 50% 0;
     background-size: 115px 115px;
   }
 
   #mainArea .Professors .ColumnUnit .Arase h3.Mds {
-    background: url(../images/arase.jpg) no-repeat 50% 0;
+    background: url(../images/arase2.jpg) no-repeat 50% 0;
     background-size: 115px 115px;
   }
 
   #mainArea .Professors .ColumnUnit .Sasaki h3.Mds {
-    background: url(../images/sasaki.jpg) no-repeat 53% 0;
+    background: url(../images/sasaki2.png) no-repeat 53% 0;
     background-size: 115px 115px;
   }
 
@@ -522,7 +529,7 @@ content: '※';
 
 
 
-  /* SP動画埋め込み */
+  /* SP youtube動画埋め込み */
   #mainArea .Movie {
     position: relative;
     margin-top: 25px;
@@ -568,19 +575,19 @@ content: '※';
   }
 
   #mainArea .Professors .ColumnUnit .Onizuka h3.Mds {
-  background: url(../images/onizuka.jpg) no-repeat;
+  background: url(../images/onizuka2.png) no-repeat;
   background-position: 50% 0;
   background-size: 105px auto;
   }
 
   #mainArea .Professors .ColumnUnit .Arase h3.Mds {
-  background: url(../images/arase.jpg) no-repeat;
+  background: url(../images/arase2.jpg) no-repeat;
   background-position: 50% 0;
   background-size: 105px auto;
   }
 
   #mainArea .Professors .ColumnUnit .Sasaki h3.Mds {
-  background: url(../images/sasaki.jpg) no-repeat;
+  background: url(../images/sasaki2.png) no-repeat;
   background-position: 53% 0;
   background-size: 105px auto;
   }

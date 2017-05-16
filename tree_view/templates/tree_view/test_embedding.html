@@ -10,12 +10,16 @@
 <title>動画埋め込みテストページ</title>
 
 {# CSS Files #}
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="{% static 'css/slidebars.css' %}">
 <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static 'css/top_page.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static 'css/salvattore.css' %}" />
 <link rel="stylesheet" href="{% static 'css/aos.css' %}" />
 <link rel="stylesheet" href="{% static 'css/tile_hover.css' %}" />
+<link rel="stylesheet" href="{% static 'css/news_card.css' %}" />
+
 
 <!-- fonts in newgrads2018 -->
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
@@ -144,71 +148,215 @@
         <!-- / .SectionBasic -->
     </section>
 
-    {# 3 column #}
-    <section class="SectionBasic Professors" id="Professors">
+
+    <section class="SectionBasic CardStyle ColumnUnit">
         <h2 class="MdsBase">Introduce Professors</h2>
         <p class="LeadMain">鬼塚研究室では下記の３名が、研究室に常駐しており、それぞれのエキスパートとして活躍しています。</p>
-        <div class="ColumnUnit">
-            <!-- * -->
-            <section class="EachProfessor Onizuka">
-                <h3 class="Mds">Makoto Onizuka</h3>
-                <p class="Lead">
-                    教授 <br />
-                    Data is the new oil (データは新しい石油である)という言葉に代表されるように，
-                    ビッグデータを処理することで知識やルールを発見して，
-                    社会的あるいは経済的なインパクトを 生み出すことが期待されています．
-                    私はこの中で特に，1)大量の計算機を利用した分散データ処理技術，2)高速グラフマイニングアルゴリズム，
-                    3)分析結果の可視化技術に取り組んでいます．
-                </p>
-                <nav class="LinkUnit">
-                <h4 class="Mds">主な研究分野</h4>
-                <ul class="LinkTo">
-                <li><a href="#">データベース</a></li>
-                <li><a href="#">グラフ分散処理</a></li>
-                </ul>
-                </nav>
-            </section>
-            <!-- * -->
-            <section class="EachProfessor Arase">
-                <h3 class="Mds">Yuki Arase</h3>
-                <p class="Lead">
-                    准教授 <br />
-                    言語は人間にとってもっとも自然なコミュニケーション手段の一つであり，長い歴史のなかで知識や経験の伝達に使われてきました．
-                    コンピュータでこのような大量の言語データを解析し，そこに現れる言語現象を理解することで，
-                    人間の社会を構成する知識の抽出と活用が可能になり，ひいては人間の知性の解明につながります．
-                    言語理解の第一歩として，ビッグデータからの言いかえ表現抽出と生成に取り組んでいます．
-                </p>
-                <nav class="LinkUnit">
-                <h4 class="Mds">主な研究分野</h4>
-                <ul class="LinkTo">
-                <li><a href="#">自然言語処理</a></li>
-                </ul>
-                </nav>
-            </section>
-            <!-- * -->
-            <section class="EachProfessor Sasaki">
-                <h3 class="Mds">Yuya Sasaki</h3>
-                <p class="Lead">
-                    助教授 <br />
-                    大阪大学大学院情報科学研究科の助教です．
-                    時空間データベース，モバイルデータ管理，グラフに関する研究をしています．
-                    2014年に大阪大学にて情報科学の博士を取得しました．
-                </p>
-                <nav class="LinkUnit">
-                <h4 class="Mds">主な研究分野</h4>
-                <ul class="LinkTo">
-                <li><a href="#">果穂</a></li>
-                </ul>
-                </nav>
-            </section>
-            <!-- / .JobsUnit -->
+        <div class="grid" data-columns>
+            <div class="EachBox box1">
+                <article class="material-card Red">
+                    <h2>
+                        <span>Makoto Onizuka</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            Database Researcher
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="{% static 'images/onizuka2.png' %}">
+                        </div>
+                        <div class="mc-description">
+                            Data is the new oil (データは新しい石油である)という言葉に代表されるように，
+                            ビッグデータを処理することで知識やルールを発見して，
+                            社会的あるいは経済的なインパクトを 生み出すことが期待されています．
+                            私はこの中で特に，1)大量の計算機を利用した分散データ処理技術，2)高速グラフマイニングアルゴリズム，
+                            3)分析結果の可視化技術に取り組んでいます．
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            Social
+                        </h4>
+                        <a class="fa fa-fw fa-facebook"></a>
+                        <a class="fa fa-fw fa-twitter"></a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="EachBox box2">
+                <article class="material-card Red">
+                    <h2>
+                        <span>Yuki Arase</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            NLP Researcher
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="{% static 'images/arase2.jpg' %}">
+                        </div>
+                        <div class="mc-description">
+                            言語は人間にとってもっとも自然なコミュニケーション手段の一つであり，長い歴史のなかで知識や経験の伝達に使われてきました．
+                            コンピュータでこのような大量の言語データを解析し，そこに現れる言語現象を理解することで，
+                            人間の社会を構成する知識の抽出と活用が可能になり，ひいては人間の知性の解明につながります．
+                            言語理解の第一歩として，ビッグデータからの言いかえ表現抽出と生成に取り組んでいます．
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            Social
+                        </h4>
+                        <a class="fa fa-fw fa-facebook"></a>
+                        <a class="fa fa-fw fa-twitter"></a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="EachBox box3">
+                <article class="material-card Red">
+                    <h2>
+                        <span>Yuya Sasaki</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            Database Researcher
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="{% static 'images/sasaki2.png' %}">
+                        </div>
+                        <div class="mc-description">
+                            Data is the new oil (データは新しい石油である)という言葉に代表されるように，
+                            ビッグデータを処理することで知識やルールを発見して，
+                            社会的あるいは経済的なインパクトを 生み出すことが期待されています．
+                            私はこの中で特に，1)大量の計算機を利用した分散データ処理技術，2)高速グラフマイニングアルゴリズム，
+                            3)分析結果の可視化技術に取り組んでいます．
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            Social
+                        </h4>
+                        <a class="fa fa-fw fa-facebook"></a>
+                        <a class="fa fa-fw fa-twitter"></a>
+                    </div>
+                </article>
+            </div>
         </div>
-        <!-- / .SectionBasic -->
     </section>
+
+
+{#    <div class="row active-with-click">#}
+{#        <div class="col-md-4 col-sm-6 col-xs-12">#}
+{#            <article class="material-card Red">#}
+{#                <h2>#}
+{#                    <span>Christopher Walken</span>#}
+{#                    <strong>#}
+{#                        <i class="fa fa-fw fa-star"></i>#}
+{#                        The Deer Hunter#}
+{#                    </strong>#}
+{#                </h2>#}
+{#                <div class="mc-content">#}
+{#                    <div class="img-container">#}
+{#                        <img class="img-responsive" src="{% static "images/onizuka2.png" %}">#}
+{#                    </div>#}
+{#                    <div class="mc-description">#}
+{#                        He has appeared in more than 100 films and television shows, including The Deer Hunter, Annie Hall, The Prophecy trilogy, The Dogs of War ...#}
+{#                    </div>#}
+{#                </div>#}
+{#                <a class="mc-btn-action">#}
+{#                    <i class="fa fa-bars"></i>#}
+{#                </a>#}
+{#                <div class="mc-footer">#}
+{#                    <h4>#}
+{#                        Social#}
+{#                    </h4>#}
+{#                    <a class="fa fa-fw fa-facebook"></a>#}
+{#                    <a class="fa fa-fw fa-twitter"></a>#}
+{#                    <a class="fa fa-fw fa-linkedin"></a>#}
+{#                    <a class="fa fa-fw fa-google-plus"></a>#}
+{#                </div>#}
+{#            </article>#}
+{#        </div>#}
+{#    </div>#}
+
+
+    {# 3 column #}
+{#    <section class="SectionBasic Professors" id="Professors">#}
+{#        <h2 class="MdsBase">Introduce Professors</h2>#}
+{#        <p class="LeadMain">鬼塚研究室では下記の３名が、研究室に常駐しており、それぞれのエキスパートとして活躍しています。</p>#}
+{#        <div class="ColumnUnit">#}
+{#            <!-- * -->#}
+{#            <section class="EachProfessor Onizuka">#}
+{#                <h3 class="Mds">Makoto Onizuka</h3>#}
+{#                <p class="Lead">#}
+{#                    教授 <br />#}
+{#                    Data is the new oil (データは新しい石油である)という言葉に代表されるように，#}
+{#                    ビッグデータを処理することで知識やルールを発見して，#}
+{#                    社会的あるいは経済的なインパクトを 生み出すことが期待されています．#}
+{#                    私はこの中で特に，1)大量の計算機を利用した分散データ処理技術，2)高速グラフマイニングアルゴリズム，#}
+{#                    3)分析結果の可視化技術に取り組んでいます．#}
+{#                </p>#}
+{#                <nav class="LinkUnit">#}
+{#                <h4 class="Mds">主な研究分野</h4>#}
+{#                <ul class="LinkTo">#}
+{#                <li><a href="#">データベース</a></li>#}
+{#                <li><a href="#">グラフ分散処理</a></li>#}
+{#                </ul>#}
+{#                </nav>#}
+{#            </section>#}
+{#            <!-- * -->#}
+{#            <section class="EachProfessor Arase">#}
+{#                <h3 class="Mds">Yuki Arase</h3>#}
+{#                <p class="Lead">#}
+{#                    准教授 <br />#}
+{#                    言語は人間にとってもっとも自然なコミュニケーション手段の一つであり，長い歴史のなかで知識や経験の伝達に使われてきました．#}
+{#                    コンピュータでこのような大量の言語データを解析し，そこに現れる言語現象を理解することで，#}
+{#                    人間の社会を構成する知識の抽出と活用が可能になり，ひいては人間の知性の解明につながります．#}
+{#                    言語理解の第一歩として，ビッグデータからの言いかえ表現抽出と生成に取り組んでいます．#}
+{#                </p>#}
+{#                <nav class="LinkUnit">#}
+{#                <h4 class="Mds">主な研究分野</h4>#}
+{#                <ul class="LinkTo">#}
+{#                <li><a href="#">自然言語処理</a></li>#}
+{#                </ul>#}
+{#                </nav>#}
+{#            </section>#}
+{#            <!-- * -->#}
+{#            <section class="EachProfessor Sasaki">#}
+{#                <h3 class="Mds">Yuya Sasaki</h3>#}
+{#                <p class="Lead">#}
+{#                    助教授 <br />#}
+{#                    大阪大学大学院情報科学研究科の助教です．#}
+{#                    時空間データベース，モバイルデータ管理，グラフに関する研究をしています．#}
+{#                    2014年に大阪大学にて情報科学の博士を取得しました．#}
+{#                </p>#}
+{#                <nav class="LinkUnit">#}
+{#                <h4 class="Mds">主な研究分野</h4>#}
+{#                <ul class="LinkTo">#}
+{#                <li><a href="#">果穂</a></li>#}
+{#                </ul>#}
+{#                </nav>#}
+{#            </section>#}
+{#            <!-- / .JobsUnit -->#}
+{#        </div>#}
+{#        <!-- / .SectionBasic -->#}
+{#    </section>#}
 
     <section class="SectionBasic Grid blur-image">
         <h2 class="MdsBase">Grid Menu</h2>
-        <div id="grid" data-columns>
+        <div class="grid" data-columns>
             <div class="EachBox box1 tiles" data-aos="fade-up" data-aos-duration="700">
                 <a class="tile" href="#">
                     <img src="{% static 'images/onizuka.jpg' %}"/>
@@ -426,7 +574,8 @@ jQuery.event.add(window, "load", function(){
     });
 
     // Grid
-    var position4 = position3 + $(".Professors").outerHeight(true);
+    //var position4 = position3 + $(".Professors").outerHeight(true);
+    var position4 = position3 + $(".CardStyle").outerHeight(true);
     $('.pc_sub_menu_work').click(function(){
         $("html,body").animate({
             scrollTop : position4
@@ -436,6 +585,38 @@ jQuery.event.add(window, "load", function(){
     });
 
 
+});
+
+
+
+$(function() {
+    $('.material-card > .mc-btn-action').click(function () {
+        var card = $(this).parent('.material-card');
+        var icon = $(this).children('i');
+        icon.addClass('fa-spin-fast');
+
+        if (card.hasClass('mc-active')) {
+            card.removeClass('mc-active');
+
+            window.setTimeout(function() {
+                icon
+                    .removeClass('fa-arrow-left')
+                    .removeClass('fa-spin-fast')
+                    .addClass('fa-bars');
+
+            }, 800);
+        } else {
+            card.addClass('mc-active');
+
+            window.setTimeout(function() {
+                icon
+                    .removeClass('fa-bars')
+                    .removeClass('fa-spin-fast')
+                    .addClass('fa-arrow-left');
+
+            }, 800);
+        }
+    });
 });
 
 </script>
