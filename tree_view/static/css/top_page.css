@@ -66,6 +66,8 @@ content: '※';
     /*-webkit-box-shadow: 0 0 12px rgba(0,0,0,0.2);*/
     /*box-shadow: 0 0 12px rgba(0,0,0,0.2);*/
     overflow: hidden;
+    max-width: 970px;
+    margin: auto;
 }
 /* These are the classes that are going to be applied: */
 .column { float: left; }
