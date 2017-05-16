@@ -49,14 +49,18 @@
 
     {# PC上側 #}
     <div id="pc_header_inner" class="cf">
-        <div id="pc_logo"><a href="http://www-bigdata.ist.osaka-u.ac.jp"><img src="{% static 'images/header_logo_bk.png' %}" class="switch" alt=""></a></div>
+        <div id="pc_logo">
+            <a href="http://www-bigdata.ist.osaka-u.ac.jp">
+                <img src="{% static 'images/header_logo_bk.png' %}" class="switch" alt="">
+            </a>
+        </div>
         <div id="pc_menu">
             <ul class="pc_navi">
-                <li class="menu-hover"><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/research"><span>研究</span></a></li>
-                <li class="menu-hover"><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/publication"><span>論文</span></a></li>
-                <li class="menu-hover"><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/whats-new"><span>News</span></a></li>
-                <li class="now_display_header"><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/member"><span>メンバー</span></a></li>
-                <li class="menu-hover"><a href=http://www-bigdata.ist.osaka-u.ac.jp/bigdata/access><span>アクセス</span></a></li>
+                <li class="now_display_header"><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/research"><span>Home</span></a></li>
+                <li class="menu-hover"><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/publication"><span>研究</span></a></li>
+                <li class="menu-hover"><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/whats-new"><span>メンバー</span></a></li>
+                <li class="menu-hover"><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/member"><span>Lab</span></a></li>
+                <li class="menu-hover"><a href=http://www-bigdata.ist.osaka-u.ac.jp/bigdata/access><span>業績</span></a></li>
                 <li class="menu-hover"><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/link"><span>リンク</span></a></li>
                 <li class="menu-hover"><a href="#"><span>English</span></a></li>
             </ul>
@@ -68,8 +72,8 @@
         <ul class="sub-contents">
             <li class="pc_sub_menu_message"><a href="#">メッセージ</a></li>
             <li class="pc_sub_menu_jobs"><a href="#">研究室紹介ビデオ</a></li>
-            <li class="pc_sub_menu_interview"><a href="#">研究紹介</a></li>
-            <li class="pc_sub_menu_work"><a href="#">教授陣</a></li>
+            <li class="pc_sub_menu_interview"><a href="#">教授陣</a></li>
+            <li class="pc_sub_menu_work"><a href="#">研究紹介</a></li>
         </ul>
     </nav>
 </div>
@@ -134,12 +138,14 @@
         <p class="LeadMain">
             現在の鬼塚研の研究紹介動画（予定），研究室内の様子も紹介．
         </p>
-        <div class="Movie"><iframe width="760" height="400" src="https://www.youtube.com/embed/a3ICNMQW7Ok" frameborder="0" allowfullscreen></iframe></div>
+        <div class="Movie">
+            <iframe width="760" height="400" src="https://www.youtube.com/embed/a3ICNMQW7Ok" frameborder="0" allowfullscreen></iframe>
+        </div>
         <!-- / .SectionBasic -->
     </section>
 
     {# 3 column #}
-    <section class="SectionBasic Professors blur-image" id="Professors">
+    <section class="SectionBasic Professors" id="Professors">
         <h2 class="MdsBase">Introduce Professors</h2>
         <p class="LeadMain">鬼塚研究室では下記の３名が、研究室に常駐しており、それぞれのエキスパートとして活躍しています。</p>
         <div class="ColumnUnit">
@@ -148,8 +154,11 @@
                 <h3 class="Mds">Makoto Onizuka</h3>
                 <p class="Lead">
                     教授 <br />
-                    Data is the new oil (データは新しい石油である)という言葉に代表されるように，ビッグデータを処理することで知識やルールを発見して，社会的あるいは経済的なインパクトを 生み出すことが期待されています．
-                    私はこの中で特に，1)大量の計算機を利用した分散データ処理技術，2)高速グラフマイニングアルゴリズム，3)分析結果の可視化技術に 取り組んでいます．
+                    Data is the new oil (データは新しい石油である)という言葉に代表されるように，
+                    ビッグデータを処理することで知識やルールを発見して，
+                    社会的あるいは経済的なインパクトを 生み出すことが期待されています．
+                    私はこの中で特に，1)大量の計算機を利用した分散データ処理技術，2)高速グラフマイニングアルゴリズム，
+                    3)分析結果の可視化技術に取り組んでいます．
                 </p>
                 <nav class="LinkUnit">
                 <h4 class="Mds">主な研究分野</h4>
@@ -165,7 +174,8 @@
                 <p class="Lead">
                     准教授 <br />
                     言語は人間にとってもっとも自然なコミュニケーション手段の一つであり，長い歴史のなかで知識や経験の伝達に使われてきました．
-                    コンピュータでこのような大量の言語データを解析し，そこに現れる言語現象を理解することで，人間の社会を構成する知識の抽出と活用が可能になり，ひいては人間の知性の解明につながります．
+                    コンピュータでこのような大量の言語データを解析し，そこに現れる言語現象を理解することで，
+                    人間の社会を構成する知識の抽出と活用が可能になり，ひいては人間の知性の解明につながります．
                     言語理解の第一歩として，ビッグデータからの言いかえ表現抽出と生成に取り組んでいます．
                 </p>
                 <nav class="LinkUnit">
@@ -437,7 +447,7 @@ jQuery.event.add(window, "load", function(){
 <script>
 	AOS.init({
         duration: 700,
-        disable: 'mobile',
+        disable: 'phone',
         delay: 400
     });
 </script>

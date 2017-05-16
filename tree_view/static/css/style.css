@@ -223,7 +223,7 @@ body#recruit_top #sb-site, body#recruit_top .sb-site-container {
 /*}*/
 
 .sb-slidebar li.hover a.hover{
-  border-left: 20px solid white;
+  border-left: 20px solid darkblue;
   color: #a9a9a9;
 }
 
@@ -627,7 +627,7 @@ body#recruit_top #sb-site, body#recruit_top .sb-site-container {
   -webkit-font-smoothing: antialiased;
 }
 .sub-contents {
-  width: 960px;
+  width: 100%;
   margin:0 auto;
   text-align: center;
   line-height: 2;

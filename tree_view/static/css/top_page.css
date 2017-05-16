@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /*
-for the use fo PC and SP
+for the use fo PC and SP on the top page Onizuka Lab.
 */
 
 
@@ -60,6 +60,7 @@ content: '※';
 }
 
 
+/* Grid menu */
 #grid{
     padding: 10px 5px 5px 5px;
     /*-webkit-box-shadow: 0 0 12px rgba(0,0,0,0.2);*/
@@ -134,17 +135,18 @@ content: '※';
   text-align: center;
   }
 
-  
+
+  /* クラス定義部分の背景画像をぼかす */
   #mainArea .blur-image{
     background-size: cover;
     position: relative;
     z-index: 0;
-    overflow: hidden;/*ブラー効果でボヤけた部分を非表示*/
+    overflow: hidden;     /*ブラー効果でボヤけた部分を非表示*/
   }
   /*:beforeにぼかし効果を設定する*/
   #mainArea .blur-image:before{
     content: '';
-    background: inherit;/*.bgImageで設定した背景画像を継承する*/
+    background: inherit;  /*.bgImageで設定した背景画像を継承する*/
     -webkit-filter: blur(3px);
     -moz-filter: blur(3px);
     -o-filter: blur(3px);
@@ -156,7 +158,7 @@ content: '※';
     left: -3px;
     right: -3px;
     bottom: -3px;
-    z-index: -1;/*重なり順序を一番下にしておく*/
+    z-index: -1;          /*重なり順序を一番下にしておく*/
   }
   
   
@@ -242,13 +244,13 @@ content: '※';
 
 
 
-  /* メッセージ */
+  /* PC メッセージ */
   #mainArea .Message {
-  padding-bottom: 20px;
-  color: whitesmoke;
-  border-bottom: 1px solid #658dc8;
-  text-align: center;
-  background: url(../images/mask_trapezoid.png) no-repeat center bottom;
+    padding-bottom: 20px;
+    color: whitesmoke;
+    border-bottom: 1px solid #658dc8;
+    text-align: center;
+    background: url(../images/mask_trapezoid.png) no-repeat center bottom;
   }
 
   #mainArea .Message h2.MdsBase {
@@ -266,7 +268,9 @@ content: '※';
   #mainArea .Message .Btn {
   margin-top: 100px;
   }
-  /* background in Message */
+
+
+  /* PC background in Message */
   .cd-fixed-bg {
     min-height: 100%;
     background-size: cover;
@@ -283,7 +287,7 @@ content: '※';
 
   
 
-  /* YouTube Video Embedding */
+  /* PC YouTube Video Embedding */
   #mainArea .VideoEmbedding {
     text-align: center;
     border-bottom: 1px solid #658dc8;
@@ -297,10 +301,10 @@ content: '※';
   
 
 
-  /* 教授陣（3 columns） */
+  /* PC 教授陣（3 columns） */
   #mainArea .Professors {
     background-color: ghostwhite;
-    background-image: url("../images/building.jpg");  
+    background-image: url("../images/grid.png");
   }
 
   #mainArea .Professors .LeadMain {
@@ -403,7 +407,7 @@ content: '※';
   /* grid menu */
   #mainArea .Grid {
     background-color: #9cc8ba;
-    background-image: url("../images/poplar2.png");
+    background-image: url("../images/building.jpg");
   }
 
 
@@ -422,12 +426,12 @@ content: '※';
 
 
 }
-/* PC用：終わり --------------------------------------------------- */
+/* PC用：終了 --------------------------------------------------- */
 
 
 
 
-/* SP (Smart Phone) 用 --------------------------------------------------- */
+/* SP (Smart Phone or other tablets) 用 -------------------------------------- */
 @media only screen and (max-width: 768px) {
 
 
@@ -439,7 +443,8 @@ content: '※';
   display: none;
   }
 
-  /* 共通 */
+
+  /* SP共通 */
   #mainArea p, #mainArea th,#mainArea td, #mainArea li {
   font-size: 13px;
   }
@@ -469,7 +474,7 @@ content: '※';
     background-size: 19px auto;
   }
 
-  /* キービジュアル */
+  /* SPキービジュアル */
   #mainArea #KeyVisualSP {
   position: relative;
   }
@@ -488,13 +493,14 @@ content: '※';
   }
 
 
-  /* メッセージ */
+  /* SPメッセージ */
   #mainArea .Message {
-  padding-top: 25px;
-  padding-bottom: 160px;
-  border-bottom: 1px solid #3e8b73;
-  /*background: url(../images/gt_favicon.png) no-repeat center bottom;*/
-  background-size: 386px auto;
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 60px;
+    /*border-bottom: 1px solid #3e8b73;*/
+    background: url(../images/grid.png);
+    background-size: 15px;
   }
 
   #mainArea .Message h2.MdsBase {
@@ -516,12 +522,13 @@ content: '※';
 
 
 
-  /* 動画埋め込み */
+  /* SP動画埋め込み */
   #mainArea .Movie {
-  position: relative;
-  margin-top: 25px;
-  padding-bottom: 56.25%;
-  overflow: hidden;
+    position: relative;
+    margin-top: 25px;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+    background: whitesmoke;
   }
 
   #mainArea .Movie iframe {
@@ -534,9 +541,10 @@ content: '※';
 
 
 
-  /* Column Test */
+  /* SP One Column Test */
   #mainArea .Professors {
   padding-bottom: 10px;
+  background: ghostwhite;
   }
 
   #mainArea .Professors .LeadMain {
@@ -611,7 +619,15 @@ content: '※';
   }
 
 
-  /* イメージ画像 */
+
+  /* SP grid menu (salvarttore) */
+  #mainArea .Grid {
+    background-image: url("../images/grid.png");
+  }
+
+
+
+  /* SPイメージ画像 */
   #mainArea .PhotoImages img {
   width: 50%;
   vertical-align: bottom;
@@ -619,7 +635,7 @@ content: '※';
 
 
 }
-/* SP用：終わり --------------------------------------------------- */
+/* SP用：終了 --------------------------------------------------- */
 
 
 /**
