@@ -445,11 +445,12 @@ content: '※';
 
 
   #mainArea {
-  padding-top: 50px;
+    text-align: center;
+    padding-top: 50px;
   }
 
   #mainArea .PC {
-  display: none;
+    display: none;
   }
 
 
@@ -485,20 +486,23 @@ content: '※';
 
   /* SPキービジュアル */
   #mainArea #KeyVisualSP {
-  position: relative;
+    position: relative;
+    background: white;
+    background-image: url(../images/grid.png);
+    background-size: 15px;
   }
 
   #mainArea #KeyVisualSP .PageTitle {
-  position: absolute;
-  z-index: 100;
-  left: 50%;
-  bottom: 25px;
-  margin-left: -110px;
+    position: absolute;
+    z-index: 100;
+    left: 50%;
+    bottom: 30px;
+    margin-left: -150px;
   }
 
   #mainArea #KeyVisualSP .PageTitle img {
-  width: 220px;
-  height: auto;
+    width: 300px;
+    height: auto;
   }
 
 
@@ -507,16 +511,17 @@ content: '※';
     text-align: center;
     padding-top: 25px;
     padding-bottom: 60px;
-    /*border-bottom: 1px solid #3e8b73;*/
-    background: url(../images/grid.png);
+    border-bottom: 1px solid lightgray;
+    background: white;
+    background-image: url(../images/grid.png);
     background-size: 15px;
   }
 
   #mainArea .Message h2.MdsBase {
-  margin-left: 5px;
-  margin-bottom: 20px;
-  font-size: 19px;
-  text-align: center;
+    margin-left: 5px;
+    margin-bottom: 20px;
+    font-size: 19px;
+    text-align: center;
   }
 
   #mainArea .Message .Lead {
@@ -532,6 +537,11 @@ content: '※';
 
 
   /* SP youtube動画埋め込み */
+  #mainArea .VideoEmbedding {
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 30px;
+  }
+
   #mainArea .Movie {
     position: relative;
     margin-top: 25px;
@@ -541,19 +551,28 @@ content: '※';
   }
 
   #mainArea .Movie iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
 
 
   /* SP One Column Test */
+  #mainArea .CardStyle {
+    margin: auto;
+    border-bottom: 1px solid lightgray;
+    background: white;
+    background-image: url('../images/grid.png');
+  }
+
+
   #mainArea .Professors {
-  padding-bottom: 10px;
-  background: ghostwhite;
+    padding-bottom: 10px;
+    background: white;
+    background-image: url('../images/grid.png');
   }
 
   #mainArea .Professors .LeadMain {
@@ -631,7 +650,8 @@ content: '※';
 
   /* SP grid menu (salvarttore) */
   #mainArea .Grid {
-    background-image: url("../images/grid.png");
+    background: honeydew;
+    /*background-image: url("../images/grid.png");*/
   }
 
 
