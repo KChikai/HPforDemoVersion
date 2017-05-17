@@ -304,7 +304,6 @@ content: '※';
 
   /* PC 教授陣（3 columns news card） */
   .CardStyle.ColumnUnit {
-    max-width: 970px;
     margin: auto;         /* auto にせずに一個ずつ決定すると左詰めになる*/
     background-image: url("../images/grid.png");
   }
