@@ -248,7 +248,6 @@ content: '※';
   #mainArea .Message {
     padding-bottom: 20px;
     color: whitesmoke;
-    border-bottom: 1px solid #658dc8;
     text-align: center;
     background: url(../images/mask_trapezoid.png) no-repeat center bottom;
   }
@@ -412,7 +411,7 @@ content: '※';
 
   /* grid menu */
   #mainArea .Grid {
-    background-color: #9cc8ba;
+    background-color: #f5f5f5;
     background-image: url("../images/building.jpg");
   }
 
@@ -624,7 +623,7 @@ content: '※';
   font-size: 13px;
   font-weight: bold;
   color: #fff;
-  background: #9cc8ba;
+  background: #f5f5f5;
   }
 
   #mainArea .Professors .LinkTo {
@@ -647,7 +646,7 @@ content: '※';
 
   /* SP grid menu (salvarttore) */
   #mainArea .Grid {
-    background: honeydew;
+    background: #f5f5f5;
     /*background-image: url("../images/grid.png");*/
   }
 

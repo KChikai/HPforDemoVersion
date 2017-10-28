@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -19,11 +19,17 @@
 <link rel="stylesheet" href="{% static 'css/aos.css' %}" />
 <link rel="stylesheet" href="{% static 'css/tile_hover.css' %}" />
 <link rel="stylesheet" href="{% static 'css/news_card.css' %}" />
+<link rel="stylesheet" href="{% static 'css/footer.css' %}" />
+<link rel="stylesheet" href="{% static 'css/research_card.css' %}" />
 
 
 <!-- fonts in the test page -->
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+
+<!-- bootstrap4 -->
+{#<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">#}
+{#<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>#}
 
 <link  rel="shortcut icon" href="/favicon.ico">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -65,7 +71,6 @@
                 <li class="menu-hover"><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/whats-new"><span>メンバー</span></a></li>
                 <li class="menu-hover"><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/member"><span>Lab</span></a></li>
                 <li class="menu-hover"><a href=http://www-bigdata.ist.osaka-u.ac.jp/bigdata/access><span>業績</span></a></li>
-                <li class="menu-hover"><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/link"><span>リンク</span></a></li>
                 <li class="menu-hover"><a href="#"><span>English</span></a></li>
             </ul>
         </div>
@@ -75,9 +80,9 @@
     <nav class="pc_sub_menu">
         <ul class="sub-contents">
             <li class="pc_sub_menu_message"><a href="#">メッセージ</a></li>
-            <li class="pc_sub_menu_jobs"><a href="#">研究室紹介ビデオ</a></li>
-            <li class="pc_sub_menu_interview"><a href="#">教授陣</a></li>
-            <li class="pc_sub_menu_work"><a href="#">研究紹介</a></li>
+            <li class="pc_sub_menu_jobs"><a href="#">研究紹介</a></li>
+            <li class="pc_sub_menu_interview"><a href="#">最新ニュース</a></li>
+            <li class="pc_sub_menu_work"><a href="#">リンク</a></li>
         </ul>
     </nav>
 </div>
@@ -135,164 +140,61 @@
         </section>
     </div>
 
-    {# embedding youtube video #}
-    <section class="SectionBasic VideoEmbedding blur-image">
-        <div class="background-image"></div>
-        <h2 class="MdsBase">Onizuka Lab's Trailer</h2>
-        <p class="LeadMain">
-            現在の鬼塚研の研究紹介動画（予定），研究室内の様子も紹介．
-        </p>
-        <div class="Movie">
-            <iframe width="760" height="400" src="https://www.youtube.com/embed/a3ICNMQW7Ok" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <!-- / .SectionBasic -->
-    </section>
 
 
+    {# 研究紹介 #}
     <section class="SectionBasic CardStyle ColumnUnit">
-        <h2 class="MdsBase">Introduce Professors</h2>
-        <p class="LeadMain">鬼塚研究室では下記の３名が、研究室に常駐しており、各分野のエキスパートとして活躍しています。</p>
-        <div class="grid" data-columns>
-            <div class="EachBox box1">
-                <article class="material-card Red">
-                    <h2>
-                        <span>Makoto Onizuka</span>
-                        <strong>
-                            <i class="fa fa-fw fa-star"></i>
-                            Database Researcher
-                        </strong>
-                    </h2>
-                    <div class="mc-content">
-                        <div class="img-container">
-                            <img class="img-responsive" src="{% static 'images/onizuka2.png' %}">
-                        </div>
-                        <div class="mc-description">
-                            Data is the new oil (データは新しい石油である)という言葉に代表されるように，
-                            ビッグデータを処理することで知識やルールを発見して，
-                            社会的あるいは経済的なインパクトを 生み出すことが期待されています．
-                            私はこの中で特に，1)大量の計算機を利用した分散データ処理技術，2)高速グラフマイニングアルゴリズム，
-                            3)分析結果の可視化技術に取り組んでいます．
-                        </div>
-                    </div>
-                    <a class="mc-btn-action">
-                        <i class="fa fa-bars"></i>
-                    </a>
-                    <div class="mc-footer">
-                        <h4>
-                            For more details
-                        </h4>
-                        <a class="fa fa-fw fa-user"></a>
-                        <a class="fa fa-fw fa-facebook"></a>
-                        <a class="fa fa-fw fa-twitter"></a>
-                    </div>
-                </article>
-            </div>
-
-            <div class="EachBox box2">
-                <article class="material-card Red">
-                    <h2>
-                        <span>Yuki Arase</span>
-                        <strong>
-                            <i class="fa fa-fw fa-star"></i>
-                            NLP Researcher
-                        </strong>
-                    </h2>
-                    <div class="mc-content">
-                        <div class="img-container">
-                            <img class="img-responsive" src="{% static 'images/arase2.jpg' %}">
-                        </div>
-                        <div class="mc-description">
-                            言語は人間にとってもっとも自然なコミュニケーション手段の一つであり，長い歴史のなかで知識や経験の伝達に使われてきました．
-                            コンピュータでこのような大量の言語データを解析し，そこに現れる言語現象を理解することで，
-                            人間の社会を構成する知識の抽出と活用が可能になり，ひいては人間の知性の解明につながります．
-                            言語理解の第一歩として，ビッグデータからの言いかえ表現抽出と生成に取り組んでいます．
-                        </div>
-                    </div>
-                    <a class="mc-btn-action">
-                        <i class="fa fa-bars"></i>
-                    </a>
-                    <div class="mc-footer">
-                        <h4>
-                            For more details
-                        </h4>
-                        <a class="fa fa-fw fa-user"></a>
-                        <a class="fa fa-fw fa-facebook"></a>
-                        <a class="fa fa-fw fa-twitter"></a>
-                    </div>
-                </article>
-            </div>
-
-            <div class="EachBox box3">
-                <article class="material-card Red">
-                    <h2>
-                        <span>Yuya Sasaki</span>
-                        <strong>
-                            <i class="fa fa-fw fa-star"></i>
-                            Database Researcher
-                        </strong>
-                    </h2>
-                    <div class="mc-content">
-                        <div class="img-container">
-                            <img class="img-responsive" src="{% static 'images/sasaki2.png' %}">
-                        </div>
-                        <div class="mc-description">
-                            Kaho
-                        </div>
-                    </div>
-                    <a class="mc-btn-action">
-                        <i class="fa fa-bars"></i>
-                    </a>
-                    <div class="mc-footer">
-                        <h4>
-                            For more details
-                        </h4>
-                        <a class="fa fa-fw fa-user"></a>
-                        <a class="fa fa-fw fa-facebook"></a>
-                        <a class="fa fa-fw fa-twitter"></a>
-                    </div>
-                </article>
-            </div>
+        <h2 class="MdsBase">Research</h2>
+        <p class="LeadMain">鬼塚研究室ではビッグデータにまつわる下記の研究分野で活動しております．</p>
+     <ul class="cards">
+      <li class="cards__item">
+        <div class="card">
+          <div class="card__image card__image--datamining"></div>
+          <div class="card__content">
+            <div class="card__title">データマイニング</div>
+            <p class="card__text">This is the shorthand for flex-grow, flex-shrink and flex-basis combined. The second and third parameters (flex-shrink and flex-basis) are optional. Default is 0 1 auto. </p>
+            <button class="btn btn--block card__btn">Button</button>
+          </div>
         </div>
+      </li>
+      <li class="cards__item">
+        <div class="card">
+          <div class="card__image card__image--nlp"></div>
+          <div class="card__content">
+            <div class="card__title">自然言語処理</div>
+            <p class="card__text">This is the shorthand for flex-grow, flex-shrink and flex-basis combined. The second and third parameters (flex-shrink and flex-basis) are optional. Default is 0 1 auto. </p>
+            <button class="btn btn--block card__btn">Button</button>
+          </div>
+        </div>
+      </li>
+      <li class="cards__item">
+        <div class="card">
+          <div class="card__image card__image--datamining"></div>
+          <div class="card__content">
+            <div class="card__title">グラフ分散処理</div>
+            <p class="card__text">This is the shorthand for flex-grow, flex-shrink and flex-basis combined. The second and third parameters (flex-shrink and flex-basis) are optional. Default is 0 1 auto. </p>
+            <button class="btn btn--block card__btn">Button</button>
+          </div>
+        </div>
+      </li>
+      <li class="cards__item">
+        <div class="card">
+          <div class="card__image card__image--dataanalysis"></div>
+          <div class="card__content">
+            <div class="card__title">データ分析</div>
+            <p class="card__text">This is the shorthand for flex-grow, flex-shrink and flex-basis combined. The second and third parameters (flex-shrink and flex-basis) are optional. Default is 0 1 auto. </p>
+            <button class="btn btn--block card__btn">Button</button>
+          </div>
+        </div>
+      </li>
+    </ul>
     </section>
 
 
-{#    <div class="row active-with-click">#}
-{#        <article class="material-card Red">#}
-{#            <h2>#}
-{#                <span>Christopher Walken</span>#}
-{#                <strong>#}
-{#                    <i class="fa fa-fw fa-star"></i>#}
-{#                    The Deer Hunter#}
-{#                </strong>#}
-{#            </h2>#}
-{#            <div class="mc-content">#}
-{#                <div class="img-container">#}
-{#                    <img class="img-responsive" src="{% static "images/onizuka2.png" %}">#}
-{#                </div>#}
-{#                <div class="mc-description">#}
-{#                    He has appeared in more than 100 films and television shows, including The Deer Hunter, Annie Hall, The Prophecy trilogy, The Dogs of War ...#}
-{#                </div>#}
-{#            </div>#}
-{#            <a class="mc-btn-action">#}
-{#                <i class="fa fa-bars"></i>#}
-{#            </a>#}
-{#            <div class="mc-footer">#}
-{#                <h4>#}
-{#                    Social#}
-{#                </h4>#}
-{#                <a class="fa fa-fw fa-facebook"></a>#}
-{#                <a class="fa fa-fw fa-twitter"></a>#}
-{#                <a class="fa fa-fw fa-linkedin"></a>#}
-{#                <a class="fa fa-fw fa-google-plus"></a>#}
-{#            </div>#}
-{#        </article>#}
-{#    </div>#}
 
-
-    {# 3 column #}
 {#    <section class="SectionBasic Professors" id="Professors">#}
-{#        <h2 class="MdsBase">Introduce Professors</h2>#}
-{#        <p class="LeadMain">鬼塚研究室では下記の３名が、研究室に常駐しており、それぞれのエキスパートとして活躍しています。</p>#}
+{#        <h2 class="MdsBase">Research</h2>#}
+{#        <p class="LeadMain">鬼塚研究室ではビッグデータにまつわる下記の研究分野で活動しております．</p>#}
 {#        <div class="ColumnUnit">#}
 {#            <!-- * -->#}
 {#            <section class="EachProfessor Onizuka">#}
@@ -351,6 +253,22 @@
 {#        <!-- / .SectionBasic -->#}
 {#    </section>#}
 
+
+
+    {# embedding youtube video #}
+{#    <section class="SectionBasic VideoEmbedding blur-image">#}
+{#        <div class="background-image"></div>#}
+{#        <h2 class="MdsBase">Onizuka Lab's Trailer</h2>#}
+{#        <p class="LeadMain">#}
+{#            現在の鬼塚研の研究紹介動画（予定），研究室内の様子も紹介．#}
+{#        </p>#}
+{#        <div class="Movie">#}
+{#            <iframe width="760" height="400" src="https://www.youtube.com/embed/a3ICNMQW7Ok" frameborder="0" allowfullscreen></iframe>#}
+{#        </div>#}
+{#        <!-- / .SectionBasic -->#}
+{#    </section>#}
+
+    {#  最新ニュース記事  #}
     <section class="SectionBasic Grid blur-image">
         <h2 class="MdsBase">Grid Menu</h2>
         <div class="grid" data-columns>
@@ -444,28 +362,88 @@
 
 
 
-{# 上に戻るボタン + footer #}
-<div id="container">
-    <div class="back-to-top-container cf">
-        <a href="#top"><img src="{% static 'images/arrow.png' %}" alt="" width="12" /> このページの先頭に戻る</a>
+{# footer #}
+<footer class="footer-distributed">
+    <div class="footer-left">
+        <h3>Onizuka<span>Lab.</span></h3>
+        <p class="footer-company-about">
+            大阪大学情報科学研究科マルチメディア工学専攻<br>
+            ビッグデータ工学講座鬼塚研究室
+        </p>
+        <br>
+        <p class="footer-company-about">
+            <span>ページ内リンク</span>
+        </p>
+        <ul>
+            <li class="footer-list"><a href="#">Home</a></li>
+            <li class="footer-list"><a href="#">研究</a></li>
+            <li class="footer-list"><a href="#">メンバー</a></li>
+            <li class="footer-list"><a href="#">業績</a></li>
+            <li class="footer-list"><a href="#">New</a></li>
+            <li class="footer-list"><a href="#">Lab</a></li>
+        </ul>
     </div>
 
-    <div id="footer" class="cf">
-        <ul id="sns_box">
-            <li><div class="fb-like" data-href="" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div></li>
-            <li><a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>
-        </ul>
-        <ul>
-            <li><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/research" target="_blank">研究内容</a></li>
-            <li><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/publication">論文</a></li>
-            <li><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/whats-new">What's new</a></li>
-            <li><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/member">メンバー</a></li>
-            <li><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/access">アクセス</a></li>
-            <li class="li_last"><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/link">外部リンク</a></li>
-        </ul>
-    </div><!-- #footer -->
-</div><!-- #container -->
+    <div class="footer-center">
+        <div>
+            <i class="fa fa-map-marker"></i><br>
+            <p><span>〒565-0871 大阪府吹田市山田丘1-5 <br>
+                大阪大学 情報科学研究科C棟</span>
+            </p>
+        </div>
+        <div>
+            <i class="fa fa-phone"></i><br>
+            <p>+1 555 123456</p>
+        </div>
+        <div>
+            <i class="fa fa-envelope"></i><br>
+            <p><a href="mailto:support@company.com">onizuka@ist.osaka-u.ac.jp</a></p>
+        </div>
+    </div>
+
+    <div class="footer-right">
+        <p class="footer-company-about">
+            <span>外部リンク</span>
+        </p>
+        <p>
+            <li class="footer-list"><a href="http://www.ist.osaka-u.ac.jp/japanese/research/majors/mm/course.html" target="_blank">マルチメディア工学専攻</a></li>
+            <li class="footer-list"><a href="http://www.ist.osaka-u.ac.jp/japanese/index.html" target="_blank">情報科学研究科</a></li>
+            <li class="footer-list"><a href="http://www.eng.osaka-u.ac.jp/ja/index.html" target="_blank">工学研究科・工学部</a></li>
+            <li class="footer-list"><a href="http://www.es.osaka-u.ac.jp/" target="_blank">基礎工学部</a></li>
+            <li class="footer-list"><a href="http://www.osaka-u.ac.jp/ja" target="_blank">大阪大学</a></li>
+            <li class="footer-list"><a href="http://www.library.osaka-u.ac.jp/" target="_blank">大阪大学付属図書館</a></li>
+            <li class="footer-list"><a href="http://www-bigdata.ist.osaka-u.ac.jp/local/oniwiki" target="_blank">鬼塚研Wiki (Local)</a></li>
+        </p>
+        <div class="footer-icons">
+            <a href="https://hub.docker.com/u/gpolab/"><i class="fa fa-docker"></i></a>
+            <a href="https://twitter.com/monizuka"><i class="fa fa-twitter"></i></a>
+            <a href="https://github.com/OnizukaLab/"><i class="fa fa-github"></i></a>
+        </div>
+    </div>
+</footer>
+
+
+{#<div id="container">#}
+{#    <div class="back-to-top-container cf">#}
+{#        <a href="#top"><img src="{% static 'images/arrow.png' %}" alt="" width="12" /> このページの先頭に戻る</a>#}
+{#    </div>#}
+{##}
+{#    <div id="footer" class="cf">#}
+{#        <ul id="sns_box">#}
+{#            <li><div class="fb-like" data-href="" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div></li>#}
+{#            <li><a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>#}
+{#            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li>#}
+{#        </ul>#}
+{#        <ul>#}
+{#            <li><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/research" target="_blank">研究内容</a></li>#}
+{#            <li><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/publication">論文</a></li>#}
+{#            <li><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/whats-new">What's new</a></li>#}
+{#            <li><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/member">メンバー</a></li>#}
+{#            <li><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/access">アクセス</a></li>#}
+{#            <li class="li_last"><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/link">外部リンク</a></li>#}
+{#        </ul>#}
+{#    </div><!-- #footer -->#}
+{#</div><!-- #container -->#}
 
 
 {# slide bar for Smart Phone #}
@@ -479,13 +457,13 @@
             </ul>
         </li>
 
-        <li class="sb-submenu-open"><a href="#" class="sb-toggle-submenu">論文<span class="sb-caret"></span></a>
+        <li class="sb-submenu-open"><a href="#" class="sb-toggle-submenu">業績<span class="sb-caret"></span></a>
         <ul class="sb-submenu">
             <li class="sb-close"><a href="#" target="_blank">概要</a></li>
             <li class="sb-close"><a href="#" target="_blank">アクセス</a></li>
         </ul>
 
-        <li class="sb-submenu-open"><a href="#" class="sb-toggle-submenu">What's new<span class="sb-caret"></span></a>
+        <li class="sb-submenu-open"><a href="#" class="sb-toggle-submenu">New<span class="sb-caret"></span></a>
             <ul class="sb-submenu">
                 <li class="sb-close"><a href="#">ああああ余り</a></li>
             </ul>
@@ -561,7 +539,7 @@ jQuery.event.add(window, "load", function(){
 
     // Professors
     //var position3 = $(".Professors").get(0).offsetTop - header_height;    // 本来の手法
-    var position3 = position2 + $(".VideoEmbedding").outerHeight(true);
+    var position3 = position2 + $(".CardStyle").outerHeight(true);
     $('.pc_sub_menu_interview').click(function(){
         $("html,body").animate({
             scrollTop : position3
@@ -572,7 +550,7 @@ jQuery.event.add(window, "load", function(){
 
     // Grid
     //var position4 = position3 + $(".Professors").outerHeight(true);
-    var position4 = position3 + $(".CardStyle").outerHeight(true);
+    var position4 = position3 + $(".Grid").outerHeight(true);
     $('.pc_sub_menu_work').click(function(){
         $("html,body").animate({
             scrollTop : position4
