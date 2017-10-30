@@ -8,7 +8,7 @@
 	text-align: left;
 	font: bold 16px sans-serif;
 
-	padding: 55px 50px;
+	padding: 55px 50px 10px 50px;
 	/*margin-top: 80px;*/
 }
 
@@ -158,6 +158,19 @@
 	color:  #92999f;
 	font-size: 13px;
 }
+
+
+/* footer bottom */
+
+.footer-distributed .footer-bottom{
+	text-align: center;
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 10px;
+	font-weight: normal;
+	margin: 40px 0 0 0;
+}
+
 
 /* If you don't want the footer to be responsive, remove these media queries */
 

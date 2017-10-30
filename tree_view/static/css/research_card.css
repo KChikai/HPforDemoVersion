@@ -1,3 +1,5 @@
+/* トップページのカードデザイン（研究紹介）用CSS */
+
 *,
 *::before,
 *::after {
@@ -28,7 +30,6 @@ img {
   border: 1px solid #cccccc;
   color: #696969;
   padding: 0.5rem;
-  text-transform: lowercase;
 }
 .btn--block {
   display: block;
@@ -124,14 +125,20 @@ img {
   background-image: url('../images/data-analytics.jpg');
 }
 .card__image--datamining {
+  background-image: url('../images/brain.jpg');
+}
+.card__image--graph {
   background-image: url('../images/web_graph.jpg');
+}
+.card__image--iot {
+  background-image: url('../images/IoT.jpg');
 }
 .card__title {
   color: #696969;
   font-size: 1.25rem;
   font-weight: 300;
   letter-spacing: 2px;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
 .card__text {
   -webkit-box-flex: 1;
