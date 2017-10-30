@@ -7,47 +7,47 @@ e=0),n=n||1;for(var r=Math.max(Math.ceil((t-e)/n),0),i=Array(r),o=0;o<r;o++,e+=n
 
 // ■ 端末の定義等 ========================================================================
 
-var ua = navigator.userAgent;
-var view_mode;
-
-// PC・スマホ・タブレット定義
-if((ua.indexOf('Android') > 0 && ua.indexOf('Mobile') == -1) || ua.indexOf('iPad') > 0 || ua.indexOf('Kindle') > 0 || ua.indexOf('Silk') > 0){
-	// タブレット
-	view_mode = "TL";
-} else if ((ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0) || ua.indexOf('iPhone') > 0 || ua.indexOf('Blackberry') > 0 || ua.indexOf('iPhone') > 0){
-	// スマートフォン
-	view_mode = "SP";
-} else {
-	// PC
-	view_mode = "PC";
-}
+// var ua = navigator.userAgent;
+// var view_mode;
+//
+// // PC・スマホ・タブレット定義
+// if((ua.indexOf('Android') > 0 && ua.indexOf('Mobile') == -1) || ua.indexOf('iPad') > 0 || ua.indexOf('Kindle') > 0 || ua.indexOf('Silk') > 0){
+// 	// タブレット
+// 	view_mode = "TL";
+// } else if ((ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0) || ua.indexOf('iPhone') > 0 || ua.indexOf('Blackberry') > 0 || ua.indexOf('iPhone') > 0){
+// 	// スマートフォン
+// 	view_mode = "SP";
+// } else {
+// 	// PC
+// 	view_mode = "PC";
+// }
 
 $(function(){
 
-	// Windows or Macで、bodyにclassを追加
-	if (view_mode == "PC") {
-
-		if(ua.match(/[Ww]in/)) {
-			$('body').addClass('Win');
-		} else if(ua.match(/[Mm]ac/)) {
-			$('body').addClass('Mac');
-		}
-
-	}
-
-	// スマホの場合、bodyにclassを追加
-	if (view_mode == "SP") {
-
-		$('body').addClass('SmartPhone');
-
-	}
-
-	// タブレットの場合、bodyにclassを追加
-	if (view_mode == "TL") {
-
-		$('body').addClass('Tablet');
-
-	}
+	// // Windows or Macで、bodyにclassを追加
+	// if (view_mode == "PC") {
+    //
+	// 	if(ua.match(/[Ww]in/)) {
+	// 		$('body').addClass('Win');
+	// 	} else if(ua.match(/[Mm]ac/)) {
+	// 		$('body').addClass('Mac');
+	// 	}
+    //
+	// }
+    //
+	// // スマホの場合、bodyにclassを追加
+	// if (view_mode == "SP") {
+    //
+	// 	$('body').addClass('SmartPhone');
+    //
+	// }
+    //
+	// // タブレットの場合、bodyにclassを追加
+	// if (view_mode == "TL") {
+    //
+	// 	$('body').addClass('Tablet');
+    //
+	// }
 
 
 	// スライドショー設定
