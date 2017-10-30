@@ -137,7 +137,6 @@
     </div>
 
 
-
     {# 研究紹介 #}
     <section class="SectionBasic CardStyle ColumnUnit">
         <h2 class="MdsBase">Research</h2>
@@ -147,7 +146,7 @@
         <div class="card">
           <div class="card__image card__image--datamining"></div>
           <div class="card__content">
-            <div class="card__title">データマイニング・機械学習</div>
+            <div class="card__title">グラフマイニング</div>
             <p class="card__text">グラフマイニングとは，「どの人がどこで何を買った・何を見た」などの，人・モノ・場所の関係に関するデータをグラフ構造で表現して，
                 得られる大規模なグラフデータを用いて，モノを推薦したり，影響力のある人物を発見したり，世の中のトレンドを分析したりする技術です．</p>
             <button class="btn btn--block card__btn">Read More</button>
@@ -159,8 +158,9 @@
           <div class="card__image card__image--nlp"></div>
           <div class="card__content">
             <div class="card__title">自然言語処理</div>
-            <p class="card__text">This is the shorthand for flex-grow, flex-shrink and flex-basis combined.
-                The second and third parameters (flex-shrink and flex-basis) are optional. Default is 0 1 auto. </p>
+            <p class="card__text">ビッグデータと機械学習を活用して人間の言語をコンピュータが理解することを目指した
+                自然言語処理技術について研究をおこなっています．具体的には，対話システムや機械翻訳等の研究を行っています．
+            </p>
             <button class="btn btn--block card__btn">Read More</button>
           </div>
         </div>
@@ -181,7 +181,9 @@
           <div class="card__image card__image--dataanalysis"></div>
           <div class="card__content">
             <div class="card__title">発見的データ分析</div>
-            <p class="card__text">誰でも簡単にビッグデータ分析ができる技術を創出して起業します． </p>
+            <p class="card__text">誰でも簡単にビッグデータ分析ができる技術を創出して起業します．
+                ああああああああああああああああああああああああああああああああああああああああああ
+            </p>
             <button class="btn btn--block card__btn">Read More</button>
           </div>
         </div>
@@ -197,40 +199,34 @@
           </div>
         </div>
       </li>
+      <li class="cards__item">
+        <div class="card">
+          <div class="card__image card__image--ml"></div>
+          <div class="card__content">
+            <div class="card__title">機械学習</div>
+            <p class="card__text">世界で今最も注目されている深層学習の技術に貢献します．
+                また，深層学習で解けない問題を半教師あり学習によって解決する＆認知症の社会問題を改善します．</p>
+            <button class="btn btn--block card__btn">Read More</button>
+          </div>
+        </div>
+      </li>
+
     </ul>
     </section>
+
 
     {#  最新ニュース記事  #}
     <section class="SectionBasic Grid blur-image">
         <h2 class="MdsBase">Latest News</h2>
-        <div class="grid" data-columns>
-            <div class="EachBox box1 tiles" data-aos="fade-up" data-aos-duration="700">
-                <a class="tile" href="#">
-                    <img src="{% static 'images/onizuka.jpg' %}"/>
-                    <div class="details">
-                        <span class="title">Makoto Onizuka</span>
-                        <span class="info">Data is the new oil.</span>
-                    </div>
-                 </a>
-            </div>
-            <div class="EachBox box2 tiles" data-aos="fade-up" data-aos-duration="700">
-                <a class="tile" href="#">
-                    <img src="{% static 'images/masai.JPG' %}"/>
-                    <div class="details">
-                        <span class="title">マサイ民族衣装</span>
-                        <span class="info">ジャンプジャンプジャンプジャンプジャンプ</span>
-                    </div>
-                 </a>
-            </div>
-            <div class="EachBox box3 tiles" data-aos="fade-up" data-aos-duration="700">
-                <a class="tile" href="#">
-                    <img src="{% static 'images/scene3.JPG' %}"/>
-                    <div class="details">
-                        <span class="title">NLP 100knock</span>
-                        <span class="info">ほげほげ</span>
-                    </div>
-                 </a>
-            </div>
+        <p class="LeadMain">鬼塚研究室に関する最新ニュースやお知らせについてまとめています．</p>
+        <div>
+            {% if latest_news_list %}
+                {% for news in latest_news_list%}
+                    <a href="{% url 'tree_view:embedding' %}#{{ news.id }}">{{ news.date }}  {{ news.text_ja }}</a>
+                {% endfor %}
+            {% else %}
+                <p>Sorry, but there is no latest news.</p>
+            {% endif %}
         </div>
     </section>
 
@@ -308,33 +304,31 @@
 <div class="sb-slidebar sb-right">
     <ul class="sb-menu">
         <li class="sb-menu-title">MENU</li>
-        <li class="sb-close"><a href="http://www-bigdata.ist.osaka-u.ac.jp">トップページ</a></li>
-        <li class="sb-submenu-open"><a href="#" class="sb-toggle-submenu">研究内容<span class="sb-caret"></span></a>
+        <li class="sb-close"><a href="http://www-bigdata.ist.osaka-u.ac.jp">ホーム</a></li>
+        <li class="sb-submenu-open"><a href="#" class="sb-toggle-submenu">研究<span class="sb-caret"></span></a>
             <ul class="sb-submenu">
-                <li class="sb-close"><a href="#">メッセージ</a></li>
+                <li class="sb-close"><a href="#">グラフマイニング</a></li>
+            </ul>
+            <ul class="sb-submenu">
+                <li class="sb-close"><a href="#">自然言語処理</a></li>
+            </ul>
+            <ul class="sb-submenu">
+                <li class="sb-close"><a href="#">分散グラフ処理エンジン</a></li>
+            </ul>
+            <ul class="sb-submenu">
+                <li class="sb-close"><a href="#">発見的データ分析</a></li>
+            </ul>
+            <ul class="sb-submenu">
+                <li class="sb-close"><a href="#">IoT技術とビッグデータ</a></li>
+            </ul>
+            <ul class="sb-submenu">
+                <li class="sb-close"><a href="#">機械学習</a></li>
             </ul>
         </li>
-
-        <li class="sb-submenu-open"><a href="#" class="sb-toggle-submenu">業績<span class="sb-caret"></span></a>
-        <ul class="sb-submenu">
-            <li class="sb-close"><a href="#" target="_blank">概要</a></li>
-            <li class="sb-close"><a href="#" target="_blank">アクセス</a></li>
-        </ul>
-
-        <li class="sb-submenu-open"><a href="#" class="sb-toggle-submenu">New<span class="sb-caret"></span></a>
-            <ul class="sb-submenu">
-                <li class="sb-close"><a href="#">ああああ余り</a></li>
-            </ul>
-        </li>
-        <li class="sb-close"><a href="#">メンバー</a></li>
-        <li class="sb-close"><a href="/treeview/index">アクセス</a></li>
-        <li class="sb-submenu-open"><a href="#" class="sb-toggle-submenu">外部リンク<span class="sb-caret"></span></a>
-            <ul class="sb-submenu">
-                <li class="sb-close"><a href="http://www.osaka-u.ac.jp/ja">大阪大学</a></li>
-                <li class="sb-close"><a href="http://www.ist.osaka-u.ac.jp/japanese">情報科学研究科</a></li>
-                <li class="sb-close"><a href="http://www-bigdata.ist.osaka-u.ac.jp/local/oniwiki">ローカル</a></li>
-            </ul>
-        </li>
+        <li class="sb-close"><a href="#">メンバー<span class="sb-caret"></span></a></li>
+        <li class="sb-close"><a href="#">NEW<span class="sb-caret"></span></a></li>
+        <li class="sb-close"><a href="#">業績</a></li>
+        <li class="sb-close"><a href="#">English<span class="sb-caret"></span></a></li>
     </ul>
 </div>
 
@@ -361,6 +355,17 @@ $(function(){
             $('.sb-menu li').removeClass('hover');
             },350);
     });
+
+
+    $('.Grid a')
+      .bind( 'touchstart', function(){
+        $( this ).addClass( 'hover' );
+    }).bind( 'touchend', function(){
+        setTimeout(function(){
+            $('.Grid a').removeClass('hover');
+            },350);
+    });
+
 
 });
 
@@ -420,37 +425,6 @@ jQuery.event.add(window, "load", function(){
 
 });
 
-
-// Card Script
-$(function() {
-    $('.material-card > .mc-btn-action').click(function () {
-        var card = $(this).parent('.material-card');
-        var icon = $(this).children('i');
-        icon.addClass('fa-spin-fast');
-
-        if (card.hasClass('mc-active')) {
-            card.removeClass('mc-active');
-
-            window.setTimeout(function() {
-                icon
-                    .removeClass('fa-arrow-left')
-                    .removeClass('fa-spin-fast')
-                    .addClass('fa-bars');
-
-            }, 800);
-        } else {
-            card.addClass('mc-active');
-
-            window.setTimeout(function() {
-                icon
-                    .removeClass('fa-bars')
-                    .removeClass('fa-spin-fast')
-                    .addClass('fa-arrow-left');
-
-            }, 800);
-        }
-    });
-});
 
 </script>
 

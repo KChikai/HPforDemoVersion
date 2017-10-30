@@ -73,23 +73,56 @@ content: '※';
 .EachBox{
     margin: 5px;
 }
-.EachBox .box-img img{
-    /*width: 100%;*/
-    /*height: 100%;*/
-}
-
-/*.box1{*/
-    /*height: 300px;*/
-/*}*/
-
-/*.EachBox.box2{*/
-    /*height: 280px;*/
-/*}*/
-
 .EachBox .box3{
     height: 480px;
 }
 
+
+/* for news */
+.Grid a, a:before {
+  transition: all .4s;
+
+}
+.Grid div {
+  max-width: 500px;
+  margin: 2em auto;
+}
+.Grid div:hover a {
+  opacity: .4;
+}
+.Grid a {
+  position: relative;
+  display: block;
+  max-width: 500px;
+  padding: 20px 20px 20px 45px;
+  box-sizing: border-box;
+  color: #777;
+  background: #fAfAfA;
+  text-decoration: none;
+  font-family: "Open Sans", "Segoe UI", Arial, sans-serif;
+}
+.Grid a:before {
+  content: "";
+  position: absolute;
+  left:0; bottom:0; top:0;
+  width: 20px;
+  background: #7F8C9A;
+}
+.Grid a:nth-child(even):before {
+  background: #34495E;
+}
+.Grid a + a {
+  border-top: 2px solid #ededed;
+}
+.Grid div a:hover,
+.Grid div a:focus {
+  opacity: 1;
+  padding-left: 55px;
+}
+.Grid div a:hover:before,
+.Grid div a:focus:before {
+  width: 30px;
+}
 
 
 

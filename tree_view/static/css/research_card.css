@@ -118,20 +118,23 @@ img {
 }
 
 /* 研究分野イメージ画像 */
+.card__image--datamining {
+  background-image: url('../images/social_graph.jpg');
+}
 .card__image--nlp {
   background-image: url('../images/word_cloud.jpg');
-}
-.card__image--dataanalysis {
-  background-image: url('../images/data-analytics.jpg');
-}
-.card__image--datamining {
-  background-image: url('../images/brain.jpg');
 }
 .card__image--graph {
   background-image: url('../images/web_graph.jpg');
 }
+.card__image--dataanalysis {
+  background-image: url('../images/data-analytics.jpg');
+}
 .card__image--iot {
   background-image: url('../images/IoT.jpg');
+}
+.card__image--ml {
+  background-image: url('../images/brain.jpg');
 }
 .card__title {
   color: #696969;
