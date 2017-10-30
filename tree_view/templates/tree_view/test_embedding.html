@@ -15,9 +15,7 @@
 <link rel="stylesheet" href="{% static 'css/slidebars.css' %}">
 <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static 'css/top_page.css' %}" type="text/css">
-<link rel="stylesheet" href="{% static 'css/salvattore.css' %}" />
 <link rel="stylesheet" href="{% static 'css/aos.css' %}" />
-<link rel="stylesheet" href="{% static 'css/tile_hover.css' %}" />
 <link rel="stylesheet" href="{% static 'css/news_card.css' %}" />
 <link rel="stylesheet" href="{% static 'css/footer.css' %}" />
 <link rel="stylesheet" href="{% static 'css/research_card.css' %}" />
@@ -27,7 +25,7 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
 
-<link  rel="shortcut icon" href="/favicon.ico">
+<link  rel="shortcut icon" href="{% static 'images/icon.png' %}">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="{% static 'js/slidebars.js' %}"></script>
 <script src="{% static 'js/main.js' %}"></script>
@@ -62,12 +60,12 @@
         </div>
         <div id="pc_menu">
             <ul class="pc_navi">
-                <li class="now_display_header"><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/research"><span>Home</span></a></li>
-                <li class="menu-hover"><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/publication"><span>研究</span></a></li>
-                <li class="menu-hover"><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/whats-new"><span>メンバー</span></a></li>
-                <li class="menu-hover"><a href="http://www-bigdata.ist.osaka-u.ac.jp/bigdata/member"><span>Lab</span></a></li>
-                <li class="menu-hover"><a href=http://www-bigdata.ist.osaka-u.ac.jp/bigdata/access><span>業績</span></a></li>
-                <li class="menu-hover"><a href="#"><span>English</span></a></li>
+                <li class="now_display_header"><a href="{% url 'tree_view:embedding' %}"><span>Home</span></a></li>
+                <li class="menu-hover"><a href="{% url 'tree_view:embedding' %}"><span>研究</span></a></li>
+                <li class="menu-hover"><a href="{% url 'tree_view:embedding' %}"><span>メンバー</span></a></li>
+                <li class="menu-hover"><a href="{% url 'tree_view:embedding' %}"><span>Lab</span></a></li>
+                <li class="menu-hover"><a href="{% url 'tree_view:embedding' %}"><span>業績</span></a></li>
+                <li class="menu-hover"><a href="{% url 'tree_view:embedding' %}"><span>English</span></a></li>
             </ul>
         </div>
     </div><!-- #pc_header_inner -->
@@ -101,8 +99,9 @@
     {# for Smart Phone #}
     <div id="KeyVisualSP" class="SP">
         <ul id="Slide">
-            <li><img src="{% static 'images/building.jpg' %}" alt=""></li>
-            <li><img src="{% static 'images/themes.png' %}" alt=""></li>
+            <li><img src="{% static 'images/room.jpg' %}" alt=""></li>
+            <li><img src="{% static 'images/oga-study.jpg' %}" alt=""></li>
+            <li><img src="{% static 'images/pc.jpg' %}" alt=""></li>
         </ul>
         <p class="PageTitle"><img src="{% static 'images/new_logo_white.png' %}" alt=""></p>
         <!-- // #KeyVisualSP -->
@@ -131,14 +130,13 @@
                     研究成果を実世界にコミットします．<br />
                     この思いに共感し、共にビッグデータ革命を牽引しましょう．</p>
                 <p class="KomeS">このページはテストページです．</p>
-                <!-- / .SectionBasic -->
             </div>
         </section>
     </div>
 
 
     {# 研究紹介 #}
-    <section class="SectionBasic CardStyle ColumnUnit">
+    <section class="SectionBasic ResearchCard ColumnUnit">
         <h2 class="MdsBase">Research</h2>
         <p class="LeadMain">鬼塚研究室ではビッグデータにまつわる下記の研究分野で活動しております．</p>
      <ul class="cards">
@@ -147,8 +145,10 @@
           <div class="card__image card__image--datamining"></div>
           <div class="card__content">
             <div class="card__title">グラフマイニング</div>
-            <p class="card__text">グラフマイニングとは，「どの人がどこで何を買った・何を見た」などの，人・モノ・場所の関係に関するデータをグラフ構造で表現して，
-                得られる大規模なグラフデータを用いて，モノを推薦したり，影響力のある人物を発見したり，世の中のトレンドを分析したりする技術です．</p>
+            <p class="card__text">グラフマイニングとは，「どの人がどこで何を買った・何を見た」などの，
+                人・モノ・場所の関係に関するデータをグラフ構造で表現して，
+                得られる大規模なグラフデータを用いて，モノを推薦したり，影響力のある人物を発見したり，
+                世の中のトレンドを分析したりする技術です．</p>
             <button class="btn btn--block card__btn">Read More</button>
           </div>
         </div>
@@ -170,8 +170,8 @@
           <div class="card__image card__image--graph"></div>
           <div class="card__content">
             <div class="card__title">分散グラフ処理エンジン</div>
-            <p class="card__text">分散データ処理エンジンとは，数100台を超えるコンピュータを使って大量なビッグデータをリアルタイムで分析処理する技術であり，
-                Google や Facebook を含めて多くの企業で利用されています．</p>
+            <p class="card__text">分散データ処理エンジンとは，数100台を超えるコンピュータを使って大量なビッグデータを
+                リアルタイムで分析処理する技術であり，Google や Facebook を含めて多くの企業で利用されています．</p>
             <button class="btn btn--block card__btn">Read More</button>
           </div>
         </div>
@@ -216,13 +216,15 @@
 
 
     {#  最新ニュース記事  #}
-    <section class="SectionBasic Grid blur-image">
+    <section class="SectionBasic LatestNews blur-image">
         <h2 class="MdsBase">Latest News</h2>
         <p class="LeadMain">鬼塚研究室に関する最新ニュースやお知らせについてまとめています．</p>
         <div>
             {% if latest_news_list %}
                 {% for news in latest_news_list%}
-                    <a href="{% url 'tree_view:embedding' %}#{{ news.id }}">{{ news.date }}  {{ news.text_ja }}</a>
+                    <a href="{% url 'tree_view:embedding' %}#{{ news.id }}">
+                        <p class="news-text"><span>{{ news.date.year }}/{{ news.date.month }}/{{ news.date.day }}</span>  {{ news.text_ja }}</p>
+                    </a>
                 {% endfor %}
             {% else %}
                 <p>Sorry, but there is no latest news.</p>
@@ -357,17 +359,26 @@ $(function(){
     });
 
 
-    $('.Grid a')
+    $('.LatestNews a')
       .bind( 'touchstart', function(){
         $( this ).addClass( 'hover' );
     }).bind( 'touchend', function(){
         setTimeout(function(){
-            $('.Grid a').removeClass('hover');
+            $('.LatestNews a').removeClass('hover');
             },350);
     });
 
 
 });
+
+
+// for the latest news
+// ニューステキストの幅を固定する（hover時に動かないようにする）
+$(function(){
+    var parent_width = $(".LatestNews a").width();
+    console.log(parent_width);
+    $(".news-text").width(parent_width - 15);
+} );
 
 // scroll to each positions
 // this script is running when this page is fully loaded.
@@ -402,7 +413,7 @@ jQuery.event.add(window, "load", function(){
 
     // Professors
     //var position3 = $(".Professors").get(0).offsetTop - header_height;    // 本来の手法
-    var position3 = position2 + $(".CardStyle").outerHeight(true);
+    var position3 = position2 + $(".ResearchCard").outerHeight(true);
     $('.pc_sub_menu_interview').click(function(){
         $("html,body").animate({
             scrollTop : position3
@@ -413,7 +424,7 @@ jQuery.event.add(window, "load", function(){
 
     // Grid
     //var position4 = position3 + $(".Professors").outerHeight(true);
-    var position4 = position3 + $(".Grid").outerHeight(true);
+    var position4 = position3 + $(".LatestNews").outerHeight(true);
     $('.pc_sub_menu_work').click(function(){
         $("html,body").animate({
             scrollTop : position4
@@ -424,12 +435,9 @@ jQuery.event.add(window, "load", function(){
 
 
 });
-
-
 </script>
 
 <!-- The script must be included at the bottom of the body to work -->
-<script src="{% static 'js/salvattore.min.js' %}"></script>
 {# for Animate On Scroll Library #}
 <script src="{% static 'js/aos.js' %}"></script>
 <script>

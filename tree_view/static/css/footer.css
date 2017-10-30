@@ -22,7 +22,8 @@
 /* Footer left */
 
 .footer-distributed .footer-left{
-	width: 40%;
+	width: 33%;
+	text-align: left;
 }
 
 /* The company logo */
@@ -62,7 +63,8 @@
 /* Footer Center */
 
 .footer-distributed .footer-center{
-	width: 35%;
+	width: 33%;
+	text-align: center;
 }
 
 .footer-distributed .footer-center i{
@@ -107,7 +109,8 @@
 /* Footer Right */
 
 .footer-distributed .footer-right{
-	width: 20%;
+	width: 32%;
+	text-align: right;
 }
 
 .footer-distributed .footer-company-about{

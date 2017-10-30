@@ -70,7 +70,7 @@ body {
   font-size: 12px;
   line-height: 1.7;
   color: #333;
-  background: #fff url("../images/gt_favicon.png") no-repeat fixed;
+  background: #fff;
   background-size: 100% auto;
   overflow-x: auto;
 }
@@ -753,19 +753,10 @@ body#recruit_top #sb-site, body#recruit_top .sb-site-container {
   .map_pc {
     display: none;
   }
-  .interview_list_panel {
-    display: none;
-  }
-  .default_box_link .interview_comment_box {
-    display: none;
-  }
   .back-to-top-container {
     display: none;
   }
-
-  #interview_list .interview_list_box .interview_comment_box .inner span {
-    display: none;
-  }
+  
   .sb-slidebar {
     top: 53px;
   }
