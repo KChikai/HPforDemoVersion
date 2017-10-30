@@ -9,30 +9,23 @@ for the use fo PC and SP on the top page Onizuka Lab.
 body {
 background: none;
 }
-
-
 #mainArea strong {
 font-weight: bold;
 }
-
 #mainArea .MB0 {
 margin-bottom: 0 !important;
 }
-
 #mainArea .WF1 {
 font-family: 'Ropa Sans', sans-serif;
 }
-
 #mainArea .defaultBG {
 background-color: #f2f5f5;
 }
-
 #mainArea a:link,
 #mainArea a:active,
 #mainArea a:visited {
 color: #658dc8;
 }
-
 #mainArea h2.MdsBase {
 font-weight: bold;
 text-align: center;
@@ -48,7 +41,6 @@ padding-left: 18px;
 font-size: 12px !important;
 line-height: 1.6em;
 }
-
 .KomeS:before {
 display: inline-block;
 position: absolute;
@@ -59,18 +51,18 @@ content: '※';
 
 
 /* for latest news */
-.LatestNews a, a:before {
+.LatestNews .latest-news a, a:before {
   transition: all .4s;
 
 }
-.LatestNews div {
+.LatestNews .latest-news div {
   max-width: 600px;
   margin: 2em auto;
 }
-.LatestNews div:hover a {
+.LatestNews .latest-news div:hover a {
   opacity: .4;
 }
-.LatestNews a {
+.LatestNews .latest-news a {
   position: relative;
   display: block;
   max-width: 600px;
@@ -81,34 +73,34 @@ content: '※';
   text-decoration: none;
   font-family: "Open Sans", "Segoe UI", Arial, sans-serif;
 }
-.LatestNews a:before {
+.LatestNews .latest-news a:before {
   content: "";
   position: absolute;
   left:0; bottom:0; top:0;
   width: 20px;
   background: #7F8C9A;
 }
-.LatestNews a:nth-child(even):before {
+.LatestNews .latest-news a:nth-child(even):before {
   background: #34495E;
 }
-.LatestNews a + a {
+.LatestNews .latest-news a + a {
   border-top: 2px solid #ededed;
 }
-.LatestNews div a:hover,
-.LatestNews div a:focus {
+.LatestNews .latest-news div a:hover,
+.LatestNews .latest-news div a:focus {
   opacity: 1;
   padding-left: 55px;
 }
-.LatestNews div a:hover:before,
-.LatestNews div a:focus:before {
+.LatestNews .latest-news div a:hover:before,
+.LatestNews .latest-news div a:focus:before {
   width: 30px;
 }
 
-.LatestNews p {
+.LatestNews .latest-news p {
   margin: auto;
 }
 
-.LatestNews span {
+.LatestNews .latest-news span {
   font-size: 16px;
   font-weight: bold;
   color: black;
@@ -124,35 +116,28 @@ content: '※';
   #mainArea .SP {
     display: none;        /* スマホ用タグのついたhtmlタグは表示しない */
   }
-
   #mainArea p, #mainArea th, #mainArea td, #mainArea li {
   font-size: 14px;
   }
-
   #mainArea small {
   font-size: 12px;
   }
-
   #mainArea .SectionBasic {
   padding: 30px 0;
   }
-
   #mainArea h2.MdsBase {
   margin-bottom: 20px;
   font-size: 44px;
   font-family: 'Anton', sans-serif;
   }
-
   .Win #mainArea h2.MdsBase {
   font-weight: normal;
   }
-
   #mainArea .LeadMain {
     font-size: 16px;
     text-align: center;
     margin: auto;
   }
-
 
   /* クラス定義部分の背景画像をぼかす */
   #mainArea .blur-image{
@@ -178,8 +163,8 @@ content: '※';
     bottom: -3px;
     z-index: -1;          /*重なり順序を一番下にしておく*/
   }
-  
-  
+
+
   
   /* ここから書くsection内容について記載 */
   /* 背景動画 */
@@ -188,7 +173,6 @@ content: '※';
     overflow: hidden;
     margin-top: 163px;  /* あまり良くない（ハードコートするべきでない） */
   }
-
   #mainArea #BgVideo {
     width: 100%;
   }
@@ -231,12 +215,10 @@ content: '※';
   .Tablet #mainArea #BgVideoWrap {
   display: none;
   }
-
   .Tablet #mainArea #KeyVisualSP {
   display: block !important;
   position: relative;
   }
-
   .Tablet #mainArea #KeyVisualSP .PageTitle {
   position: absolute;
   z-index: 10000;
@@ -244,7 +226,6 @@ content: '※';
   bottom: 50px;
   margin-left: -110px;
   }
-
   .Tablet #mainArea #KeyVisualSP .PageTitle img {
   width: 220px;
   height: auto;
@@ -259,19 +240,16 @@ content: '※';
     text-align: center;
     background: url(../images/mask_square.png) no-repeat center bottom;
   }
-
   #mainArea .Message h2.MdsBase {
   margin-left: 10px;
   margin-bottom: 50px;
   font-size: 40px;
   }
-
   #mainArea .Message .Lead {
   margin-bottom: 30px;
   font-size: 16px;
   line-height: 2.2em;
   }
-
   #mainArea .Message .Btn {
   margin-top: 100px;
   }
@@ -292,39 +270,35 @@ content: '※';
     min-height: 100%;
   }
 
-  
-
-  /* PC YouTube Video Embedding */
-  #mainArea .VideoEmbedding {
-    text-align: center;
-    border-bottom: 1px solid #658dc8;
-  }
-
-  #mainArea .VideoEmbedding .LeadMain {
-    margin-bottom: 35px;
-  }
 
 
-
-  /* PC 教授陣（3 columns news card） */
+  /* research card */
   .ResearchCard.ColumnUnit {
     margin: auto;         /* auto にせずに一個ずつ決定すると左詰めになる*/
     background-image: url("../images/grid.png");
   }
 
 
-  /* grid menu */
+  /* latest news */
   #mainArea .LatestNews {
     background-color: #f5f5f5;
     background-image: url("../images/building.jpg");
   }
-
-
-  /* image */
-  #mainArea .PhotoImages img {
-  width: 33.33333333%;
-  vertical-align: bottom;
+  .news-button {
+  text-align: center;
   }
+  .news-button button{
+    background-color: transparent;
+    border: 3px solid #fff;
+    color: #fff;
+    line-height: 50px;
+    font-weight: bold;
+    padding: 0 20px;
+  }
+  .news-button button:hover {
+    background-color: rgba(255, 255, 255, .2);
+  }
+
 
 
   /* FBページプラグイン */
@@ -348,7 +322,6 @@ content: '※';
     text-align: center;
     padding-top: 50px;
   }
-
   #mainArea .PC {
     display: none;
   }
@@ -358,30 +331,26 @@ content: '※';
   #mainArea p, #mainArea th,#mainArea td, #mainArea li {
   font-size: 13px;
   }
-
   #mainArea small {
   font-size: 10px;
   }
-
   #mainArea .Break {
   display: block;
   }
-
   #mainArea .SectionBasic {
   padding: 30px 15px;
   }
-
   #mainArea h2.MdsBase {
       font-family: 'Anton', sans-serif;
       margin-bottom: 15px;
       font-size: 24px;
   }
-
   #mainArea .BtnEntry {
     padding: 12px 80px;
     font-size: 18px;
     background-size: 19px auto;
   }
+
 
   /* SPキービジュアル */
   #mainArea #KeyVisualSP {
@@ -389,7 +358,6 @@ content: '※';
     background: #f5f5f5;
     background-size: 15px;
   }
-
   #mainArea #KeyVisualSP .PageTitle {
     position: absolute;
     z-index: 100;
@@ -397,7 +365,6 @@ content: '※';
     bottom: 30px;
     margin-left: -150px;
   }
-
   #mainArea #KeyVisualSP .PageTitle img {
     width: 300px;
     height: auto;
@@ -413,19 +380,16 @@ content: '※';
     background-image: url('../images/grid.png');
     background-size: 15px;
   }
-
   #mainArea .Message h2.MdsBase {
     margin-left: 5px;
     margin-bottom: 20px;
     font-size: 19px;
     text-align: center;
   }
-
   #mainArea .Message .Lead {
   margin-bottom: 20px;
   font-size: 13px;
   }
-
   #mainArea .Message .Btn {
   margin-top: 30px;
   text-align: center;
@@ -444,12 +408,19 @@ content: '※';
     background: white;
     background-image: url('../images/grid.png');
   }
-
-
-  /* SPイメージ画像 */
-  #mainArea .PhotoImages img {
-  width: 50%;
-  vertical-align: bottom;
+  .news-button {
+  text-align: center;
+  }
+  .news-button button{
+    background-color: #757575;
+    border: 3px solid #757575;
+    color: white;
+    line-height: 50px;
+    font-weight: bold;
+    padding: 0 20px;
+  }
+  .news-button button:hover {
+    background-color: #34495E;
   }
 
 

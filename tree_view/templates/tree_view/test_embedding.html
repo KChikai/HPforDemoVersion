@@ -219,16 +219,23 @@
     <section class="SectionBasic LatestNews blur-image">
         <h2 class="MdsBase">Latest News</h2>
         <p class="LeadMain">鬼塚研究室に関する最新ニュースやお知らせについてまとめています．</p>
-        <div>
-            {% if latest_news_list %}
-                {% for news in latest_news_list%}
-                    <a href="{% url 'tree_view:embedding' %}#{{ news.id }}">
-                        <p class="news-text"><span>{{ news.date.year }}/{{ news.date.month }}/{{ news.date.day }}</span>  {{ news.text_ja }}</p>
-                    </a>
-                {% endfor %}
-            {% else %}
-                <p>Sorry, but there is no latest news.</p>
-            {% endif %}
+        <div class="latest-news">
+            <div>
+                {% if latest_news_list %}
+                    {% for news in latest_news_list%}
+                        <a href="{% url 'tree_view:embedding' %}#{{ news.id }}">
+                            <p class="news-text"><span>{{ news.date.year }}/{{ news.date.month }}/{{ news.date.day }}</span>  {{ news.text_ja }}</p>
+                        </a>
+                    {% endfor %}
+                {% else %}
+                    <p>Sorry, but there is no latest news.</p>
+                {% endif %}
+            </div>
+        </div>
+        <div class="news-button">
+            <a href="#">
+                <button>Read More</button>
+            </a>
         </div>
     </section>
 
@@ -365,6 +372,15 @@ $(function(){
     }).bind( 'touchend', function(){
         setTimeout(function(){
             $('.LatestNews a').removeClass('hover');
+            },350);
+    });
+
+    $('.news-button button')
+      .bind( 'touchstart', function(){
+        $( this ).addClass( 'hover' );
+    }).bind( 'touchend', function(){
+        setTimeout(function(){
+            $('.news-button button').removeClass('hover');
             },350);
     });
 
