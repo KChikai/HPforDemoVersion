@@ -190,12 +190,16 @@ content: '※';
 
   /* スクロール画像 */
   #mainArea #BgVideoWrap .ScrollDown {
-  position: absolute;
-  bottom: 30px;
-  width: 100%;
-  height: 50px;
-  text-align: center;
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    height: 50px;
+    text-align: center;
   }
+  #mainArea #BgVideoWrap .ScrollDown .scroll-img {
+    width: 7%;
+  }
+
 
   /* Dot画像の貼り付け */
   .BgVideoOverlay {
@@ -210,27 +214,25 @@ content: '※';
   }
 
 
-
-  /* 背景動画：タブレット対応 */
+  /* 背景動画：タブレット対応 (top_page.js でTabletタグをつけている場合) */
   .Tablet #mainArea #BgVideoWrap {
-  display: none;
+    display: none;
   }
   .Tablet #mainArea #KeyVisualSP {
-  display: block !important;
-  position: relative;
+    display: block !important;
+    position: relative;
   }
   .Tablet #mainArea #KeyVisualSP .PageTitle {
-  position: absolute;
-  z-index: 10000;
-  left: 50%;
-  bottom: 50px;
-  margin-left: -110px;
+    position: absolute;
+    z-index: 10000;
+    left: 50%;
+    bottom: 50px;
+    margin-left: -110px;
   }
   .Tablet #mainArea #KeyVisualSP .PageTitle img {
-  width: 220px;
-  height: auto;
+    width: 220px;
+    height: auto;
   }
-
 
 
   /* PC メッセージ */
@@ -241,17 +243,17 @@ content: '※';
     background: url(../images/mask_square.png) no-repeat center bottom;
   }
   #mainArea .Message h2.MdsBase {
-  margin-left: 10px;
-  margin-bottom: 50px;
-  font-size: 40px;
+    margin-left: 10px;
+    margin-bottom: 50px;
+    font-size: 40px;
   }
   #mainArea .Message .Lead {
-  margin-bottom: 30px;
-  font-size: 16px;
-  line-height: 2.2em;
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 2.2em;
   }
   #mainArea .Message .Btn {
-  margin-top: 100px;
+    margin-top: 100px;
   }
 
 
