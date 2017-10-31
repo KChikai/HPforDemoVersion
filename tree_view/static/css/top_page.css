@@ -12,15 +12,6 @@ background: none;
 #mainArea strong {
 font-weight: bold;
 }
-#mainArea .MB0 {
-margin-bottom: 0 !important;
-}
-#mainArea .WF1 {
-font-family: 'Ropa Sans', sans-serif;
-}
-#mainArea .defaultBG {
-background-color: #f2f5f5;
-}
 #mainArea a:link,
 #mainArea a:active,
 #mainArea a:visited {
@@ -48,6 +39,26 @@ left: 3px;
 top: 0;
 content: '※';
 }
+
+
+/* Grid menu (メンバーカードで使用) */
+.grid{
+    padding: 10px 5px 5px 5px;
+    overflow: hidden;
+    max-width: 970px;
+    margin: auto;
+}
+/* These are the classes that are going to be applied: */
+.column {
+    float: left;
+}
+.EachBox{
+    margin: 5px;
+}
+.EachBox .box3{
+    height: 480px;
+}
+
 
 
 /* for latest news */
@@ -117,27 +128,29 @@ content: '※';
     display: none;        /* スマホ用タグのついたhtmlタグは表示しない */
   }
   #mainArea p, #mainArea th, #mainArea td, #mainArea li {
-  font-size: 14px;
+    font-size: 14px;
   }
   #mainArea small {
-  font-size: 12px;
+    font-size: 12px;
   }
   #mainArea .SectionBasic {
-  padding: 30px 0;
+    padding: 30px 0;
   }
   #mainArea h2.MdsBase {
-  margin-bottom: 20px;
-  font-size: 44px;
-  font-family: 'Anton', sans-serif;
+    margin-bottom: 20px;
+    font-size: 44px;
+    color: #37474F;
+    font-family: 'Anton', sans-serif;
   }
   .Win #mainArea h2.MdsBase {
-  font-weight: normal;
+    font-weight: normal;
   }
   #mainArea .LeadMain {
     font-size: 16px;
     text-align: center;
     margin: auto;
   }
+
 
   /* クラス定義部分の背景画像をぼかす */
   #mainArea .blur-image{
@@ -177,6 +190,7 @@ content: '※';
     width: 100%;
   }
 
+
   /* タイトルロゴ */
   #mainArea #BgVideoWrap .PageTitle {
     position: absolute;
@@ -187,6 +201,7 @@ content: '※';
     margin: 0 auto;
     text-align: center;
   }
+
 
   /* スクロール画像 */
   #mainArea #BgVideoWrap .ScrollDown {
@@ -243,6 +258,7 @@ content: '※';
     background: url(../images/mask_square.png) no-repeat center bottom;
   }
   #mainArea .Message h2.MdsBase {
+    color: whitesmoke;
     margin-left: 10px;
     margin-bottom: 50px;
     font-size: 40px;
@@ -273,7 +289,6 @@ content: '※';
   }
 
 
-
   /* research card */
   .ResearchCard.ColumnUnit {
     margin: auto;         /* auto にせずに一個ずつ決定すると左詰めになる*/
@@ -300,7 +315,6 @@ content: '※';
   .news-button button:hover {
     background-color: rgba(255, 255, 255, .2);
   }
-
 
 
   /* FBページプラグイン */

@@ -22,11 +22,10 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
 
-<link  rel="shortcut icon" href="/favicon.ico">
+<link  rel="shortcut icon" href="{% static 'images/icon.png' %}">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="{% static 'js/slidebars.js' %}"></script>
 <script src="{% static 'js/main.js' %}"></script>
-<script src="{% static 'js/application.js' %}"></script>
 
 <!-- js files in the test page -->
 <script src="{% static 'js/jquery.bxslider.min.js' %}"></script>
@@ -108,7 +107,8 @@
 <!-- mainコンテンツ：Start -->
 <div id="mainArea" class="bg-grid-white-">
 
-    <div class="container">
+    <div class="SectionBasic container">
+        <h2 class="MdsBase">Research</h2>
         <div class="row">
 
             <div id="main-content" class="col-sm-9 col-md-10">
@@ -182,12 +182,11 @@
             <span>ページ内リンク</span>
         </p>
         <ul>
-            <li class="footer-list"><a href="#">Home</a></li>
-            <li class="footer-list"><a href="#">研究</a></li>
-            <li class="footer-list"><a href="#">メンバー</a></li>
-            <li class="footer-list"><a href="#">業績</a></li>
-            <li class="footer-list"><a href="#">New</a></li>
-            <li class="footer-list"><a href="#">Lab</a></li>
+            <li class="footer-list"><a href="{% url 'tree_view:embedding' %}">Home</a></li>
+            <li class="footer-list"><a href="{% url 'tree_view:research' %}">研究</a></li>
+            <li class="footer-list"><a href="{% url 'tree_view:member' %}">メンバー</a></li>
+            <li class="footer-list"><a href="{% url 'tree_view:new' %}">New</a></li>
+            <li class="footer-list"><a href="{% url 'tree_view:embedding' %}">業績</a></li>
         </ul>
     </div>
 
@@ -238,33 +237,31 @@
 <div class="sb-slidebar sb-right">
     <ul class="sb-menu">
         <li class="sb-menu-title">MENU</li>
-        <li class="sb-close"><a href="http://www-bigdata.ist.osaka-u.ac.jp">トップページ</a></li>
-        <li class="sb-submenu-open"><a href="#" class="sb-toggle-submenu">研究内容<span class="sb-caret"></span></a>
+        <li class="sb-close"><a href="{% url 'tree_view:embedding' %}">ホーム</a></li>
+        <li class="sb-submenu-open"><a href="{% url 'tree_view:research' %}" class="sb-toggle-submenu">研究<span class="sb-caret"></span></a>
             <ul class="sb-submenu">
-                <li class="sb-close"><a href="#">メッセージ</a></li>
+                <li class="sb-close"><a href="#">グラフマイニング</a></li>
+            </ul>
+            <ul class="sb-submenu">
+                <li class="sb-close"><a href="#">自然言語処理</a></li>
+            </ul>
+            <ul class="sb-submenu">
+                <li class="sb-close"><a href="#">分散グラフ処理エンジン</a></li>
+            </ul>
+            <ul class="sb-submenu">
+                <li class="sb-close"><a href="#">発見的データ分析</a></li>
+            </ul>
+            <ul class="sb-submenu">
+                <li class="sb-close"><a href="#">IoT技術とビッグデータ</a></li>
+            </ul>
+            <ul class="sb-submenu">
+                <li class="sb-close"><a href="#">機械学習</a></li>
             </ul>
         </li>
-
-        <li class="sb-submenu-open"><a href="#" class="sb-toggle-submenu">論文<span class="sb-caret"></span></a>
-        <ul class="sb-submenu">
-            <li class="sb-close"><a href="#" target="_blank">概要</a></li>
-            <li class="sb-close"><a href="#" target="_blank">アクセス</a></li>
-        </ul>
-
-        <li class="sb-submenu-open"><a href="#" class="sb-toggle-submenu">What's new<span class="sb-caret"></span></a>
-            <ul class="sb-submenu">
-                <li class="sb-close"><a href="#">ああああ余り</a></li>
-            </ul>
-        </li>
-        <li class="sb-close"><a href="#">メンバー</a></li>
-        <li class="sb-close"><a href="#">アクセス</a></li>
-        <li class="sb-submenu-open"><a href="#" class="sb-toggle-submenu">外部リンク<span class="sb-caret"></span></a>
-            <ul class="sb-submenu">
-                <li class="sb-close"><a href="http://www.osaka-u.ac.jp/ja">大阪大学</a></li>
-                <li class="sb-close"><a href="http://www.ist.osaka-u.ac.jp/japanese">情報科学研究科</a></li>
-                <li class="sb-close"><a href="http://www-bigdata.ist.osaka-u.ac.jp/local/oniwiki">ローカル</a></li>
-            </ul>
-        </li>
+        <li class="sb-close"><a href="{% url 'tree_view:member' %}">メンバー<span class="sb-caret"></span></a></li>
+        <li class="sb-close"><a href="{% url 'tree_view:new' %}">NEW<span class="sb-caret"></span></a></li>
+        <li class="sb-close"><a href="{% url 'tree_view:embedding' %}">業績</a></li>
+        <li class="sb-close"><a href="{% url 'tree_view:embedding' %}">English<span class="sb-caret"></span></a></li>
     </ul>
 </div>
 
@@ -287,7 +284,7 @@
 </script>
 
 <script>
-// for SP hover
+// for SP hover in side bar
 $(function(){
     $('.sb-menu li')
       .bind( 'touchstart', function(){
@@ -308,107 +305,6 @@ $(function(){
     });
 
 });
-
-// scroll to each positions
-// this script is running when this page is fully loaded.
-// videoをjsでwindow sizeぴったりにresizeするので，#BgVideoWrapのheightが値が安定しない
-// 従って，最初の部分はwindow sizeから取得
-jQuery.event.add(window, "load", function(){
-
-    var header_and_video = $(window).height();
-    var header_height = $("#mainArea").get(0).offsetTop;
-
-    // Poem
-    //var position = $("#BgVideoWrap").outerHeight(true) - header_height;  // 本来の手法
-    var position = header_and_video - header_height;
-    $('.pc_sub_menu_message').click(function(){
-        $("html,body").animate({
-            scrollTop : position
-        }, {
-            queue : false
-        });
-    });
-
-    // Embedding Video
-    //var position2 = $(".VideoEmbedding").get(0).offsetTop - header_height;    // 本来の手法
-    var position2 = position + $("#Poem").outerHeight(true);
-    $('.pc_sub_menu_jobs').click(function(){
-        $("html,body").animate({
-            scrollTop : position2
-        }, {
-            queue : false
-        });
-    });
-
-    // Professors
-    //var position3 = $(".Professors").get(0).offsetTop - header_height;    // 本来の手法
-    var position3 = position2 + $(".VideoEmbedding").outerHeight(true);
-    $('.pc_sub_menu_interview').click(function(){
-        $("html,body").animate({
-            scrollTop : position3
-        }, {
-            queue : false
-        });
-    });
-
-    // Grid
-    //var position4 = position3 + $(".Professors").outerHeight(true);
-    var position4 = position3 + $(".CardStyle").outerHeight(true);
-    $('.pc_sub_menu_work').click(function(){
-        $("html,body").animate({
-            scrollTop : position4
-        }, {
-            queue : false
-        });
-    });
-
-
-});
-
-
-// Card Script
-$(function() {
-    $('.material-card > .mc-btn-action').click(function () {
-        var card = $(this).parent('.material-card');
-        var icon = $(this).children('i');
-        icon.addClass('fa-spin-fast');
-
-        if (card.hasClass('mc-active')) {
-            card.removeClass('mc-active');
-
-            window.setTimeout(function() {
-                icon
-                    .removeClass('fa-arrow-left')
-                    .removeClass('fa-spin-fast')
-                    .addClass('fa-bars');
-
-            }, 800);
-        } else {
-            card.addClass('mc-active');
-
-            window.setTimeout(function() {
-                icon
-                    .removeClass('fa-bars')
-                    .removeClass('fa-spin-fast')
-                    .addClass('fa-arrow-left');
-
-            }, 800);
-        }
-    });
-});
-
-</script>
-
-<!-- The script must be included at the bottom of the body to work -->
-<script src="{% static 'js/salvattore.min.js' %}"></script>
-{# for Animate On Scroll Library #}
-<script src="{% static 'js/aos.js' %}"></script>
-<script>
-	AOS.init({
-        duration: 700,
-        disable: 'phone',
-        delay: 400
-    });
 </script>
 
 </body>

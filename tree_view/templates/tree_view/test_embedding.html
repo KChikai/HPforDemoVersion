@@ -7,17 +7,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="format-detection" content="telephone=no">
 
-<title>動画埋め込みテストページ</title>
+<title>鬼塚研ホームページ</title>
 
 {# CSS Files #}
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="{% static 'css/slidebars.css' %}">
-<link rel="stylesheet" href="{% static 'css/footer.css' %}" />
 <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'css/slidebars.css' %}">
 <link rel="stylesheet" href="{% static 'css/top_page.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static 'css/aos.css' %}" />
 <link rel="stylesheet" href="{% static 'css/research_card.css' %}" />
+<link rel="stylesheet" href="{% static 'css/footer.css' %}" />
 
 <!-- fonts in the test page -->
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
@@ -27,7 +27,6 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="{% static 'js/slidebars.js' %}"></script>
 <script src="{% static 'js/main.js' %}"></script>
-<script src="{% static 'js/application.js' %}"></script>
 
 <!-- js files in the test page -->
 <script src="{% static 'js/jquery.bxslider.min.js' %}"></script>
@@ -254,12 +253,11 @@
             <span>ページ内リンク</span>
         </p>
         <ul>
-            <li class="footer-list"><a href="#">Home</a></li>
-            <li class="footer-list"><a href="#">研究</a></li>
-            <li class="footer-list"><a href="#">メンバー</a></li>
-            <li class="footer-list"><a href="#">業績</a></li>
-            <li class="footer-list"><a href="#">New</a></li>
-            <li class="footer-list"><a href="#">Lab</a></li>
+            <li class="footer-list"><a href="{% url 'tree_view:embedding' %}">Home</a></li>
+            <li class="footer-list"><a href="{% url 'tree_view:research' %}">研究</a></li>
+            <li class="footer-list"><a href="{% url 'tree_view:member' %}">メンバー</a></li>
+            <li class="footer-list"><a href="{% url 'tree_view:new' %}">New</a></li>
+            <li class="footer-list"><a href="{% url 'tree_view:embedding' %}">業績</a></li>
         </ul>
     </div>
 
@@ -310,8 +308,8 @@
 <div class="sb-slidebar sb-right">
     <ul class="sb-menu">
         <li class="sb-menu-title">MENU</li>
-        <li class="sb-close"><a href="http://www-bigdata.ist.osaka-u.ac.jp">ホーム</a></li>
-        <li class="sb-submenu-open"><a href="#" class="sb-toggle-submenu">研究<span class="sb-caret"></span></a>
+        <li class="sb-close"><a href="{% url 'tree_view:embedding' %}">ホーム</a></li>
+        <li class="sb-submenu-open"><a href="{% url 'tree_view:research' %}" class="sb-toggle-submenu">研究<span class="sb-caret"></span></a>
             <ul class="sb-submenu">
                 <li class="sb-close"><a href="#">グラフマイニング</a></li>
             </ul>
@@ -331,10 +329,10 @@
                 <li class="sb-close"><a href="#">機械学習</a></li>
             </ul>
         </li>
-        <li class="sb-close"><a href="#">メンバー<span class="sb-caret"></span></a></li>
-        <li class="sb-close"><a href="#">NEW<span class="sb-caret"></span></a></li>
-        <li class="sb-close"><a href="#">業績</a></li>
-        <li class="sb-close"><a href="#">English<span class="sb-caret"></span></a></li>
+        <li class="sb-close"><a href="{% url 'tree_view:member' %}">メンバー<span class="sb-caret"></span></a></li>
+        <li class="sb-close"><a href="{% url 'tree_view:new' %}">NEW<span class="sb-caret"></span></a></li>
+        <li class="sb-close"><a href="{% url 'tree_view:embedding' %}">業績</a></li>
+        <li class="sb-close"><a href="{% url 'tree_view:embedding' %}">English<span class="sb-caret"></span></a></li>
     </ul>
 </div>
 
@@ -386,7 +384,7 @@ $(function(){
 
 
 // for the latest news
-// ニューステキストの幅を固定する（hover時に動かないようにする）
+// ニューステキストの幅を固定する（hover時に文字の改行等が動かないようにする）
 $(function(){
     var parent_width = $(".LatestNews a").width();
     $(".news-text").width(parent_width - 15);
