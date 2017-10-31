@@ -1,0 +1,179 @@
+/* Material iconsを利用する */
+
+.link-year {
+    width: 70%;
+    text-align:center;
+    margin: 0 auto;
+    text-decoration:none;
+    color:black;
+    font-size:large;
+    padding: 10px;
+}
+
+a:link {
+text-decoration:none;
+}
+a:visited {
+text-decoration:none;
+}
+a:active {
+text-decoration:none;
+}
+a:hover {
+text-decoration:none;
+}
+
+.raised{
+  display: inline-block;
+  background-color: #26a69b;/*背景色*/
+  color: #ffffff;/*文字色*/
+  font-size: 1em;/*文字サイズ*/
+  line-height: 1;
+  text-decoration: none;
+  letter-spacing: 0.05em;/*字間*/
+  padding: 0.2em 1em;/*ボタン内の余白*/
+  border-radius: 3px;/*角の丸み*/
+    cursor: pointer;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);/*影*/
+  -webkit-tap-highlight-color: transparent;
+  transition: .3s ease-out;/*変化を緩やかに*/
+}
+
+.raised:hover{
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);/*浮き上がるように*/
+}
+
+
+.material-icons {
+  font-family: 'Material Icons';
+  #font-weight: bold;
+  font-style: normal;
+  font-size: larger; 
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-transform: none;
+  vertical-align:-15%;
+ 
+  /* WebKitブラウザサポート */
+  -webkit-font-smoothing: antialiased;
+  /* Chrome、Safariサポート */
+  text-rendering: optimizeLegibility;
+ 
+  /* Firefoxサポート */
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* IEサポート */
+  font-feature-settings: 'liga';
+}
+
+
+.header-year {
+    margin: 0 auto;
+
+    sw: 10px;
+    padding-bottom: 10px;
+    font-weight: bold;
+    text-align: left;
+    font-size: x-large;
+    border-bottom: 1px solid #CCCCCC;
+    margin-bottom: 10px;
+}
+
+
+.tbl-common01 {  
+    width: 70%;
+    margin: 0 auto;
+    border: 0px solid #FFFFFF;
+    #background-color: #FFFFFF;
+    font-size : 1
+    border-bottom: none;
+    padding-bottom: 50px;   
+    
+}
+
+.tbl-common01 dt {  
+    font-weight: bold;
+}
+
+
+/* スマホ
+-------------------------------------------------- */
+@media only screen and (max-width:570px) {
+    .header-year {
+        width: 90%;
+        font-size: large;
+        margin-top : -60px;
+        padding-top : 60px;
+
+    }
+    
+    .tbl-common01 {
+        width: 90%;
+        #background-color: #EEEEEE;
+    }
+    
+    .tbl-common01 dd {
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-bottom: 10px;
+    }
+    
+    .tbl-common01 dt {
+        float: none;
+        padding-top: 10px;
+        #background-color: #FFFFFF; /* 背景色を指定 */
+        border-top:0px solid #FFFFFF;
+        border-left: 0px solid #FFFFFF;
+    }
+    
+    .tbl-common01 dd {
+        #padding-left: 120px;
+        #text-align: left;
+        
+        border-top: 0px solid #666666;
+        border-bottom: 0px solid #666666;
+    }
+}
+
+
+/* PC
+-------------------------------------------------- */
+@media only screen and (min-width: 571px) {
+    .header-year {
+        width: 70%;
+        margin-top : -110px;
+        padding-top : 110px;
+    }
+    .tbl-common01 {
+        width: 70%;
+        /* background: #FFFFFF;/* dlで背景画像をyリピートし、dtの背景色のように見せる。positionはdtの幅に応じて調整 */
+    }
+    .tbl-common01 dt,
+    .tbl-common01 dd {
+        padding-left: 20px;
+        padding-top: 8px;
+        padding-bottom:8px;
+    }
+    
+    .tbl-common01 dt {
+        clear: both;
+        float: left;
+        width: 140px; /* 幅を指定 */
+        border-top: 0px solid #FFFFFF;
+    }
+    
+    .tbl-common01 dd {
+        padding-left: 160px; /* dtの分、左にpaddingを取る */
+        border-top: 0px solid #FFFFFF;
+        border-bottom: 0px solid #CCCCCC;
+        border-left: 0px solid #FFFFFF;
+    }
+}
+
+.clearfix:after{
+    content: "";
+    clear: both;
+    display: block;
+}

@@ -84,6 +84,7 @@
 .material-card.mc-active h2 {
   top: 0;
   padding: 10px 16px 10px 90px;
+  height: 156px;
 }
 .material-card.mc-active h2:before {
   top: 0;
@@ -125,7 +126,7 @@
   transition: all 0.3s;
 }
 .material-card.mc-active .mc-btn-action {
-  top: 62px;
+  top: 86px;
 }
 .material-card .mc-description {
   position: absolute;
@@ -164,6 +165,10 @@
   -ms-transition: all 1.4s;
   -o-transition: all 1.4s;
   transition: all 1.4s;
+}
+.material-card .mc-footer p {
+  padding-right:14px;
+  margin-top:-11px;
 }
 .material-card .mc-footer a {
   display: block;
@@ -265,7 +270,7 @@
     top: auto;
     right: auto;
     left: auto;
-    padding: 75px 30px 70px 30px;
+    padding: 80px 30px 70px 30px;
     bottom: 0;
   }
 /*}*/
@@ -277,7 +282,7 @@
   top: calc(100% - 16px);
   left: 16px;
   right: 0;
-  height: 82px;
+  height: 52px;
   padding-top: 15px;
   padding-left: 25px;
 }
@@ -338,6 +343,56 @@
   border-color: #FFEBEE;
 }
 
+.material-card.Green h2 {
+  background-color: #109445;
+}
+.material-card.Green h2:after {
+  border-top-color: #109445;
+  border-right-color: #109445;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+}
+.material-card.Green h2:before {
+  border-top-color: transparent;
+  border-right-color: #0b5629;
+  border-bottom-color: #0b5629;
+  border-left-color: transparent;
+}
+.material-card.Green.mc-active h2:before {
+  border-top-color: transparent;
+  border-right-color: #109445;
+  border-bottom-color: #109445;
+  border-left-color: transparent;
+}
+.material-card.Green.mc-active h2:after {
+  border-top-color: #0b5629;
+  border-right-color: #0b5629;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+}
+.material-card.Green .mc-btn-action {
+  background-color: #109445;
+}
+.material-card.Green .mc-btn-action:hover {
+  background-color: #096930;
+}
+.material-card.Green .mc-footer h4 {
+  color: #1e840d;
+}
+.material-card.Green .mc-footer a {
+  background-color: #B71C1C;
+}
+
+
+.material-card.Green.mc-active .mc-content {
+    background-color: #f1fff5;
+}
+.material-card.Green.mc-active .mc-footer {
+    background-color: #c9ffd0;
+}
+.material-card.Green.mc-active .mc-btn-action {
+  border-color: #FFEBEE;
+}
 
 body {
   background-color: #ECEFF1;

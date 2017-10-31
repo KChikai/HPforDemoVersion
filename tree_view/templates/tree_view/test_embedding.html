@@ -13,11 +13,10 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="{% static 'css/slidebars.css' %}">
+<link rel="stylesheet" href="{% static 'css/footer.css' %}" />
 <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static 'css/top_page.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static 'css/aos.css' %}" />
-<link rel="stylesheet" href="{% static 'css/news_card.css' %}" />
-<link rel="stylesheet" href="{% static 'css/footer.css' %}" />
 <link rel="stylesheet" href="{% static 'css/research_card.css' %}" />
 
 <!-- fonts in the test page -->
@@ -60,9 +59,9 @@
         <div id="pc_menu">
             <ul class="pc_navi">
                 <li class="now_display_header"><a href="{% url 'tree_view:embedding' %}"><span>Home</span></a></li>
-                <li class="menu-hover"><a href="{% url 'tree_view:embedding' %}"><span>研究</span></a></li>
-                <li class="menu-hover"><a href="{% url 'tree_view:embedding' %}"><span>メンバー</span></a></li>
-                <li class="menu-hover"><a href="{% url 'tree_view:embedding' %}"><span>Lab</span></a></li>
+                <li class="menu-hover"><a href="{% url 'tree_view:research' %}"><span>研究</span></a></li>
+                <li class="menu-hover"><a href="{% url 'tree_view:member' %}"><span>メンバー</span></a></li>
+                <li class="menu-hover"><a href="{% url 'tree_view:new' %}"><span>New</span></a></li>
                 <li class="menu-hover"><a href="{% url 'tree_view:embedding' %}"><span>業績</span></a></li>
                 <li class="menu-hover"><a href="{% url 'tree_view:embedding' %}"><span>English</span></a></li>
             </ul>
@@ -89,7 +88,6 @@
         <div class='BgVideoOverlay'></div>
         <video id="BgVideo" autoplay loop muted>
             <source src="{% static 'images/test.m4v' %}" />
-{#            <source src="{% static 'images/test-oga.mp4' %}" type="video/mp4" />#}
         </video>
         <h1 class="PageTitle"><img src="{% static 'images/logo_white.png' %}" alt="Onizuka Lab logo"></h1>
         <div class="ScrollDown"><img class="scroll-img" src="{% static 'images/sc.gif' %}" alt="SCROLL DOWN"></div>
@@ -222,7 +220,7 @@
             <div>
                 {% if latest_news_list %}
                     {% for news in latest_news_list%}
-                        <a href="{% url 'tree_view:embedding' %}#{{ news.id }}">
+                        <a href="{% url 'tree_view:new' %}#{{ news.id }}">
                             <p class="news-text"><span>{{ news.date.year }}/{{ news.date.month }}/{{ news.date.day }}</span>  {{ news.text_ja }}</p>
                         </a>
                     {% endfor %}

@@ -1,0 +1,415 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+
+<title>研究内容</title>
+
+{# CSS Files #}
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'css/slidebars.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'css/top_page.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'css/footer.css' %}" type="text/css">
+
+
+<!-- fonts in the test page -->
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+
+<link  rel="shortcut icon" href="/favicon.ico">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="{% static 'js/slidebars.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/application.js' %}"></script>
+
+<!-- js files in the test page -->
+<script src="{% static 'js/jquery.bxslider.min.js' %}"></script>
+<script src="{% static 'js/top_page.js' %}"></script>
+</head>
+<style>
+    .bg-grid-white {
+        border-bottom: 1px solid lightgray;
+        background: white;
+        background-image: url({% static 'images/grid.png' %});
+    }
+    .bg-grid-gray {
+        border-bottom: 1px solid lightgray;
+        background: #ECEFF1;
+        background-image: url({% static 'images/grid.png' %});
+    }
+    .upper-size {
+        max-width: 500px;
+    }
+    .horizontally-centered {
+        margin: 0 auto;
+        display: block;
+    }
+    .list-group-item > a {
+        color: #333 !important;
+        text-decoration: none;
+    }
+    .fixed {
+        position: fixed;
+    }
+    @media only screen and (max-width: 768px) {
+         #mainArea {
+            padding-top: 0px;
+        }
+        #side-content {
+            display: hidden;
+        }
+        .upper-size {
+            max-width: 100%;
+        }
+    }
+</style>
+<body>
+
+{# Header part #}
+<div id="header" class="cf">
+
+    {# PC以外用 #}
+    <div id="header_inner" class="cf">
+        <div id="logo">
+            <a href="http://www-bigdata.ist.osaka-u.ac.jp"><img src="{% static 'images/header_logo_bk.png' %}" class="switch" alt=""></a>
+        </div>
+        <div id="menu">
+            <img src="{% static 'images/menu.png' %}" alt="" class="sb-toggle-right">
+        </div>
+    </div><!--#header_inner-->
+
+    {# PC上側 #}
+    <div id="pc_header_inner" class="cf">
+        <div id="pc_logo">
+            <a href="http://www-bigdata.ist.osaka-u.ac.jp">
+                <img src="{% static 'images/header_logo_bk.png' %}" class="switch" alt="">
+            </a>
+        </div>
+        <div id="pc_menu">
+            <ul class="pc_navi">
+                <li class="menu-hover"><a href="{% url 'tree_view:embedding' %}"><span>Home</span></a></li>
+                <li class="now_display_header"><a href="{% url 'tree_view:research' %}"><span>研究</span></a></li>
+                <li class="menu-hover"><a href="{% url 'tree_view:member' %}"><span>メンバー</span></a></li>
+                <li class="menu-hover"><a href="{% url 'tree_view:new' %}"><span>New</span></a></li>
+                <li class="menu-hover"><a href="{% url 'tree_view:research' %}"><span>業績</span></a></li>
+                <li class="menu-hover"><a href="{% url 'tree_view:embedding' %}"><span>English</span></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!-- mainコンテンツ：Start -->
+<div id="mainArea" class="bg-grid-white-">
+
+    <div class="container">
+        <div class="row">
+
+            <div id="main-content" class="col-sm-9 col-md-10">
+                <section class="SectionBasic" id="sec-distributed-processing">
+                    <h2 class="MdsBase">分散データ処理エンジン</h2>
+                    <p class="LeadMain">分散データ処理エンジンとは，数100台を超えるコンピュータを使って大量なビッグデータをリアルタイムで分析処理する技術であり，Google や Facebook を含めて多くの企業で利用されています．ビッグデータ工学講座では，MapReduce に代表される分散データ処理エンジンに関する高速化技術に関する研究を行っており，特に OLAP 分析・クラスタ解析・PageRank計算・相関ルールマイニング・行列分解などの分析処理の特徴を捉えることで，処理を最適化する分散データ処理技術に取り組んでいます．またビッグデータを安心して利用するため自動的にデータを匿名化するセキュアなデータマイニング技術についても取り組んでいます．</p>
+                    <img class="horizontally-centered" src="{% static 'images/research-distributed-processing.png' %}" alt="distributed processing">
+                </section>
+
+                <section class="SectionBasic" id="sec-graph-mining">
+                    <h2 class="MdsBase">グラフマイニング技術</h2>
+                    <p class="LeadMain">グラフマイニングとは，「どの人がどこで何を買った・何を見た」などの，人・モノ・場所の関係に関するデータをグラフ構造で表現して，得られる大規模なグラフデータを用いて，モノを推薦したり，影響力のある人物を発見したり，世の中のトレンドを分析したりする技術です．
+                    ビッグデータ工学講座では，グラフのクラスタ解析・ PageRankを高速に処理するアルゴリズムに関する研究と，これらのアルゴリズムを利用するにあたってどのようにグラフ構造のデータを構築し，どのようにグラフ構造の時間的な変化を捉えるかといった，グラフ分析における試行錯誤を伴う分析操作を自動化する技術について取り組んでいます</p>
+                    <img class="horizontally-centered"  src="{% static 'images/research-graph-mining.png' %}" alt="graph mining">
+                </section>
+
+                <section class="SectionBasic" id="sec-conversation-system">
+                    <h2 class="MdsBase">対話システム</h2>
+                    <p class="LeadMain">言葉を理解し、気持ちを察し、人間のような会話をする対話システムの実現を目指し、研究に取り組んでいます。特に日常会話をするチャットボットと呼ばれるサービスを研究対象としています。
+                    私たちのグループでは検索ベース・生成ベースの２つのアプローチを研究しています。
+                    １．検索ベースの手法：大規模な過去の対話データから、適切な発話を検索し、ユーザに応答します。
+                    ２．生成ベースの手法：様々な機械学習の手法を用い、会話を生成します。
+                    この研究ではMicrosoftリサーチアジアCORE共同研究プロジェクトの支援のもと、日本マイクロソフト社のサービスであるりんなとの共同研究を行っています。</p>
+                    <img class="horizontally-centered upper-size" src="{% static 'images/research-conversation-system-jp.png' %}" alt="conversation system">
+                </section>
+
+                <section class="SectionBasic" id="sec-machine-translation">
+                    <h2 class="MdsBase">機械翻訳</h2>
+                    <p class="LeadMain">言語の壁はコミュニケーションにおいて大きく立ちはだかる困難です。時に誤解や争いの原因ともなります。私たちは言語の壁のない世界を目指し、機械翻訳の研究に取り組んでいます。特にニューラルネットワークを用いた機械翻訳をターゲットにしており、日本語や英語のようなメジャーな言語だけでなく、マイナー言語の翻訳にも興味を持っています。</p>
+                    <img class="horizontally-centered upper-size" src="{% static 'images/research-machine-translation.png' %}" alt="machine translation">
+                </section>
+
+                <section class="SectionBasic" id="sec-learning-support">
+                    <h2 class="MdsBase">言語学習支援</h2>
+                    <p class="LeadMain">外国語の習得は重要かつ有益ですが、そのプロセスは困難に満ちています。私たちは言語学習者、また語学教員を支援するシステムの研究開発に取り組んでいます。これまで英語レベルを自動で判定するシステム、英語教材のレベルを自動で調整するシステムを開発しています。</p>
+                </section>
+            </div>
+
+            <div id="side-content" class="col-sm-3 col-md-2">
+                <nav class="fixed" style="margin-top:30px;">
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-success">ビッグデータ工学</li>
+                        <li class="list-group-item"><a href="" data-target="#sec-distributed-processing" class="inner-link">分散データ処理エンジン</a></li>
+                        <li class="list-group-item"><a href="" data-target="#sec-graph-mining" class="inner-link">グラフマイニング技術</a></li>
+                        <li class="list-group-item list-group-item-success">自然言語処理</li>
+                        <li class="list-group-item"><a href="" data-target="#sec-conversation-system" class="inner-link">対話システム</a></li>
+                        <li class="list-group-item"><a href="" data-target="#sec-machine-translation" class="inner-link">機械翻訳</a></li>
+                        <li class="list-group-item"><a href="" data-target="#sec-learning-support" class="inner-link">言語学習支援</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+{# footer #}
+<footer class="footer-distributed">
+    <div class="footer-left">
+        <h3>Onizuka<span>Lab.</span></h3>
+        <p class="footer-company-about">
+            大阪大学情報科学研究科<br>
+            マルチメディア工学専攻<br>
+            ビッグデータ工学講座鬼塚研究室
+        </p>
+        <br>
+        <p class="footer-company-about">
+            <span>ページ内リンク</span>
+        </p>
+        <ul>
+            <li class="footer-list"><a href="#">Home</a></li>
+            <li class="footer-list"><a href="#">研究</a></li>
+            <li class="footer-list"><a href="#">メンバー</a></li>
+            <li class="footer-list"><a href="#">業績</a></li>
+            <li class="footer-list"><a href="#">New</a></li>
+            <li class="footer-list"><a href="#">Lab</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-center">
+        <div>
+            <i class="fa fa-map-marker"></i><br>
+            <p><span>〒565-0871 大阪府吹田市山田丘1-5 <br>
+                大阪大学 情報科学研究科C棟</span>
+            </p>
+        </div>
+        <div>
+            <i class="fa fa-phone"></i><br>
+            <p>+1 555 123456</p>
+        </div>
+        <div>
+            <i class="fa fa-envelope"></i><br>
+            <p><a href="mailto:support@company.com">onizuka@ist.osaka-u.ac.jp</a></p>
+        </div>
+    </div>
+
+    <div class="footer-right">
+        <p class="footer-company-about">
+            <span>外部リンク</span>
+        </p>
+        <p>
+            <li class="footer-list"><a href="http://www.ist.osaka-u.ac.jp/japanese/research/majors/mm/course.html" target="_blank">マルチメディア工学専攻</a></li>
+            <li class="footer-list"><a href="http://www.ist.osaka-u.ac.jp/japanese/index.html" target="_blank">情報科学研究科</a></li>
+            <li class="footer-list"><a href="http://www.eng.osaka-u.ac.jp/ja/index.html" target="_blank">工学研究科・工学部</a></li>
+            <li class="footer-list"><a href="http://www.es.osaka-u.ac.jp/" target="_blank">基礎工学部</a></li>
+            <li class="footer-list"><a href="http://www.osaka-u.ac.jp/ja" target="_blank">大阪大学</a></li>
+            <li class="footer-list"><a href="http://www.library.osaka-u.ac.jp/" target="_blank">大阪大学付属図書館</a></li>
+            <li class="footer-list"><a href="http://www-bigdata.ist.osaka-u.ac.jp/local/oniwiki" target="_blank">鬼塚研Wiki (Local)</a></li>
+        </p>
+        <div class="footer-icons">
+            <a href="https://hub.docker.com/u/gpolab/"><i class="fa fa-docker"></i></a>
+            <a href="https://twitter.com/monizuka"><i class="fa fa-twitter"></i></a>
+            <a href="https://github.com/OnizukaLab/"><i class="fa fa-github"></i></a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        Copyright &copy; 2017 Onizuka Lab. All rights reserved.
+    </div>
+</footer>
+
+
+{# slide bar for Smart Phone #}
+<div class="sb-slidebar sb-right">
+    <ul class="sb-menu">
+        <li class="sb-menu-title">MENU</li>
+        <li class="sb-close"><a href="http://www-bigdata.ist.osaka-u.ac.jp">トップページ</a></li>
+        <li class="sb-submenu-open"><a href="#" class="sb-toggle-submenu">研究内容<span class="sb-caret"></span></a>
+            <ul class="sb-submenu">
+                <li class="sb-close"><a href="#">メッセージ</a></li>
+            </ul>
+        </li>
+
+        <li class="sb-submenu-open"><a href="#" class="sb-toggle-submenu">論文<span class="sb-caret"></span></a>
+        <ul class="sb-submenu">
+            <li class="sb-close"><a href="#" target="_blank">概要</a></li>
+            <li class="sb-close"><a href="#" target="_blank">アクセス</a></li>
+        </ul>
+
+        <li class="sb-submenu-open"><a href="#" class="sb-toggle-submenu">What's new<span class="sb-caret"></span></a>
+            <ul class="sb-submenu">
+                <li class="sb-close"><a href="#">ああああ余り</a></li>
+            </ul>
+        </li>
+        <li class="sb-close"><a href="#">メンバー</a></li>
+        <li class="sb-close"><a href="#">アクセス</a></li>
+        <li class="sb-submenu-open"><a href="#" class="sb-toggle-submenu">外部リンク<span class="sb-caret"></span></a>
+            <ul class="sb-submenu">
+                <li class="sb-close"><a href="http://www.osaka-u.ac.jp/ja">大阪大学</a></li>
+                <li class="sb-close"><a href="http://www.ist.osaka-u.ac.jp/japanese">情報科学研究科</a></li>
+                <li class="sb-close"><a href="http://www-bigdata.ist.osaka-u.ac.jp/local/oniwiki">ローカル</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+
+
+{# jquery #}
+<script>
+    $(function(){
+        var headerHight = $('#header').height();
+        $('#mainArea').css('margin-top', headerHight);
+
+        $('.inner-link').click(function(event){
+            var href = $(this).data("target");
+            var target = ( href == "#" || href == "" ) ? 'html' : href ;
+            var position = $(target).offset().top-headerHight; //ヘッダの高さ分位置をずらす
+            $("html, body").animate({scrollTop:position}, 550, "swing");
+            return false;
+        });
+    });
+</script>
+
+<script>
+// for SP hover
+$(function(){
+    $('.sb-menu li')
+      .bind( 'touchstart', function(){
+        $( this ).addClass( 'hover' );
+    }).bind( 'touchend', function(){
+        setTimeout(function(){
+            $('.sb-menu li').removeClass('hover');
+            },350);
+    });
+
+    $('.sb-close a')
+      .bind( 'touchstart', function(){
+        $( this ).addClass( 'hover' );
+    }).bind( 'touchend', function(){
+        setTimeout(function(){
+            $('.sb-menu li').removeClass('hover');
+            },350);
+    });
+
+});
+
+// scroll to each positions
+// this script is running when this page is fully loaded.
+// videoをjsでwindow sizeぴったりにresizeするので，#BgVideoWrapのheightが値が安定しない
+// 従って，最初の部分はwindow sizeから取得
+jQuery.event.add(window, "load", function(){
+
+    var header_and_video = $(window).height();
+    var header_height = $("#mainArea").get(0).offsetTop;
+
+    // Poem
+    //var position = $("#BgVideoWrap").outerHeight(true) - header_height;  // 本来の手法
+    var position = header_and_video - header_height;
+    $('.pc_sub_menu_message').click(function(){
+        $("html,body").animate({
+            scrollTop : position
+        }, {
+            queue : false
+        });
+    });
+
+    // Embedding Video
+    //var position2 = $(".VideoEmbedding").get(0).offsetTop - header_height;    // 本来の手法
+    var position2 = position + $("#Poem").outerHeight(true);
+    $('.pc_sub_menu_jobs').click(function(){
+        $("html,body").animate({
+            scrollTop : position2
+        }, {
+            queue : false
+        });
+    });
+
+    // Professors
+    //var position3 = $(".Professors").get(0).offsetTop - header_height;    // 本来の手法
+    var position3 = position2 + $(".VideoEmbedding").outerHeight(true);
+    $('.pc_sub_menu_interview').click(function(){
+        $("html,body").animate({
+            scrollTop : position3
+        }, {
+            queue : false
+        });
+    });
+
+    // Grid
+    //var position4 = position3 + $(".Professors").outerHeight(true);
+    var position4 = position3 + $(".CardStyle").outerHeight(true);
+    $('.pc_sub_menu_work').click(function(){
+        $("html,body").animate({
+            scrollTop : position4
+        }, {
+            queue : false
+        });
+    });
+
+
+});
+
+
+// Card Script
+$(function() {
+    $('.material-card > .mc-btn-action').click(function () {
+        var card = $(this).parent('.material-card');
+        var icon = $(this).children('i');
+        icon.addClass('fa-spin-fast');
+
+        if (card.hasClass('mc-active')) {
+            card.removeClass('mc-active');
+
+            window.setTimeout(function() {
+                icon
+                    .removeClass('fa-arrow-left')
+                    .removeClass('fa-spin-fast')
+                    .addClass('fa-bars');
+
+            }, 800);
+        } else {
+            card.addClass('mc-active');
+
+            window.setTimeout(function() {
+                icon
+                    .removeClass('fa-bars')
+                    .removeClass('fa-spin-fast')
+                    .addClass('fa-arrow-left');
+
+            }, 800);
+        }
+    });
+});
+
+</script>
+
+<!-- The script must be included at the bottom of the body to work -->
+<script src="{% static 'js/salvattore.min.js' %}"></script>
+{# for Animate On Scroll Library #}
+<script src="{% static 'js/aos.js' %}"></script>
+<script>
+	AOS.init({
+        duration: 700,
+        disable: 'phone',
+        delay: 400
+    });
+</script>
+
+</body>
+</html>

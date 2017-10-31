@@ -70,7 +70,6 @@ body {
   font-size: 12px;
   line-height: 1.7;
   color: #333;
-  background: #fff;
   background-size: 100% auto;
   overflow-x: auto;
 }
@@ -115,10 +114,51 @@ a:hover {
   height: 30px;
   margin: 11px 11px 0 0;
 }
-　
+
 #main {
   padding: 10px 0 0;
 }
+
+
+#footer {
+  padding: 10px;
+  font-size: 10px;
+  background: #000;
+  border-top: 1px solid #dad8d2;
+}
+
+#footer ul {
+  float: right;
+  height:40px;
+}
+
+#footer li {
+  display: block;
+  float: left;
+  padding: 0 5px;
+  border-right: 1px solid #dad8d2;
+}
+
+#footer li a{
+  color: white;
+}
+
+#footer .li_last {
+  border: none;
+}
+
+#footer ul#sns_box {
+  float: left;
+  width: 100%;
+  margin: 10px 0 0;
+}
+
+#footer ul#sns_box li {
+  border: none;
+  display: block;
+  float: left;
+}
+
 
 
 /* /////////  SLIDEBAR for SP ///////////////////////////////////////////*/
@@ -131,6 +171,10 @@ a:hover {
 #sb-site, .sb-site-container {
   /* override slidemenu library style */
   background-color: transparent;
+}
+
+body#recruit_top #sb-site, body#recruit_top .sb-site-container {
+  background-color: #fff;
 }
 
 
@@ -167,10 +211,6 @@ a:hover {
   transition: .2s;
 }
 
-/*.sb-slidebar li a:hover {*/
-  /*border-left: 20px solid white;*/
-  /*color: #a9a9a9;*/
-/*}*/
 
 .sb-slidebar li.hover a.hover{
   border-left: 20px solid darkblue;
@@ -217,6 +257,9 @@ a:hover {
 /* ---------  common for PC  ---------*/
 
 @media only screen and (min-width: 769px) {
+  body {
+    /*background-image: url("../images/body4.jpg");*/
+  }
 
   #container {
     /*width: 970px;*/
@@ -239,6 +282,70 @@ a:hover {
     height: 100px;
     margin: 0;
   }
+  #dropmenu {
+    width: 600px;
+    height: 40px;
+    margin: 30px 0 0;
+    list-style-type: none;
+  }
+  #dropmenu li {
+    position: relative;
+    float: left;
+    padding: 0;
+    width: 70px;
+    margin: 0 30px 0 0;
+    text-align: center;
+  }
+  #dropmenu li.first {
+    width: 100px;
+  }
+  #dropmenu li.last {
+    margin: 0;
+  }
+  #dropmenu li a {
+    display: block;
+    padding: 15px 0 11px;
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1;
+    text-decoration: none;
+  }
+  #dropmenu li ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: none;
+    z-index: 1500;
+    width: 200%;
+  }
+  #dropmenu li ul li {
+    width: 100%;
+    color: #fff;
+    border-top: 1px solid #fff;
+    margin: 0;
+  }
+  #dropmenu li ul li:first-child {
+    border-top: none;
+  }
+  #dropmenu li ul li a {
+    line-height: 1.6;
+    padding: 10px 15px;
+    font-size: 12px;
+    font-weight: normal;
+    color: #fff;
+    text-align: left;
+    background-color: #442515;
+  }
+  #dropmenu li ul li a:hover {
+    color: #ffb43b;
+  }
+  #dropmenu li:hover ul li:first-child {
+    border-top: 0;
+  }
   #main {
     padding: 10px 0 0;
   }
@@ -260,9 +367,143 @@ a:hover {
     margin: 36px 0 0;
     font-size: 14px;
   }
+  #footer {
+    padding: 20px 0;
+    clear: both;
+    font-size: 12px;
+  }
+  #footer ul#sns_box {
+  width: 40%;
+  margin: 0;
+  }
+
+  .dotted_box h4,
+  .contents_box h4,
+  .service_box h4,
+  .img_max_box h4 {
+    margin: 0 0 20px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .dotted_box li,
+  .contents_box li {
+    padding: 0 0 5px 15px;
+    margin: 0 0 10px;
+    line-height: 1.4;
+  }
+  .dotted_box .link_list li,
+  .contents_box .link_list li {
+    padding: 0 0 0 20px;
+    margin: 0 0 30px;
+    line-height: 1.4;
+  }
+  .h3_bg {
+    padding: 5px 20px;
+    margin: 0 0 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background: #f1efe9;
+  }
+  .contents_box {
+    margin: 0 0 40px;
+  }
+  .contents_box dl {
+    padding: 20px 0;
+    border-bottom: dotted 1px #bebbb2;
+  }
+  .contents_box dt {
+    float: left;
+    width: 20%;
+    margin: 0;
+    font-weight: bold;
+  }
+  .contents_box dd {
+    float: left;
+    width: 80%;
+    padding: 0;
+    margin: 0;
+    border: none;
+  }
+  .contents_box dd.border_none {
+    padding: 0 0 20px;
+  }
+
+  .uniform_height {
+    display: table;
+  }
+  .uniform_height_middle {
+    width: 30px;
+  }
+  .service_box,
+  .project_box,
+  .welfare_box {
+    display: table-cell;
+    width: 430px;
+    padding: 30px 0;
+    border-bottom: dotted 1px #bebbb2;
+  }
+  .service_box_L {
+    width: 890px;
+  }
+  .service_box_right,
+  .project_box_right,
+  .welfare_box_right {
+    display: table-cell;
+    margin: 0 0 30px 0;
+  }
+  .project_box h3.h3_border,
+  .welfare_box h3.h3_border {
+    font-size: 18px;
+  }
+  .welfare_box img {
+    margin: 0 auto 20px;
+  }
+  .map_sp {
+    display: none;
+  }
+  .map_pc {
+    display: block;
+    width: 600px;
+    margin: 30px auto 0;
+  }
+
+
+  .default_box_link,
+  .top_box_link {
+    display: block;
+  }
+  .default_box_link {
+    float: left;
+    width: 240px;
+    height: 180px;
+  }
+  .default_box_link img,
+  .comming_soon { /* remove it if it has released */
+    float: left;
+    width: 240px;
+    height: 180px;
+  }
+  .top_box_link img {
+    width: 480px;
+    height: 360px;
+  }
+  .job_box {
+    margin: 0 0 30px;
+    width: 430px;
+    padding: 30px 0;
+    display: table-cell;
+    border-bottom: dotted 1px #bebbb2;
+  }
+  .job_box h4 {
+    margin-bottom: 0;
+  }
+  .job_box h4 + p {
+    font-size: 90%;
+    margin: 0 0 15px 1px;
+    color: #666;
+  }
 
 }
-
 
 #header {
   position: fixed;
@@ -270,6 +511,7 @@ a:hover {
   width: 100%;
   background: #000000;
 }
+
 
 /* PC用headerの幅 */
 #pc_header_inner {
@@ -437,18 +679,15 @@ a:hover {
 }
 
 
-#pc_menu .pc_navi .now_display_header span:after {
-  display: block;
-  content: " ";
-  position: relative;
-  bottom: -30px;
-  width: 0;
-  height: 0;
-  left: 50%;
-  margin-left: -6px;
-  border-style: solid;
-  border-width: 0 7px 7px;
-  border-color: transparent transparent #fff;
+  .navigation_menu li {
+  border-right: 1px solid #e6e6e6;
+  display: table-cell;
+  width: 25%;
+  box-sizing: border-box;
+  }
+
+  .navigation_menu li a {
+  font-size: 16px;
   }
 
 
@@ -469,6 +708,7 @@ a:hover {
   background: #000000;
   }
 
+
   #top-banner {
     padding-top: 70px;
   }
@@ -485,12 +725,36 @@ a:hover {
   .map_pc {
     display: none;
   }
+  .interview_list_panel {
+    display: none;
+  }
+  .default_box_link .interview_comment_box {
+    display: none;
+  }
   .back-to-top-container {
     display: none;
   }
 
+  #interview_list .interview_list_box .interview_comment_box .inner span {
+    display: none;
+  }
   .sb-slidebar {
     top: 53px;
+  }
+  .navigation_menu li {
+    display: inline-block;
+    width: 50%;
+    box-sizing: border-box;
+    border-right: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+  }
+
+  .navigation_menu li.publication {
+    border-right: none;
+  }
+
+  .navigation_menu li a {
+    font-size: 12px;
   }
   .searchCategory ul {
     display: none;

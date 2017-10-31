@@ -1,0 +1,232 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+
+<title>News</title>
+
+{# CSS Files #}
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/slidebars.css' %}">
+<link rel="stylesheet" href="{% static 'css/footer.css' %}" />
+<link rel="stylesheet" href="{% static 'css/member.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'css/top_page.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'css/new.css' %}" />
+
+
+    
+
+<!-- fonts in the test page -->
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+
+<link  rel="shortcut icon" href="{% static 'images/icon.png' %}">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="{% static 'js/slidebars.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/application.js' %}"></script>
+
+<!-- js files in the test page -->
+<script src="{% static 'js/jquery.bxslider.min.js' %}"></script>
+<script src="{% static 'js/top_page.js' %}"></script>
+</head>
+
+<body>
+
+{# Header part #}
+<div id="header" class="cf">
+
+    {# PC以外用 #}
+    <div id="header_inner" class="cf">
+        <div id="logo">
+            <a href="http://www-bigdata.ist.osaka-u.ac.jp"><img src="{% static 'images/header_logo_bk.png' %}" class="switch" alt=""></a>
+        </div>
+        <div id="menu">
+            <img src="{% static 'images/menu.png' %}" alt="" class="sb-toggle-right">
+        </div>
+    </div><!--#header_inner-->
+
+    {# PC上側 #}
+    <div id="pc_header_inner" class="cf">
+        <div id="pc_logo">
+            <a href="http://www-bigdata.ist.osaka-u.ac.jp">
+                <img src="{% static 'images/header_logo_bk.png' %}" class="switch" alt="">
+            </a>
+        </div>
+        <div id="pc_menu">
+            <ul class="pc_navi">
+                <li class="menu-hover"><a href="{% url 'tree_view:embedding' %}"><span>Home</span></a></li>
+                <li class="menu-hover"><a href="{% url 'tree_view:embedding' %}"><span>研究</span></a></li>
+                <li class="menu-hover"><a href="{% url 'tree_view:member' %}"><span>メンバー</span></a></li>
+                <li class="now_display_header"><a href="{% url 'tree_view:new' %}"><span>New</span></a></li>
+                <li class="menu-hover"><a href="{% url 'tree_view:embedding' %}"><span>業績</span></a></li>
+                <li class="menu-hover"><a href="{% url 'tree_view:embedding' %}"><span>English</span></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!-- mainコンテンツ：Start -->
+<div id="mainArea">
+    {#  for PC (padding)  #}
+    <div style ="padding-top:110px;"  class="PC">
+
+    </div>
+
+    
+    <section class = "clearfix">
+        <h2 class = "MdsBase">News</h2>
+        <div class="link-year">
+        |
+        {% for news_anniversal in news %}
+            <a href="#{{ news_anniversal.0 }}">{{ news_anniversal.0 }}</a> |
+        {% endfor %}
+        </div>
+        
+        {% for news_anniversal in news %}
+
+            <div class="header-year" id="{{ news_anniversal.0 }}" >
+                <i class="material-icons">event</i> {{ news_anniversal.0 }}年度
+                <section style="float:right;padding-right:20px;padding-top:10px;text-align:right;font-size:small;">
+                    <a href="#top">↑このページの先頭に戻る</a>
+                </section>
+            </div>
+            <dl class="tbl-common01">
+            {% for article in news_anniversal.1 %}
+                <dt>{{ article.date }}</dt>
+                <dd id="{{ article.id }}">
+                    {{ article.text_ja|safe }}
+                </dd>
+            {% endfor %}
+            </dl>
+        {% endfor %}
+    </section>
+
+
+</div>
+
+
+{# footer #}
+<footer class="footer-distributed">
+    <div class="footer-left">
+        <h3>Onizuka<span>Lab.</span></h3>
+        <p class="footer-company-about">
+            大阪大学情報科学研究科<br>
+            マルチメディア工学専攻<br>
+            ビッグデータ工学講座鬼塚研究室
+        </p>
+        <br>
+        <p class="footer-company-about">
+            <span>ページ内リンク</span>
+        </p>
+        <ul>
+            <li class="footer-list"><a href="#">Home</a></li>
+            <li class="footer-list"><a href="#">研究</a></li>
+            <li class="footer-list"><a href="#">メンバー</a></li>
+            <li class="footer-list"><a href="#">業績</a></li>
+            <li class="footer-list"><a href="#">New</a></li>
+            <li class="footer-list"><a href="#">Lab</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-center">
+        <div>
+            <i class="fa fa-map-marker"></i><br>
+            <p><span>〒565-0871 大阪府吹田市山田丘1-5 <br>
+                大阪大学 情報科学研究科C棟</span>
+            </p>
+        </div>
+        <div>
+            <i class="fa fa-phone"></i><br>
+            <p>+1 555 123456</p>
+        </div>
+        <div>
+            <i class="fa fa-envelope"></i><br>
+            <p><a href="mailto:support@company.com">onizuka@ist.osaka-u.ac.jp</a></p>
+        </div>
+    </div>
+
+    <div class="footer-right">
+        <p class="footer-company-about">
+            <span>外部リンク</span>
+        </p>
+        <p>
+            <li class="footer-list"><a href="http://www.ist.osaka-u.ac.jp/japanese/research/majors/mm/course.html" target="_blank">マルチメディア工学専攻</a></li>
+            <li class="footer-list"><a href="http://www.ist.osaka-u.ac.jp/japanese/index.html" target="_blank">情報科学研究科</a></li>
+            <li class="footer-list"><a href="http://www.eng.osaka-u.ac.jp/ja/index.html" target="_blank">工学研究科・工学部</a></li>
+            <li class="footer-list"><a href="http://www.es.osaka-u.ac.jp/" target="_blank">基礎工学部</a></li>
+            <li class="footer-list"><a href="http://www.osaka-u.ac.jp/ja" target="_blank">大阪大学</a></li>
+            <li class="footer-list"><a href="http://www.library.osaka-u.ac.jp/" target="_blank">大阪大学付属図書館</a></li>
+            <li class="footer-list"><a href="http://www-bigdata.ist.osaka-u.ac.jp/local/oniwiki" target="_blank">鬼塚研Wiki (Local)</a></li>
+        </p>
+        <div class="footer-icons">
+            <a href="https://hub.docker.com/u/gpolab/"><i class="fa fa-docker"></i></a>
+            <a href="https://twitter.com/monizuka"><i class="fa fa-twitter"></i></a>
+            <a href="https://github.com/OnizukaLab/"><i class="fa fa-github"></i></a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        Copyright &copy; 2017 Onizuka Lab. All rights reserved.
+    </div>
+</footer>
+
+
+{# slide bar for Smart Phone #}
+<div class="sb-slidebar sb-right">
+    <ul class="sb-menu">
+        <li class="sb-menu-title">MENU</li>
+        <li class="sb-close"><a href="http://www-bigdata.ist.osaka-u.ac.jp">トップページ</a></li>
+        <li class="sb-submenu-open"><a href="#" class="sb-toggle-submenu">研究内容<span class="sb-caret"></span></a>
+            <ul class="sb-submenu">
+                <li class="sb-close"><a href="#">メッセージ</a></li>
+            </ul>
+        </li>
+
+        <li class="sb-submenu-open"><a href="#" class="sb-toggle-submenu">論文<span class="sb-caret"></span></a>
+        <ul class="sb-submenu">
+            <li class="sb-close"><a href="#" target="_blank">概要</a></li>
+            <li class="sb-close"><a href="#" target="_blank">アクセス</a></li>
+        </ul>
+
+        <li class="sb-submenu-open"><a href="#" class="sb-toggle-submenu">What's new<span class="sb-caret"></span></a>
+            <ul class="sb-submenu">
+                <li class="sb-close"><a href="#">ああああ余り</a></li>
+            </ul>
+        </li>
+        <li class="sb-close"><a href="#">メンバー</a></li>
+        <li class="sb-close"><a href="#">アクセス</a></li>
+        <li class="sb-submenu-open"><a href="#" class="sb-toggle-submenu">外部リンク<span class="sb-caret"></span></a>
+            <ul class="sb-submenu">
+                <li class="sb-close"><a href="http://www.osaka-u.ac.jp/ja">大阪大学</a></li>
+                <li class="sb-close"><a href="http://www.ist.osaka-u.ac.jp/japanese">情報科学研究科</a></li>
+                <li class="sb-close"><a href="http://www-bigdata.ist.osaka-u.ac.jp/local/oniwiki">ローカル</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+
+
+<!-- The script must be included at the bottom of the body to work -->
+<script src="{% static 'js/salvattore.min.js' %}"></script>
+{# for Animate On Scroll Library #}
+<script src="{% static 'js/aos.js' %}"></script>
+<script>
+	AOS.init({
+        duration: 700,
+        disable: 'phone',
+        delay: 400
+    });
+</script>
+
+</body>
+</html>
+
