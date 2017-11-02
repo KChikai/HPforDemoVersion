@@ -1,0 +1,1246 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+
+<title>Member</title>
+
+{# CSS Files #}
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'css/slidebars.css' %}">
+<link rel="stylesheet" href="{% static 'css/base_style.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'css/top_page.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'css/salvattore.css' %}" />
+<link rel="stylesheet" href="{% static 'css/aos.css' %}" />
+<link rel="stylesheet" href="{% static 'css/member_card.css' %}" />
+
+<!-- fonts in the test page -->
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+
+<link  rel="shortcut icon" href="{% static 'images/icon.png' %}">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="{% static 'js/slidebars.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+
+<!-- js files in the test page -->
+<script src="{% static 'js/jquery.bxslider.min.js' %}"></script>
+<script src="{% static 'js/top_page.js' %}"></script>
+</head>
+
+
+<body>
+
+{# Header part #}
+<div id="header" class="cf">
+
+    {# PC以外用 #}
+    <div id="header_inner" class="cf">
+        <div id="logo">
+            <a href="http://www-bigdata.ist.osaka-u.ac.jp"><img src="{% static 'images/header_logo_bk.png' %}" class="switch" alt=""></a>
+        </div>
+        <div id="menu">
+            <img src="{% static 'images/menu.png' %}" alt="" class="sb-toggle-right">
+        </div>
+    </div>
+
+    {# PC上側 #}
+    <div id="pc_header_inner" class="cf">
+        <div id="pc_logo">
+            <a href="http://www-bigdata.ist.osaka-u.ac.jp">
+                <img src="{% static 'images/header_logo_bk.png' %}" class="switch" alt="">
+            </a>
+        </div>
+        <div id="pc_menu">
+            <ul class="pc_navi">
+                <li class="menu-hover"><a href="{% url 'homepage:home_en' %}"><span>Home</span></a></li>
+                <li class="menu-hover"><a href="{% url 'homepage:research_en' %}"><span>Research</span></a></li>
+                <li class="now_display_header"><a href="{% url 'homepage:member_en' %}"><span>Member</span></a></li>
+                <li class="menu-hover"><a href="{% url 'homepage:new_en' %}"><span>New</span></a></li>
+                <li class="menu-hover"><a href="{% url 'homepage:paper_en' %}"><span>Paper</span></a></li>
+                <li class="menu-hover"><a href="{% url 'homepage:member' %}"><span>Japanese</span></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!-- mainコンテンツ：Start -->
+<div id="mainArea">
+    <section class="SectionBasic ResearchCard ColumnUnit">
+        <h2 class="MdsBase">Professors</h2>
+        <p class="LeadMain">鬼塚研究室では下記の４名が、各分野のエキスパートとして活躍しています。</p>
+        <div class="grid" data-columns>
+            <div class="EachBox box1">
+                <article class="material-card Red">
+                    <h2>
+                        <span>鬼塚 真 教授</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            Database Researcher
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="{% static 'images/onizuka2.png' %}">
+                        </div>
+                        <div class="mc-description">
+                            Data is the new oil (データは新しい石油である)という言葉に代表されるように，
+                            ビッグデータを処理することで知識やルールを発見して，
+                            社会的あるいは経済的なインパクトを 生み出すことが期待されています．
+                            私はこの中で特に，1)大量の計算機を利用した分散データ処理技術，2)高速グラフマイニングアルゴリズム，
+                            3)分析結果の可視化技術に取り組んでいます．
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            E-mail address*
+                        </h4>
+                        <p>makoto at</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="EachBox box2">
+                <article class="material-card Red">
+                    <h2>
+                        <span>荒瀬 由紀 准教授</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            NLP Researcher
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="{% static 'images/arase2.jpg' %}">
+                        </div>
+                        <div class="mc-description">
+                            言語は人間にとってもっとも自然なコミュニケーション手段の一つであり，長い歴史のなかで知識や経験の伝達に使われてきました．
+                            コンピュータでこのような大量の言語データを解析し，そこに現れる言語現象を理解することで，
+                            人間の社会を構成する知識の抽出と活用が可能になり，ひいては人間の知性の解明につながります．
+                            言語理解の第一歩として，ビッグデータからの言いかえ表現抽出と生成に取り組んでいます．
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            E-mail address*
+                        </h4>
+                        <p>arase at</p>
+                    </div>
+                </article>
+            </div>
+            <div class="EachBox box3">
+                <article class="material-card Red">
+                    <h2>
+                        <span>藤原 靖宏 招へい准教授</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            Database Researcher
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="{% static 'images/nodata.png' %}">
+                        </div>
+                        <div class="mc-description">
+
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                    </div>
+                </article>
+            </div>
+            <div class="EachBox box3">
+                <article class="material-card Red">
+                    <h2>
+                        <span>佐々木 勇和 助教</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            Database Researcher
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="{% static 'images/sasaki2.png' %}">
+                        </div>
+                        <div class="mc-description">
+                            Kaho
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            E-mail address*
+                        </h4>
+                        <p>sasaki@ist.osaka-u.ac.jo</p>
+                    </div>
+                </article>
+            </div>
+
+
+        </div>
+        <!--博士課程の部分-->
+        <h2 class="MdsBase">Ph.D students</h2>
+        <div class="grid" data-columns>
+            <div class="EachBox box3">
+                <article class="material-card Green">
+                    <h2>
+                        <span>新井 淳也</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            Database Researcher
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="{% static 'images/nodata.png' %}">
+                        </div>
+                        <div class="mc-description">
+
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            E-mail address*
+                        </h4>
+                        <p>arai.junya at</p>
+                    </div>
+                </article>
+            </div>
+            <div class="EachBox box3">
+                <article class="material-card Green">
+                    <h2>
+                        <span>山室 健</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            Database Researcher
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="{% static 'images/nodata.png' %}">
+                        </div>
+                        <div class="mc-description">
+
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            E-mail address*
+                        </h4>
+                        <p>yamamuro.takeshi at</p>
+                    </div>
+                </article>
+            </div><div class="EachBox box3">
+    <article class="material-card Green">
+        <h2>
+            <span>田中 貴秋</span>
+            <strong>
+                <i class="fa fa-fw fa-star"></i>
+                NLP Researcher
+            </strong>
+        </h2>
+        <div class="mc-content">
+            <div class="img-container">
+                <img class="img-responsive" src="{% static 'images/nodata.png' %}">
+            </div>
+            <div class="mc-description">
+
+            </div>
+        </div>
+        <a class="mc-btn-action">
+            <i class="fa fa-bars"></i>
+        </a>
+        <div class="mc-footer">
+            <h4>
+                E-mail address*
+            </h4>
+            <p>tanaka.takaaki at</p>
+        </div>
+    </article>
+</div>
+        </div>
+        <!--修士２回生の部分-->
+        <h2 class="MdsBase">Second Year Master Course students</h2>
+        <div class="grid" data-columns>
+            <div class="EachBox box3">
+                <article class="material-card Green">
+                    <h2>
+                        <span>伊藤 竜一</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            Database Researcher
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="{% static 'images/nodata.png' %}">
+                        </div>
+                        <div class="mc-description">
+
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            E-mail address*
+                        </h4>
+                        <p>ito.ryuichi at</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="EachBox box3">
+                <article class="material-card Green">
+                    <h2>
+                        <span>小笠原 麻斗</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            Database Researcher
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="{% static 'images/nodata.png' %}">
+                        </div>
+                        <div class="mc-description">
+
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            E-mail address*
+                        </h4>
+                        <p>ogasawara.asato at</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="EachBox box3">
+                <article class="material-card Green">
+                    <h2>
+                        <span>瓦 祐希</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            NLP Researcher
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="{% static 'images/nodata.png' %}">
+                        </div>
+                        <div class="mc-description">
+
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            E-mail address*
+                        </h4>
+                        <p>kawara.yuki at</p>
+                    </div>
+
+                </article>
+            </div>
+
+            <div class="EachBox box3">
+                <article class="material-card Green">
+                    <h2>
+                        <span>近藤 舜介</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            DataBase Researcher
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="{% static 'images/nodata.png' %}">
+                        </div>
+                        <div class="mc-description">
+
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            E-mail address*
+                        </h4>
+                        <p>kondo.shunsuke at</p>
+                    </div>
+
+                </article>
+            </div>
+
+            <div class="EachBox box3">
+                <article class="material-card Green">
+                    <h2>
+                        <span>高田 祥平</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            NLP Researcher
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="{% static 'images/nodata.png' %}">
+                        </div>
+                        <div class="mc-description">
+
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            E-mail address*
+                        </h4>
+                        <p>takada.syouhei at</p>
+                    </div>
+
+                </article>
+            </div>
+
+            <div class="EachBox box3">
+                <article class="material-card Green">
+                    <h2>
+                        <span>近井 厚三</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            NLP Researcher
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="{% static 'images/nodata.png' %}">
+                        </div>
+                        <div class="mc-description">
+
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            E-mail address*
+                        </h4>
+                        <p>chikai.kozo at</p>
+                    </div>
+
+                </article>
+            </div>
+
+            <div class="EachBox box3">
+                <article class="material-card Green">
+                    <h2>
+                        <span>中嶋 篤宏</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            Database Researcher
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="{% static 'images/nodata.png' %}">
+                        </div>
+                        <div class="mc-description">
+
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            E-mail address*
+                        </h4>
+                        <p>nakashima.atsuhiro at</p>
+                    </div>
+
+                </article>
+            </div>
+
+        </div>
+        <!--修士１回生の部分-->
+        <h2 class="MdsBase">Frist Year Master Course students</h2>
+        <div class="grid" data-columns>
+            <div class="EachBox box3">
+                <article class="material-card Green">
+                    <h2>
+                        <span>五十川 真生</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            NLP Researcher
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="{% static 'images/isogawa_mao.png' %}">
+                        </div>
+                        <div class="mc-description">
+                            雑談こそAIに必要不可欠な機能である。そういう思いを持って、研究室のメンバーと日々研究に励んでいます。
+                            現在は雑談対話システムのための必要なデータを収集する機構の実装に取り組んでいます。
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            E-mail address*
+                        </h4>
+                        <p>isogawa.mao at</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="EachBox box3">
+                <article class="material-card Green">
+                    <h2>
+                        <span>佐々木 健太</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            Database Researcher
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="{% static 'images/nodata.png' %}">
+                        </div>
+                        <div class="mc-description">
+
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            E-mail address*
+                        </h4>
+                        <p>sasaki.kenta at</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="EachBox box3">
+                <article class="material-card Green">
+                    <h2>
+                        <span>高山 隼矢</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            NLP Researcher
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="{% static 'images/nodata.png' %}">
+                        </div>
+                        <div class="mc-description">
+
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            E-mail address*
+                        </h4>
+                        <p>takayama.junya at</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="EachBox box3">
+                <article class="material-card Green">
+                    <h2>
+                        <span>竹林 佑斗</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            NLP Researcher
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="{% static 'images/nodata.png' %}">
+                        </div>
+                        <div class="mc-description">
+
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            E-mail address*
+                        </h4>
+                        <p>takebayashi.yuto at</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="EachBox box3">
+                <article class="material-card Green">
+                    <h2>
+                        <span>永田 耕平</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            Database Researcher
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="{% static 'images/nodata.png' %}">
+                        </div>
+                        <div class="mc-description">
+
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            E-mail address*
+                        </h4>
+                        <p>nagata.kohei at</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="EachBox box3">
+                <article class="material-card Green">
+                    <h2>
+                        <span>前川 政司</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            Database Researcher
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="{% static 'images/nodata.png' %}">
+                        </div>
+                        <div class="mc-description">
+
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            E-mail address*
+                        </h4>
+                        <p>maekawa.seiji at</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="EachBox box3">
+                <article class="material-card Green">
+                    <h2>
+                        <span>Yuan Peilin</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            Database Researcher
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="{% static 'images/nodata.png' %}">
+                        </div>
+                        <div class="mc-description">
+
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            E-mail address*
+                        </h4>
+                        <p>yuan.peilin at</p>
+                    </div>
+                </article>
+            </div>
+
+        </div>
+        <!--学部４回生の部分-->
+        <h2 class="MdsBase">Fourth Year Undergraduate students</h2>
+        <div class="grid" data-columns>
+            <div class="EachBox box3">
+                <article class="material-card Green">
+                    <h2>
+                        <span>芦原 和樹</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            NLP Researcher
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="{% static 'images/nodata.png' %}">
+                        </div>
+                        <div class="mc-description">
+
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            E-mail address*
+                        </h4>
+                        <p>ashihara.kazuki at</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="EachBox box3">
+                <article class="material-card Green">
+                    <h2>
+                        <span>Afifah Mohd Shabri</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            NLP Researcher
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="{% static 'images/nodata.png' %}">
+                        </div>
+                        <div class="mc-description">
+
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            E-mail address*
+                        </h4>
+                        <p>afifah.ms at</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="EachBox box3">
+                <article class="material-card Green">
+                    <h2>
+                        <span>曽我 洋史</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            Database Researcher
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="{% static 'images/nodata.png' %}">
+                        </div>
+                        <div class="mc-description">
+
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            E-mail address*
+                        </h4>
+                        <p>soga.hirofumi at</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="EachBox box3">
+                <article class="material-card Green">
+                    <h2>
+                        <span>田中 昂志</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            NLP Researcher
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="{% static 'images/nodata.png' %}">
+                        </div>
+                        <div class="mc-description">
+
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            E-mail address*
+                        </h4>
+                        <p>tanaka.koji at</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="EachBox box3">
+                <article class="material-card Green">
+                    <h2>
+                        <span>野本 英梨子</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            NLP Researcher
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="{% static 'images/nodata.png' %}">
+                        </div>
+                        <div class="mc-description">
+
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            E-mail address*
+                        </h4>
+                        <p>nomoto.eriko at</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="EachBox box3">
+                <article class="material-card Green">
+                    <h2>
+                        <span>原田 圭</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            Database Researcher
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="{% static 'images/nodata.png' %}">
+                        </div>
+                        <div class="mc-description">
+
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            E-mail address*
+                        </h4>
+                        <p>harada.kei at</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="EachBox box3">
+                <article class="material-card Green">
+                    <h2>
+                        <span>松本 拓海</span>
+                        <strong>
+                            <i class="fa fa-fw fa-star"></i>
+                            Database Researcher
+                        </strong>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="{% static 'images/nodata.png' %}">
+                        </div>
+                        <div class="mc-description">
+
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                        <h4>
+                            E-mail address*
+                        </h4>
+                        <p>matsumoto.takumi at</p>
+                    </div>
+                </article>
+            </div>
+
+            </div>
+        <!--学部３回生の部分-->
+        <h2 class="MdsBase">Thrid Year Undergraduate students</h2>
+        <div class="grid" data-columns>
+                <div class="EachBox box3">
+                    <article class="material-card Green">
+                        <h2>
+                            <span>三浦 びわ</span>
+                            <strong>
+                                <i class="fa fa-fw fa-star"></i>
+                                NLP Researcher
+                            </strong>
+                        </h2>
+                        <div class="mc-content">
+                            <div class="img-container">
+                                <img class="img-responsive" src="{% static 'images/nodata.png' %}">
+                            </div>
+                            <div class="mc-description">
+
+                            </div>
+                        </div>
+                        <a class="mc-btn-action">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                        <div class="mc-footer">
+                            <h4>
+                                E-mail address*
+                            </h4>
+                            <p>miura.biwa at</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="EachBox box3">
+                    <article class="material-card Green">
+                        <h2>
+                            <span>涌田 悠佑</span>
+                            <strong>
+                                <i class="fa fa-fw fa-star"></i>
+                                Database Researcher
+                            </strong>
+                        </h2>
+                        <div class="mc-content">
+                            <div class="img-container">
+                                <img class="img-responsive" src="{% static 'images/nodata.png' %}">
+                            </div>
+                            <div class="mc-description">
+
+                            </div>
+                        </div>
+                        <a class="mc-btn-action">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                        <div class="mc-footer">
+                            <h4>
+                                E-mail address*
+                            </h4>
+                            <p>wakuta.yusuke at</p>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        <!--研究生の部分-->
+        <h2 class="MdsBase">Research students</h2>
+        <div class="grid" data-columns>
+                <div class="EachBox box3">
+                    <article class="material-card Green">
+                        <h2>
+                            <span>Faith Wavinya</span>
+                            <strong>
+                                <i class="fa fa-fw fa-star"></i>
+                                Database Researcher
+                            </strong>
+                        </h2>
+                        <div class="mc-content">
+                            <div class="img-container">
+                                <img class="img-responsive" src="{% static 'images/nodata.png' %}">
+                            </div>
+                            <div class="mc-description">
+
+                            </div>
+                        </div>
+                        <a class="mc-btn-action">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                        <div class="mc-footer">
+                            <h4>
+                                E-mail address*
+                            </h4>
+                            <p>arai.junya at</p>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        <!--訪問学生の部分-->
+        <h2 class="MdsBase">Visit students</h2>
+        <div class="grid" data-columns>
+                <div class="EachBox box3">
+                    <article class="material-card Green">
+                        <h2>
+                            <span>Hu Shuguang</span>
+                            <strong>
+                                <i class="fa fa-fw fa-star"></i>
+                                Database Researcher
+                            </strong>
+                        </h2>
+                        <div class="mc-content">
+                            <div class="img-container">
+                                <img class="img-responsive" src="{% static 'images/nodata.png' %}">
+                            </div>
+                            <div class="mc-description">
+
+                            </div>
+                        </div>
+                        <a class="mc-btn-action">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                        <div class="mc-footer">
+                            <h4>
+                                E-mail address*
+                            </h4>
+                            <p>wavinya.faith at</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        <!--秘書の部分-->
+        <h2 class="MdsBase">Clerical staff</h2>
+        <div class="grid" data-columns>
+            <div class="EachBox box3">
+                <article class="material-card Green">
+                    <h2>
+                        <span>八川 三保子</span>
+                    </h2>
+                    <div class="mc-content">
+                        <div class="img-container">
+                            <img class="img-responsive" src="{% static 'images/nodata.png' %}">
+                        </div>
+                        <div class="mc-description">
+
+                        </div>
+                    </div>
+                    <a class="mc-btn-action">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="mc-footer">
+                    </div>
+                </article>
+            </div>
+        </div>
+        <p class="LeadMain">*atを@ist.osaka-u.ac.jpに変換してください</p>
+    </section>
+</div>
+
+
+
+{# footer #}
+<footer class="footer-distributed">
+    <div class="footer-left">
+        <h3>Onizuka<span>Lab.</span></h3>
+        <p class="footer-company-about">
+            大阪大学情報科学研究科<br>
+            マルチメディア工学専攻<br>
+            ビッグデータ工学講座鬼塚研究室
+        </p>
+        <br>
+        <p class="footer-company-about">
+            <span>Link in this home page</span>
+        </p>
+        <ul>
+            <li class="footer-list"><a href="{% url 'homepage:home_en' %}">Home</a></li>
+            <li class="footer-list"><a href="{% url 'homepage:research_en' %}">Research</a></li>
+            <li class="footer-list"><a href="{% url 'homepage:member_en' %}">Member</a></li>
+            <li class="footer-list"><a href="{% url 'homepage:new_en' %}">New</a></li>
+            <li class="footer-list"><a href="{% url 'homepage:paper_en' %}">Paper</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-center">
+        <div>
+            <i class="fa fa-map-marker"></i><br>
+            <p><span>〒565-0871 大阪府吹田市山田丘1-5 <br>
+                大阪大学 情報科学研究科C棟</span>
+            </p>
+        </div>
+        <div>
+            <i class="fa fa-phone"></i><br>
+            <p>+1 555 123456</p>
+        </div>
+        <div>
+            <i class="fa fa-envelope"></i><br>
+            <p><a href="mailto:support@company.com">onizuka@ist.osaka-u.ac.jp</a></p>
+        </div>
+    </div>
+
+    <div class="footer-right">
+        <p class="footer-company-about">
+            <span>外部リンク</span>
+        </p>
+        <p>
+            <li class="footer-list"><a href="http://www.ist.osaka-u.ac.jp/japanese/research/majors/mm/course.html" target="_blank">マルチメディア工学専攻</a></li>
+            <li class="footer-list"><a href="http://www.ist.osaka-u.ac.jp/japanese/index.html" target="_blank">情報科学研究科</a></li>
+            <li class="footer-list"><a href="http://www.eng.osaka-u.ac.jp/ja/index.html" target="_blank">工学研究科・工学部</a></li>
+            <li class="footer-list"><a href="http://www.es.osaka-u.ac.jp/" target="_blank">基礎工学部</a></li>
+            <li class="footer-list"><a href="http://www.osaka-u.ac.jp/ja" target="_blank">大阪大学</a></li>
+            <li class="footer-list"><a href="http://www.library.osaka-u.ac.jp/" target="_blank">大阪大学付属図書館</a></li>
+            <li class="footer-list"><a href="http://www-bigdata.ist.osaka-u.ac.jp/local/oniwiki" target="_blank">鬼塚研Wiki (Local)</a></li>
+        </p>
+        <div class="footer-icons">
+            <a href="https://hub.docker.com/u/gpolab/"><i class="fa fa-docker"></i></a>
+            <a href="https://twitter.com/monizuka"><i class="fa fa-twitter"></i></a>
+            <a href="https://github.com/OnizukaLab/"><i class="fa fa-github"></i></a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        Copyright &copy; 2017 Onizuka Lab. All rights reserved.
+    </div>
+</footer>
+
+
+
+{# slide bar for Smart Phone #}
+<div class="sb-slidebar sb-right">
+    <ul class="sb-menu">
+        <li class="sb-menu-title">MENU</li>
+        <li class="sb-close"><a href="{% url 'homepage:home' %}">ホーム</a></li>
+        <li class="sb-submenu-open"><a href="{% url 'homepage:research' %}" class="sb-toggle-submenu">研究<span class="sb-caret"></span></a>
+            <ul class="sb-submenu">
+                <li class="sb-close"><a href="#">グラフマイニング</a></li>
+            </ul>
+            <ul class="sb-submenu">
+                <li class="sb-close"><a href="#">自然言語処理</a></li>
+            </ul>
+            <ul class="sb-submenu">
+                <li class="sb-close"><a href="#">分散グラフ処理エンジン</a></li>
+            </ul>
+            <ul class="sb-submenu">
+                <li class="sb-close"><a href="#">発見的データ分析</a></li>
+            </ul>
+            <ul class="sb-submenu">
+                <li class="sb-close"><a href="#">IoT技術とビッグデータ</a></li>
+            </ul>
+            <ul class="sb-submenu">
+                <li class="sb-close"><a href="#">機械学習</a></li>
+            </ul>
+        </li>
+        <li class="sb-close"><a href="{% url 'homepage:member' %}">メンバー<span class="sb-caret"></span></a></li>
+        <li class="sb-close"><a href="{% url 'homepage:new' %}">NEW<span class="sb-caret"></span></a></li>
+        <li class="sb-close"><a href="{% url 'homepage:paper' %}">業績</a></li>
+        <li class="sb-close"><a href="{% url 'homepage:home' %}">English<span class="sb-caret"></span></a></li>
+    </ul>
+</div>
+
+
+{# jquery #}
+<script>
+
+// for header (to add margin-top to main area)
+$(function(){
+    var headerHight = $('#header').height();
+    $('#mainArea').css('margin-top', headerHight);
+});
+
+// for SP hover
+$(function(){
+    $('.sb-menu li')
+      .bind( 'touchstart', function(){
+        $( this ).addClass( 'hover' );
+    }).bind( 'touchend', function(){
+        setTimeout(function(){
+            $('.sb-menu li').removeClass('hover');
+            },350);
+    });
+
+    $('.sb-close a')
+      .bind( 'touchstart', function(){
+        $( this ).addClass( 'hover' );
+    }).bind( 'touchend', function(){
+        setTimeout(function(){
+            $('.sb-menu li').removeClass('hover');
+            },350);
+    });
+
+});
+
+
+// Card Script
+$(function() {
+    $('.material-card > .mc-btn-action').click(function () {
+        var card = $(this).parent('.material-card');
+        var icon = $(this).children('i');
+        icon.addClass('fa-spin-fast');
+
+        if (card.hasClass('mc-active')) {
+            card.removeClass('mc-active');
+
+            window.setTimeout(function() {
+                icon
+                    .removeClass('fa-arrow-left')
+                    .removeClass('fa-spin-fast')
+                    .addClass('fa-bars');
+
+            }, 800);
+        } else {
+            card.addClass('mc-active');
+
+            window.setTimeout(function() {
+                icon
+                    .removeClass('fa-bars')
+                    .removeClass('fa-spin-fast')
+                    .addClass('fa-arrow-left');
+
+            }, 800);
+        }
+    });
+});
+
+</script>
+
+<!-- The script must be included at the bottom of the body to work -->
+<script src="{% static 'js/salvattore.min.js' %}"></script>
+{# for Animate On Scroll Library #}
+<script src="{% static 'js/aos.js' %}"></script>
+<script>
+	AOS.init({
+        duration: 700,
+        disable: 'phone',
+        delay: 400
+    });
+</script>
+
+</body>
+</html>

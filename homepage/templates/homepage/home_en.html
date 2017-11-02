@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="format-detection" content="telephone=no">
 
-<title>鬼塚研ホームページ</title>
+<title>Onizuka Lab Home Page</title>
 
 {# CSS Files #}
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -56,12 +56,12 @@
         </div>
         <div id="pc_menu">
             <ul class="pc_navi">
-                <li class="now_display_header"><a href="{% url 'homepage:home' %}"><span>Home</span></a></li>
-                <li class="menu-hover"><a href="{% url 'homepage:research' %}"><span>研究</span></a></li>
-                <li class="menu-hover"><a href="{% url 'homepage:member' %}"><span>メンバー</span></a></li>
-                <li class="menu-hover"><a href="{% url 'homepage:new' %}"><span>New</span></a></li>
-                <li class="menu-hover"><a href="{% url 'homepage:paper' %}"><span>業績</span></a></li>
-                <li class="menu-hover"><a href="{% url 'homepage:home_en' %}"><span>English</span></a></li>
+                <li class="now_display_header"><a href="{% url 'homepage:home_en' %}"><span>Home</span></a></li>
+                <li class="menu-hover"><a href="{% url 'homepage:research_en' %}"><span>Research</span></a></li>
+                <li class="menu-hover"><a href="{% url 'homepage:member_en' %}"><span>Member</span></a></li>
+                <li class="menu-hover"><a href="{% url 'homepage:new_en' %}"><span>New</span></a></li>
+                <li class="menu-hover"><a href="{% url 'homepage:paper_en' %}"><span>Paper</span></a></li>
+                <li class="menu-hover"><a href="{% url 'homepage:home' %}"><span>Japanese</span></a></li>
             </ul>
         </div>
     </div><!-- #pc_header_inner -->
@@ -270,14 +270,14 @@
         </p>
         <br>
         <p class="footer-company-about">
-            <span>ページ内リンク</span>
+            <span>Link in this home Page</span>
         </p>
         <ul>
-            <li class="footer-list"><a href="{% url 'homepage:home' %}">Home</a></li>
-            <li class="footer-list"><a href="{% url 'homepage:research' %}">研究</a></li>
-            <li class="footer-list"><a href="{% url 'homepage:member' %}">メンバー</a></li>
-            <li class="footer-list"><a href="{% url 'homepage:new' %}">New</a></li>
-            <li class="footer-list"><a href="{% url 'homepage:paper' %}">業績</a></li>
+            <li class="footer-list"><a href="{% url 'homepage:home_en' %}">Home</a></li>
+            <li class="footer-list"><a href="{% url 'homepage:research_en' %}">Research</a></li>
+            <li class="footer-list"><a href="{% url 'homepage:member_en' %}">Member</a></li>
+            <li class="footer-list"><a href="{% url 'homepage:new_en' %}">New</a></li>
+            <li class="footer-list"><a href="{% url 'homepage:paper_en' %}">Paper</a></li>
         </ul>
     </div>
 
@@ -300,7 +300,7 @@
 
     <div class="footer-right">
         <p class="footer-company-about">
-            <span>外部リンク</span>
+            <span>Link Outside</span>
         </p>
         <p>
             <li class="footer-list"><a href="http://www.ist.osaka-u.ac.jp/japanese/research/majors/mm/course.html" target="_blank">マルチメディア工学専攻</a></li>
@@ -352,7 +352,7 @@
         <li class="sb-close"><a href="{% url 'homepage:member' %}">メンバー<span class="sb-caret"></span></a></li>
         <li class="sb-close"><a href="{% url 'homepage:new' %}">NEW<span class="sb-caret"></span></a></li>
         <li class="sb-close"><a href="{% url 'homepage:paper' %}">業績</a></li>
-        <li class="sb-close"><a href="{% url 'homepage:home_en' %}">English<span class="sb-caret"></span></a></li>
+        <li class="sb-close"><a href="{% url 'homepage:home' %}">English<span class="sb-caret"></span></a></li>
     </ul>
 </div>
 
