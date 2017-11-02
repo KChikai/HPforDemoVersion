@@ -1,9 +1,6 @@
-#mainArea{
-    background: #f5f5f5;
-}
-
 
 #mainArea .result-space {
+    background: #f1fff5;
     min-height: 450px;
 }
 
