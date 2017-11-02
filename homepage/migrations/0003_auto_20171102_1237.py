@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('tree_view', '0002_auto_20171030_1435'),
+        ('homepage', '0002_auto_20171030_1435'),
     ]
 
     operations = [
@@ -34,6 +34,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='author',
             name='papers',
-            field=models.ManyToManyField(to='tree_view.Paper'),
+            field=models.ManyToManyField(to='homepage.Paper'),
         ),
     ]

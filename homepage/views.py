@@ -5,14 +5,14 @@ from .models import New, Paper, Author
 from . import APP_LABEL
 
 
-def embedding(request):
+def home(request):
     # 最新5件のニュースをデータベースから取得
     obj_latest_5 = New.objects.order_by('-date')[:5]
     context = {'latest_news_list': obj_latest_5}
     if len(context['latest_news_list']) == 0:
-        return render(request, APP_LABEL + '/test_embedding.html')
+        return render(request, APP_LABEL + '/home.html')
     else:
-        return render(request, APP_LABEL + '/test_embedding.html', context)
+        return render(request, APP_LABEL + '/home.html', context)
 
 
 def research(request):

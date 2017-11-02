@@ -1,5 +1,5 @@
 from django.contrib import admin
-from tree_view.models import New, Paper, Author
+from homepage.models import New, Paper, Author
 
 
 # Register your models here.

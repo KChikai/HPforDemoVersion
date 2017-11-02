@@ -56,12 +56,12 @@
         </div>
         <div id="pc_menu">
             <ul class="pc_navi">
-                <li class="now_display_header"><a href="{% url 'tree_view:embedding' %}"><span>Home</span></a></li>
-                <li class="menu-hover"><a href="{% url 'tree_view:research' %}"><span>研究</span></a></li>
-                <li class="menu-hover"><a href="{% url 'tree_view:member' %}"><span>メンバー</span></a></li>
-                <li class="menu-hover"><a href="{% url 'tree_view:new' %}"><span>New</span></a></li>
-                <li class="menu-hover"><a href="{% url 'tree_view:paper' %}"><span>業績</span></a></li>
-                <li class="menu-hover"><a href="{% url 'tree_view:embedding' %}"><span>English</span></a></li>
+                <li class="now_display_header"><a href="{% url 'homepage:home' %}"><span>Home</span></a></li>
+                <li class="menu-hover"><a href="{% url 'homepage:research' %}"><span>研究</span></a></li>
+                <li class="menu-hover"><a href="{% url 'homepage:member' %}"><span>メンバー</span></a></li>
+                <li class="menu-hover"><a href="{% url 'homepage:new' %}"><span>New</span></a></li>
+                <li class="menu-hover"><a href="{% url 'homepage:paper' %}"><span>業績</span></a></li>
+                <li class="menu-hover"><a href="{% url 'homepage:home' %}"><span>English</span></a></li>
             </ul>
         </div>
     </div><!-- #pc_header_inner -->
@@ -217,7 +217,7 @@
             <div>
                 {% if latest_news_list %}
                     {% for news in latest_news_list%}
-                        <a href="{% url 'tree_view:new' %}#{{ news.id }}">
+                        <a href="{% url 'homepage:new' %}#{{ news.id }}">
                             <p class="news-text"><span>{{ news.date.year }}/{{ news.date.month }}/{{ news.date.day }}</span>  {{ news.text_ja }}</p>
                         </a>
                     {% endfor %}
@@ -227,7 +227,7 @@
             </div>
         </div>
         <div class="news-button">
-            <a href="{% url 'tree_view:new' %}">
+            <a href="{% url 'homepage:new' %}">
                 <button>Read More</button>
             </a>
         </div>
@@ -273,11 +273,11 @@
             <span>ページ内リンク</span>
         </p>
         <ul>
-            <li class="footer-list"><a href="{% url 'tree_view:embedding' %}">Home</a></li>
-            <li class="footer-list"><a href="{% url 'tree_view:research' %}">研究</a></li>
-            <li class="footer-list"><a href="{% url 'tree_view:member' %}">メンバー</a></li>
-            <li class="footer-list"><a href="{% url 'tree_view:new' %}">New</a></li>
-            <li class="footer-list"><a href="{% url 'tree_view:paper' %}">業績</a></li>
+            <li class="footer-list"><a href="{% url 'homepage:home' %}">Home</a></li>
+            <li class="footer-list"><a href="{% url 'homepage:research' %}">研究</a></li>
+            <li class="footer-list"><a href="{% url 'homepage:member' %}">メンバー</a></li>
+            <li class="footer-list"><a href="{% url 'homepage:new' %}">New</a></li>
+            <li class="footer-list"><a href="{% url 'homepage:paper' %}">業績</a></li>
         </ul>
     </div>
 
@@ -328,8 +328,8 @@
 <div class="sb-slidebar sb-right">
     <ul class="sb-menu">
         <li class="sb-menu-title">MENU</li>
-        <li class="sb-close"><a href="{% url 'tree_view:embedding' %}">ホーム</a></li>
-        <li class="sb-submenu-open"><a href="{% url 'tree_view:research' %}" class="sb-toggle-submenu">研究<span class="sb-caret"></span></a>
+        <li class="sb-close"><a href="{% url 'homepage:home' %}">ホーム</a></li>
+        <li class="sb-submenu-open"><a href="{% url 'homepage:research' %}" class="sb-toggle-submenu">研究<span class="sb-caret"></span></a>
             <ul class="sb-submenu">
                 <li class="sb-close"><a href="#">グラフマイニング</a></li>
             </ul>
@@ -349,10 +349,10 @@
                 <li class="sb-close"><a href="#">機械学習</a></li>
             </ul>
         </li>
-        <li class="sb-close"><a href="{% url 'tree_view:member' %}">メンバー<span class="sb-caret"></span></a></li>
-        <li class="sb-close"><a href="{% url 'tree_view:new' %}">NEW<span class="sb-caret"></span></a></li>
-        <li class="sb-close"><a href="{% url 'tree_view:paper' %}">業績</a></li>
-        <li class="sb-close"><a href="{% url 'tree_view:embedding' %}">English<span class="sb-caret"></span></a></li>
+        <li class="sb-close"><a href="{% url 'homepage:member' %}">メンバー<span class="sb-caret"></span></a></li>
+        <li class="sb-close"><a href="{% url 'homepage:new' %}">NEW<span class="sb-caret"></span></a></li>
+        <li class="sb-close"><a href="{% url 'homepage:paper' %}">業績</a></li>
+        <li class="sb-close"><a href="{% url 'homepage:home' %}">English<span class="sb-caret"></span></a></li>
     </ul>
 </div>
 

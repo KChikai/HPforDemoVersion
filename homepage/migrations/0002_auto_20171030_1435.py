@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('tree_view', '0001_initial'),
+        ('homepage', '0001_initial'),
     ]
 
     operations = [

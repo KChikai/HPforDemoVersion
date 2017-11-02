@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="format-detection" content="telephone=no">
 
-<title>News</title>
+<title>Paper Detail</title>
 
 {# CSS Files #}
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="{% static 'css/base_style.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static 'css/top_page.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static 'css/new.css' %}" />
+<link rel="stylesheet" href="{% static 'css/archive_manager.css' %}" />
 
 
 <!-- fonts in the test page -->
@@ -27,6 +28,7 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="{% static 'js/slidebars.js' %}"></script>
 <script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/set_values.js' %}"></script>
 
 <!-- js files in the test page -->
 <script src="{% static 'js/jquery.bxslider.min.js' %}"></script>
@@ -58,50 +60,37 @@
         </div>
         <div id="pc_menu">
             <ul class="pc_navi">
-                <li class="menu-hover"><a href="{% url 'tree_view:embedding' %}"><span>Home</span></a></li>
-                <li class="menu-hover"><a href="{% url 'tree_view:research' %}"><span>研究</span></a></li>
-                <li class="menu-hover"><a href="{% url 'tree_view:member' %}"><span>メンバー</span></a></li>
-                <li class="now_display_header"><a href="{% url 'tree_view:new' %}"><span>New</span></a></li>
-                <li class="menu-hover"><a href="{% url 'tree_view:paper' %}"><span>業績</span></a></li>
-                <li class="menu-hover"><a href="{% url 'tree_view:embedding' %}"><span>English</span></a></li>
+                <li class="menu-hover"><a href="{% url 'homepage:home' %}"><span>Home</span></a></li>
+                <li class="menu-hover"><a href="{% url 'homepage:research' %}"><span>研究</span></a></li>
+                <li class="menu-hover"><a href="{% url 'homepage:member' %}"><span>メンバー</span></a></li>
+                <li class="menu-hover"><a href="{% url 'homepage:new' %}"><span>New</span></a></li>
+                <li class="now_display_header"><a href="{% url 'homepage:paper' %}"><span>業績</span></a></li>
+                <li class="menu-hover"><a href="{% url 'homepage:home' %}"><span>English</span></a></li>
             </ul>
         </div>
-    </div>
+    </div><!-- #pc_header_inner -->
 </div>
 
 
-<!-- mainコンテンツ：Start -->
+{# main contents #}
 <div id="mainArea">
-    {#  for PC  #}
-    <div class="PC">
-    </div>
-
-    <section class = "SectionBasic clearfix">
-        <h2 class = "MdsBase">News</h2>
-        <div class="link-year">
-        |
-        {% for news_anniversal in news %}
-            <a href="#{{ news_anniversal.0 }}">{{ news_anniversal.0 }}</a> |
-        {% endfor %}
-        </div>
-        
-        {% for news_anniversal in news %}
-
-            <div class="header-year" id="{{ news_anniversal.0 }}" >
-                <i class="material-icons">event</i> {{ news_anniversal.0 }}年度
-                <section style="float:right;padding-right:20px;padding-top:10px;text-align:right;font-size:small;">
-                    <a href="#top">↑このページの先頭に戻る</a>
-                </section>
-            </div>
-            <dl class="tbl-common01">
-            {% for article in news_anniversal.1 %}
-                <dt>{{ article.date }}</dt>
-                <dd id="{{ article.id }}">
-                    {{ article.text_ja|safe }}
-                </dd>
-            {% endfor %}
-            </dl>
-        {% endfor %}
+    <section class="SectionBasic">
+        <h2 class="MdsBase">Paper Detail</h2>
+            <h2>{{paper.title}}</h2>
+            <p>著者：
+            <ul>
+                <div class="author_list">
+                    {% for author in paper.author_set.all %}
+                        <li>
+                            <a href="{% url 'homepage:author_detail' author.id %}">{{ author.name }}</a>
+                        </li>
+                    {% endfor %}
+                </div>
+            </ul>
+            </p>
+            <p>種別：{{paper.colloquium}}</p>
+            <p>出版年：{{paper.year}}</p>
+            <p>アブストラクト：{{paper.abstract}}</p>
     </section>
 </div>
 
@@ -120,11 +109,11 @@
             <span>ページ内リンク</span>
         </p>
         <ul>
-            <li class="footer-list"><a href="{% url 'tree_view:embedding' %}">Home</a></li>
-            <li class="footer-list"><a href="{% url 'tree_view:research' %}">研究</a></li>
-            <li class="footer-list"><a href="{% url 'tree_view:member' %}">メンバー</a></li>
-            <li class="footer-list"><a href="{% url 'tree_view:new' %}">New</a></li>
-            <li class="footer-list"><a href="{% url 'tree_view:embedding' %}">業績</a></li>
+            <li class="footer-list"><a href="{% url 'homepage:home' %}">Home</a></li>
+            <li class="footer-list"><a href="{% url 'homepage:research' %}">研究</a></li>
+            <li class="footer-list"><a href="{% url 'homepage:member' %}">メンバー</a></li>
+            <li class="footer-list"><a href="{% url 'homepage:new' %}">New</a></li>
+            <li class="footer-list"><a href="{% url 'homepage:home' %}">業績</a></li>
         </ul>
     </div>
 
@@ -171,12 +160,13 @@
 </footer>
 
 
+
 {# slide bar for Smart Phone #}
 <div class="sb-slidebar sb-right">
     <ul class="sb-menu">
         <li class="sb-menu-title">MENU</li>
-        <li class="sb-close"><a href="{% url 'tree_view:embedding' %}">ホーム</a></li>
-        <li class="sb-submenu-open"><a href="{% url 'tree_view:research' %}" class="sb-toggle-submenu">研究<span class="sb-caret"></span></a>
+        <li class="sb-close"><a href="{% url 'homepage:home' %}">ホーム</a></li>
+        <li class="sb-submenu-open"><a href="{% url 'homepage:research' %}" class="sb-toggle-submenu">研究<span class="sb-caret"></span></a>
             <ul class="sb-submenu">
                 <li class="sb-close"><a href="#">グラフマイニング</a></li>
             </ul>
@@ -196,10 +186,10 @@
                 <li class="sb-close"><a href="#">機械学習</a></li>
             </ul>
         </li>
-        <li class="sb-close"><a href="{% url 'tree_view:member' %}">メンバー<span class="sb-caret"></span></a></li>
-        <li class="sb-close"><a href="{% url 'tree_view:new' %}">NEW<span class="sb-caret"></span></a></li>
-        <li class="sb-close"><a href="{% url 'tree_view:paper' %}">業績</a></li>
-        <li class="sb-close"><a href="{% url 'tree_view:embedding' %}">English<span class="sb-caret"></span></a></li>
+        <li class="sb-close"><a href="{% url 'homepage:member' %}">メンバー<span class="sb-caret"></span></a></li>
+        <li class="sb-close"><a href="{% url 'homepage:new' %}">NEW<span class="sb-caret"></span></a></li>
+        <li class="sb-close"><a href="{% url 'homepage:paper' %}">業績</a></li>
+        <li class="sb-close"><a href="{% url 'homepage:home' %}">English<span class="sb-caret"></span></a></li>
     </ul>
 </div>
 
@@ -237,4 +227,3 @@ $(function(){
 
 </body>
 </html>
-

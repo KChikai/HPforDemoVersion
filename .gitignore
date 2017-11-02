@@ -4,9 +4,4 @@ __pycache__
 *.log
 
 TreeView/setting_local.py
-
-tree_view/templates/_backup_2018.html
-tree_view/static/images/*
-tree_view/static/screenshots/*
-
-
+homepage/static/images/
