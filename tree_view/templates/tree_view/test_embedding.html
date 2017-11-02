@@ -12,8 +12,8 @@
 {# CSS Files #}
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static 'css/slidebars.css' %}">
+<link rel="stylesheet" href="{% static 'css/base_style.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static 'css/top_page.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static 'css/aos.css' %}" />
 <link rel="stylesheet" href="{% static 'css/research_card.css' %}" />
@@ -61,7 +61,7 @@
                 <li class="menu-hover"><a href="{% url 'tree_view:research' %}"><span>研究</span></a></li>
                 <li class="menu-hover"><a href="{% url 'tree_view:member' %}"><span>メンバー</span></a></li>
                 <li class="menu-hover"><a href="{% url 'tree_view:new' %}"><span>New</span></a></li>
-                <li class="menu-hover"><a href="{% url 'tree_view:embedding' %}"><span>業績</span></a></li>
+                <li class="menu-hover"><a href="{% url 'tree_view:paper' %}"><span>業績</span></a></li>
                 <li class="menu-hover"><a href="{% url 'tree_view:embedding' %}"><span>English</span></a></li>
             </ul>
         </div>
@@ -73,7 +73,7 @@
             <li class="pc_sub_menu_message"><a href="#">メッセージ</a></li>
             <li class="pc_sub_menu_jobs"><a href="#">研究紹介</a></li>
             <li class="pc_sub_menu_interview"><a href="#">最新ニュース</a></li>
-            <li class="pc_sub_menu_work"><a href="#">リンク</a></li>
+            <li class="pc_sub_menu_work"><a href="#">外部の方へ</a></li>
         </ul>
     </nav>
 </div>
@@ -86,7 +86,7 @@
     <div id="BgVideoWrap" class="PC">
         <div class='BgVideoOverlay'></div>
         <video id="BgVideo" autoplay loop muted>
-            <source src="{% static 'images/test.m4v' %}" />
+            <source src="{% static 'images/test.mp4' %}" />
         </video>
         <h1 class="PageTitle"><img src="{% static 'images/logo_white.png' %}" alt="Onizuka Lab logo"></h1>
         <div class="ScrollDown"><img class="scroll-img" src="{% static 'images/sc.gif' %}" alt="SCROLL DOWN"></div>
@@ -97,10 +97,9 @@
         <ul id="Slide">
             <li><img src="{% static 'images/room.jpg' %}" alt=""></li>
             <li><img src="{% static 'images/oga-study.jpg' %}" alt=""></li>
-            <li><img src="{% static 'images/pc.jpg' %}" alt=""></li>
+            <li><img src="{% static 'images/oni_server.jpg' %}" alt=""></li>
         </ul>
         <p class="PageTitle"><img src="{% static 'images/new_logo_white.png' %}" alt=""></p>
-        <!-- // #KeyVisualSP -->
     </div>
 
     {# Message contents #}
@@ -229,11 +228,33 @@
             </div>
         </div>
         <div class="news-button">
-            <a href="#">
+            <a href="{% url 'tree_view:new' %}">
                 <button>Read More</button>
             </a>
         </div>
     </section>
+
+
+    {# 外部の方に向けたメッセージ #}
+    <div id="outside-bg">
+        <section class="SectionBasic ForOutside">
+            <h2 class="MdsBase">For Outside</h2>
+            <h2 class="MdsBase">
+                当研究室を志望の学生へ
+            </h2>
+            <p class="Lead">
+                鬼塚研究室では大学院生を募集しております．（社会人大学院生を含む）<br />
+                研究室見学等を希望する方は，事前に鬼塚教授へのご連絡をお願い致します．<br />
+            </p>
+            <h2 class="MdsBase">
+                企業・各種研究機関の研究者方へ
+            </h2>
+            <p class="Lead">
+                鬼塚研究室では様々な企業や研究機関と共同研究プロジェクトを推進しております．<br />
+                共同研究に関する連絡・問い合わせは鬼塚教授までご連絡をお願いいたします．</p>
+            <p class="small-address"><i class="fa fa-envelope"></i>　onizuka@ist.osaka-u.ac.jp</p>
+        </section>
+    </div>
 
 </div>
 
@@ -257,7 +278,7 @@
             <li class="footer-list"><a href="{% url 'tree_view:research' %}">研究</a></li>
             <li class="footer-list"><a href="{% url 'tree_view:member' %}">メンバー</a></li>
             <li class="footer-list"><a href="{% url 'tree_view:new' %}">New</a></li>
-            <li class="footer-list"><a href="{% url 'tree_view:embedding' %}">業績</a></li>
+            <li class="footer-list"><a href="{% url 'tree_view:paper' %}">業績</a></li>
         </ul>
     </div>
 
@@ -331,7 +352,7 @@
         </li>
         <li class="sb-close"><a href="{% url 'tree_view:member' %}">メンバー<span class="sb-caret"></span></a></li>
         <li class="sb-close"><a href="{% url 'tree_view:new' %}">NEW<span class="sb-caret"></span></a></li>
-        <li class="sb-close"><a href="{% url 'tree_view:embedding' %}">業績</a></li>
+        <li class="sb-close"><a href="{% url 'tree_view:paper' %}">業績</a></li>
         <li class="sb-close"><a href="{% url 'tree_view:embedding' %}">English<span class="sb-caret"></span></a></li>
     </ul>
 </div>
@@ -411,7 +432,7 @@ jQuery.event.add(window, "load", function(){
         });
     });
 
-    // Embedding Video
+    // Research
     //var position2 = $(".VideoEmbedding").get(0).offsetTop - header_height;    // 本来の手法
     var position2 = position + $("#Poem").outerHeight(true);
     $('.pc_sub_menu_jobs').click(function(){
@@ -422,7 +443,7 @@ jQuery.event.add(window, "load", function(){
         });
     });
 
-    // Professors
+    // News
     //var position3 = $(".Professors").get(0).offsetTop - header_height;    // 本来の手法
     var position3 = position2 + $(".ResearchCard").outerHeight(true);
     $('.pc_sub_menu_interview').click(function(){
@@ -433,7 +454,7 @@ jQuery.event.add(window, "load", function(){
         });
     });
 
-    // Grid
+    // For Outside
     //var position4 = position3 + $(".Professors").outerHeight(true);
     var position4 = position3 + $(".LatestNews").outerHeight(true);
     $('.pc_sub_menu_work').click(function(){

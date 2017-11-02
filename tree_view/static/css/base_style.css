@@ -73,7 +73,7 @@ body {
   /*font-size: 12px;*/
   line-height: 1.7;
   color: #333;
-  background: #fff;
+  background: #f5f5f5;
   background-size: 100% auto;
   overflow-x: auto;
 }
@@ -277,14 +277,14 @@ a:hover {
 /* PC用headerの幅 */
 #pc_header_inner {
   width: 940px;
-  height: 100px;
+  height: 80px;
   margin: 0 auto;
   background: #000000;
   position: relative;
 }
 
 #pc_logo a {
-  height: 100px;
+  height: 80px;
   display: block;
   /*background: url(../images/header_logo_bk.png) left center no-repeat;*/
   text-indent: -200%;
@@ -293,12 +293,12 @@ a:hover {
 #pc_logo img{
   display: block;
   width: 30%;
-  padding-top: 15px;
+  padding-top: 6px;
 }
 
 
 #pc_menu ul.pc_navi {
-  line-height: 100px;
+  line-height: 80px;
   position: absolute;
   width: 600px;
   right: 160px;
@@ -315,7 +315,7 @@ a:hover {
   vertical-align: bottom;
   display: inline-block;
   padding: 0 10px;
-  height: 100px;
+  height: 80px;
 }
 
 
@@ -367,7 +367,7 @@ a:hover {
 /* not hovering */
 #pc_menu ul.pc_navi li.now_display_header a {
   border-bottom: 2px solid #fff;
-  height: 25px;
+  height: 30px;
 }
 
 
@@ -382,8 +382,8 @@ a:hover {
   margin:0 auto;
   text-align: center;
   line-height: 2;
-  padding-top: 10px;
-  padding-bottom: 12px;
+  /*padding-top: 10px;*/
+  padding-bottom: 10px;
   top: auto;
   right: auto;
   font-family: "Hiragino Kaku Gothic ProN",Meiryo,sans-serif; 
@@ -439,12 +439,12 @@ a:hover {
   border-bottom: 2px solid #fff;
 }
 
-
+/* headerの△ */
 #pc_menu .pc_navi .now_display_header span:after {
   display: block;
   content: " ";
   position: relative;
-  bottom: -30px;
+  bottom: -19px;
   width: 0;
   height: 0;
   left: 50%;

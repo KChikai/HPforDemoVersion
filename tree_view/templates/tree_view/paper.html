@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="format-detection" content="telephone=no">
 
-<title>News</title>
+<title>Publication</title>
 
 {# CSS Files #}
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="{% static 'css/top_page.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static 'css/new.css' %}" />
 <link rel="stylesheet" href="{% static 'css/footer.css' %}" />
+<link rel="stylesheet" href="{% static 'css/archive_manager.css' %}" />
 
 
 <!-- fonts in the test page -->
@@ -28,6 +29,7 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="{% static 'js/slidebars.js' %}"></script>
 <script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/set_values.js' %}"></script>
 
 <!-- js files in the test page -->
 <script src="{% static 'js/jquery.bxslider.min.js' %}"></script>
@@ -62,49 +64,78 @@
                 <li class="menu-hover"><a href="{% url 'tree_view:embedding' %}"><span>Home</span></a></li>
                 <li class="menu-hover"><a href="{% url 'tree_view:research' %}"><span>研究</span></a></li>
                 <li class="menu-hover"><a href="{% url 'tree_view:member' %}"><span>メンバー</span></a></li>
-                <li class="now_display_header"><a href="{% url 'tree_view:new' %}"><span>New</span></a></li>
-                <li class="menu-hover"><a href="{% url 'tree_view:paper' %}"><span>業績</span></a></li>
+                <li class="menu-hover"><a href="{% url 'tree_view:new' %}"><span>New</span></a></li>
+                <li class="now_display_header"><a href="{% url 'tree_view:paper' %}"><span>業績</span></a></li>
                 <li class="menu-hover"><a href="{% url 'tree_view:embedding' %}"><span>English</span></a></li>
             </ul>
         </div>
-    </div>
+    </div><!-- #pc_header_inner -->
 </div>
 
 
-<!-- mainコンテンツ：Start -->
+{# main contents #}
 <div id="mainArea">
-    {#  for PC  #}
-    <div class="PC">
-    </div>
-
-    <section class = "SectionBasic clearfix">
-        <h2 class = "MdsBase">News</h2>
-        <div class="link-year">
-        |
-        {% for news_anniversal in news %}
-            <a href="#{{ news_anniversal.0 }}">{{ news_anniversal.0 }}</a> |
-        {% endfor %}
-        </div>
-        
-        {% for news_anniversal in news %}
-
-            <div class="header-year" id="{{ news_anniversal.0 }}" >
-                <i class="material-icons">event</i> {{ news_anniversal.0 }}年度
-                <section style="float:right;padding-right:20px;padding-top:10px;text-align:right;font-size:small;">
-                    <a href="#top">↑このページの先頭に戻る</a>
-                </section>
+    <section class="SectionBasic search_form">
+        <h2 class="MdsBase">Publication</h2>
+        <form name="searchform" id="form-space" action="" method="get">
+            <input class="text" type="text" name="text_box" placeholder="Search...">
+            <input type="radio" name="andor" value="and" checked="checked"> and
+            <input type="radio" name="andor" value="or"> or
+            <button type=submit>検索</button>
+            <br>
+            <div class="sort-box">
+                <div class="box-title">
+                    Sort：
+                </div>
+                <select id="sorting" name="sorting">
+                    <option value="name">タイトル名</option>
+                    <option value="year">発行年</option>
+                </select>
             </div>
-            <dl class="tbl-common01">
-            {% for article in news_anniversal.1 %}
-                <dt>{{ article.date }}</dt>
-                <dd id="{{ article.id }}">
-                    {{ article.text_ja|safe }}
-                </dd>
-            {% endfor %}
-            </dl>
-        {% endfor %}
+            <br>
+            <div class="grouping-box">
+                 <div class="box-title">
+                    Grouping：
+                </div>
+                <select id="grouping" name="grouping">
+                    <option value="none">指定なし</option>
+                    <option value="kaigi">会議</option>
+                    <option value="year">発行年</option>
+                </select>
+            </div>
+        </form>
     </section>
+
+
+    <form action="{% url 'tree_view:result_bibtex' %}" method="post" id="bib_get">
+        {% csrf_token %}
+        <button type="button" name="bibtex_button" id="bib_button">bibtex</button>
+    </form>
+
+    <section class="SectionBasic result-space">
+        {% if paper_groups %}
+            {% for group, papers in paper_groups.items %}
+                <div class="{% cycle 'paper_group_1' 'paper_group_2' %}">
+                    <strong>{{ group }}</strong>
+                    {% for paper in papers %}
+                    <div class="paper_detail"><li>
+                        {% for author in paper.author_set.values %}
+                        <a href="{% url 'tree_view:author_detail' author.id %}">{{ author.name }}</a>,
+                        {% endfor %}
+                        <a href="{% url 'tree_view:paper_detail' paper.id %}">{{paper.title}}</a>,
+                        {{ paper.colloquium }}, {{ paper.year }}
+                    </li></div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="no_available"><p>Sorry, but no paper are available.</p></div>
+        {% endif %}
+    </section>
+
 </div>
+
+
 
 
 {# footer #}
@@ -170,6 +201,7 @@
         Copyright &copy; 2017 Onizuka Lab. All rights reserved.
     </div>
 </footer>
+
 
 
 {# slide bar for Smart Phone #}
@@ -238,4 +270,3 @@ $(function(){
 
 </body>
 </html>
-

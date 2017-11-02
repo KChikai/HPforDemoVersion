@@ -6,9 +6,6 @@ for the use fo PC and SP on the top page Onizuka Lab.
 
 
 /* common --------------------------------------------------- */
-body {
-background: none;
-}
 #mainArea strong {
 font-weight: bold;
 }
@@ -119,6 +116,19 @@ content: '※';
 
 
 
+/* 外部の方へのメッセージ (small address) */
+.small-address {
+  display: inline-block;
+  position: relative;
+  margin-top: 10px;
+  padding-left: 18px;
+  font-size: 12px !important;
+  line-height: 1.6em;
+}
+
+
+
+
 /* PC用 --------------------------------------------------- */
 @media only screen and (min-width: 769px) {
 
@@ -184,7 +194,7 @@ content: '※';
   #mainArea #BgVideoWrap {
     position: relative;
     overflow: hidden;
-    margin-top: 163px;  /* あまり良くない（ハードコートするべきでない） */
+    margin-top: 131px;  /* あまり良くない（ハードコートするべきでない）163 */
   }
   #mainArea #BgVideo {
     width: 100%;
@@ -255,7 +265,7 @@ content: '※';
     padding-bottom: 20px;
     color: whitesmoke;
     text-align: center;
-    background: url(../images/mask_square.png) no-repeat center bottom;
+    background: url(../images/mask_square.png) no-repeat center;
   }
   #mainArea .Message h2.MdsBase {
     color: whitesmoke;
@@ -268,9 +278,7 @@ content: '※';
     font-size: 16px;
     line-height: 2.2em;
   }
-  #mainArea .Message .Btn {
-    margin-top: 100px;
-  }
+
 
 
   /* PC background in Message */
@@ -282,7 +290,7 @@ content: '※';
     background-position: center center;
   }
   .cd-fixed-bg.cd-bg-1 {
-    background-image: url("../images/data_center.jpg");
+    background-image: url("../images/server.jpg");
   }
   .cd-scrolling-bg {
     min-height: 100%;
@@ -317,10 +325,32 @@ content: '※';
   }
 
 
-  /* FBページプラグイン */
-  #mainArea .FBPlugin {
-  padding: 80px 0;
-  text-align: center;
+
+  /* 外部の方へのメッセージ */
+  #mainArea .ForOutside {
+    padding-bottom: 20px;
+    color: whitesmoke;
+    text-align: center;
+    background-size: cover;
+    background: url(../images/mask_square.png) no-repeat center;
+  }
+  #mainArea #outside-bg {
+    background-size: cover;
+    background-image: url('../images/oni_server.jpg');
+
+  }
+
+
+  #mainArea .ForOutside h2.MdsBase {
+    color: whitesmoke;
+    margin-left: 10px;
+    margin-bottom: 50px;
+    font-size: 40px;
+  }
+  #mainArea .ForOutside .Lead {
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 2.2em;
   }
 
 
@@ -336,7 +366,7 @@ content: '※';
 
   #mainArea {
     text-align: center;
-    padding-top: 50px;
+    /*padding-top: 50px;*/
   }
   #mainArea .PC {
     display: none;
@@ -345,21 +375,22 @@ content: '※';
 
   /* SP共通 */
   #mainArea p, #mainArea th,#mainArea td, #mainArea li {
-  font-size: 13px;
+    font-size: 13px;
   }
   #mainArea small {
-  font-size: 10px;
+    font-size: 10px;
   }
   #mainArea .Break {
-  display: block;
+    display: block;
   }
   #mainArea .SectionBasic {
-  padding: 30px 15px;
+    padding: 30px 15px;
   }
   #mainArea h2.MdsBase {
-      font-family: 'Anton', sans-serif;
-      margin-bottom: 15px;
-      font-size: 24px;
+    font-family: 'Anton', sans-serif;
+    margin-bottom: 15px;
+    color: #37474F;
+    font-size: 24px;
   }
   #mainArea .BtnEntry {
     padding: 12px 80px;
@@ -373,6 +404,7 @@ content: '※';
     position: relative;
     background: #f5f5f5;
     background-size: 15px;
+    padding-top: 53px;    /* ヘッダー分空ける */
   }
   #mainArea #KeyVisualSP .PageTitle {
     position: absolute;
@@ -438,6 +470,33 @@ content: '※';
   .news-button button:hover {
     background-color: #34495E;
   }
+
+
+  /* 外部の方へのメッセージ */
+  #mainArea .ForOutside {
+    padding-bottom: 20px;
+    color: whitesmoke;
+    text-align: center;
+    background-size: cover;
+    background: url(../images/mask_square.png) no-repeat center;
+  }
+  #mainArea #outside-bg {
+    background-size: cover;
+    background-image: url('../images/server.jpg');
+
+  }
+  #mainArea .ForOutside h2.MdsBase {
+    color: whitesmoke;
+    margin-left: 5px;
+    margin-bottom: 20px;
+    font-size: 19px;
+    text-align: center;
+  }
+  #mainArea .ForOutside .Lead {
+  margin-bottom: 20px;
+  font-size: 13px;
+  }
+
 
 
 }

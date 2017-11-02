@@ -1,0 +1,126 @@
+#mainArea{
+    background: #f5f5f5;
+}
+
+
+#mainArea .result-space {
+    min-height: 450px;
+}
+
+.search_form {
+    /*background: url("../images/mask_square.png") no-repeat center,*/
+                /*url("../images/paper.jpg") no-repeat center;*/
+    background: url("../images/paper.jpg") no-repeat center;
+    background-size: cover;
+    width: 100%;
+    top: 0;
+    color: whitesmoke;
+    text-align: center;
+    position: relative;
+}
+.search_form::before {
+    background-color: rgba(0, 0, 0, 0.25);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: ' ';
+}
+
+
+.search_form.sticky {
+    position: fixed;
+    top: 3px;
+}
+
+.search_form form input.text {
+    background-color: #404040;
+    font-size: 18px;
+    border: 1px solid whitesmoke;
+    color: rgb(255, 255, 255);
+    width: 30%;
+    margin: 5px;
+    padding: 3px;
+}
+.search_form button {
+    margin: 5px;
+    border: 2px solid whitesmoke;
+    background-color: transparent;
+    color: whitesmoke;
+    border-radius: 3px;
+    width: 50px;
+}
+.search_form button:hover {
+    background-color: rgba(255, 255, 255, .2);
+}
+
+/* 検索フォーム */
+#form-space {
+    margin: 40px 0px 20px 0px;
+    position: relative;
+}
+
+
+.search_form .box-title {
+}
+
+.search_form .sort-box {
+    text-align: left;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.search_form .grouping-box {
+    text-align: left;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.search_form select{
+    margin: 10px;
+    position: static;
+    width: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 3px;
+    border: 2px solid whitesmoke;
+    background: rgba(0, 0, 0, 0) url(../images/sc.png) 95% 40% no-repeat;
+    background-size: 20px 80%;
+}
+
+
+
+div.author_list a:link {
+    color: black;
+}
+
+div.paper_list a:link {
+    color: black;
+}
+
+div.paper_detail {
+    margin: 3px;
+}
+
+div.paper_detail a:link{
+    color: black;
+}
+
+div.no_available {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+div.paper_group_1 {
+    background: #7F8C9A;
+    padding: 3px;
+    margin: 5px;
+}
+
+div.paper_group_2 {
+    background: #a2a2a2;
+    padding: 3px;
+    margin: 5px;
+}
+

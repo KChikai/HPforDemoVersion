@@ -1,3 +1,4 @@
+/* News ページでの使用 */
 /* Material iconsを利用する */
 
 .link-year {
@@ -46,7 +47,6 @@ text-decoration:none;
 
 .material-icons {
   font-family: 'Material Icons';
-  #font-weight: bold;
   font-style: normal;
   font-size: larger; 
   display: inline-block;
@@ -71,8 +71,6 @@ text-decoration:none;
 
 .header-year {
     margin: 0 auto;
-
-    sw: 10px;
     padding-bottom: 10px;
     font-weight: bold;
     text-align: left;

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="format-detection" content="telephone=no">
 
-<title>News</title>
+<title>Paper Detail</title>
 
 {# CSS Files #}
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="{% static 'css/top_page.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static 'css/new.css' %}" />
 <link rel="stylesheet" href="{% static 'css/footer.css' %}" />
+<link rel="stylesheet" href="{% static 'css/archive_manager.css' %}" />
 
 
 <!-- fonts in the test page -->
@@ -28,6 +29,7 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="{% static 'js/slidebars.js' %}"></script>
 <script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/set_values.js' %}"></script>
 
 <!-- js files in the test page -->
 <script src="{% static 'js/jquery.bxslider.min.js' %}"></script>
@@ -62,47 +64,34 @@
                 <li class="menu-hover"><a href="{% url 'tree_view:embedding' %}"><span>Home</span></a></li>
                 <li class="menu-hover"><a href="{% url 'tree_view:research' %}"><span>研究</span></a></li>
                 <li class="menu-hover"><a href="{% url 'tree_view:member' %}"><span>メンバー</span></a></li>
-                <li class="now_display_header"><a href="{% url 'tree_view:new' %}"><span>New</span></a></li>
-                <li class="menu-hover"><a href="{% url 'tree_view:paper' %}"><span>業績</span></a></li>
+                <li class="menu-hover"><a href="{% url 'tree_view:new' %}"><span>New</span></a></li>
+                <li class="now_display_header"><a href="{% url 'tree_view:paper' %}"><span>業績</span></a></li>
                 <li class="menu-hover"><a href="{% url 'tree_view:embedding' %}"><span>English</span></a></li>
             </ul>
         </div>
-    </div>
+    </div><!-- #pc_header_inner -->
 </div>
 
 
-<!-- mainコンテンツ：Start -->
+{# main contents #}
 <div id="mainArea">
-    {#  for PC  #}
-    <div class="PC">
-    </div>
-
-    <section class = "SectionBasic clearfix">
-        <h2 class = "MdsBase">News</h2>
-        <div class="link-year">
-        |
-        {% for news_anniversal in news %}
-            <a href="#{{ news_anniversal.0 }}">{{ news_anniversal.0 }}</a> |
-        {% endfor %}
-        </div>
-        
-        {% for news_anniversal in news %}
-
-            <div class="header-year" id="{{ news_anniversal.0 }}" >
-                <i class="material-icons">event</i> {{ news_anniversal.0 }}年度
-                <section style="float:right;padding-right:20px;padding-top:10px;text-align:right;font-size:small;">
-                    <a href="#top">↑このページの先頭に戻る</a>
-                </section>
-            </div>
-            <dl class="tbl-common01">
-            {% for article in news_anniversal.1 %}
-                <dt>{{ article.date }}</dt>
-                <dd id="{{ article.id }}">
-                    {{ article.text_ja|safe }}
-                </dd>
-            {% endfor %}
-            </dl>
-        {% endfor %}
+    <section class="SectionBasic">
+        <h2 class="MdsBase">Paper Detail</h2>
+            <h2>{{paper.title}}</h2>
+            <p>著者：
+            <ul>
+                <div class="author_list">
+                    {% for author in paper.author_set.all %}
+                        <li>
+                            <a href="{% url 'tree_view:author_detail' author.id %}">{{ author.name }}</a>
+                        </li>
+                    {% endfor %}
+                </div>
+            </ul>
+            </p>
+            <p>種別：{{paper.colloquium}}</p>
+            <p>出版年：{{paper.year}}</p>
+            <p>アブストラクト：{{paper.abstract}}</p>
     </section>
 </div>
 
@@ -172,6 +161,7 @@
 </footer>
 
 
+
 {# slide bar for Smart Phone #}
 <div class="sb-slidebar sb-right">
     <ul class="sb-menu">
@@ -238,4 +228,3 @@ $(function(){
 
 </body>
 </html>
-
